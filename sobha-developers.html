@@ -1,0 +1,1531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>apartment Investments | Premium Real Estate Opportunities</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+   
+<style>
+/* Base Styles */
+:root {
+    --primary: #2c3e50;
+    --secondary: #e74c3c;
+    --accent: #3498db;
+    --light: #ecf0f1;
+    --dark: #2c3e50;
+    --text: #333;
+    --text-light: #7f8c8d;
+    --success: #27ae60;
+    --warning: #f39c12;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text);
+    background-color: #f9f9f9;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: var(--secondary);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: var(--transition);
+    text-decoration: none;
+}
+
+.btn:hover {
+    background-color: #c0392b;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+
+.property-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.property-card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.property-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.property-image {
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+
+.property-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.property-card:hover .property-image img {
+    transform: scale(1.05);
+}
+
+.property-details {
+    padding: 20px;
+}
+
+.property-details h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: var(--primary);
+}
+
+.property-location {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    color: var(--text-light);
+}
+
+.property-location i {
+    margin-right: 5px;
+}
+
+.property-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.action-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 8px;
+    background-color: var(--light);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: var(--transition);
+    text-decoration: none;
+    color: inherit;
+}
+
+.action-btn:hover {
+    background-color: var(--primary);
+    color: white;
+}
+
+.action-btn i {
+    font-size: 0.9rem;
+}
+
+/* Navigation */
+.navbar {
+    background-color: white;
+    box-shadow: var(--shadow);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    padding: 15px 0;
+    transition: var(--transition);
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar.scrolled {
+    padding: 10px 0;
+    background-color: rgba(255, 255, 255, 0.95);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.logo span {
+    color: var(--secondary);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    color: var(--secondary);
+}
+
+.login-btn {
+    background-color: var(--primary);
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.login-btn:hover {
+    background-color: var(--secondary);
+}
+
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--primary);
+}
+
+/* Dropdown styles */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    border-radius: 8px;
+    padding: 10px 0;
+}
+
+.dropdown-content a {
+    color: var(--text);
+    padding: 10px 16px;
+    text-decoration: none;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: #f8f9fa;
+    color: var(--secondary);
+    padding-left: 20px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropbtn i {
+    margin-left: 5px;
+    font-size: 12px;
+    transition: transform 0.3s ease;
+}
+
+.dropdown:hover .dropbtn i {
+    transform: rotate(180deg);
+}
+
+.bangalore-header {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('sobha-images/sobha-infinia-phase-2.webp');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 120px 0 210px;
+    text-align: center;
+    margin-top: 70px;
+}
+
+.bangalore-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.bangalore-header p {
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.location-filters {
+    padding: 30px 0;
+    background-color: #f5f5f5;
+}
+
+.filter-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.filter-btn {
+    padding: 10px 20px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: 500;
+}
+
+.filter-btn:hover {
+    background-color: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+.filter-btn.active {
+    background-color: var(--secondary);
+    color: white;
+    border-color: var(--secondary);
+}
+
+.plots-grid {
+    padding: 60px 0;
+}
+
+.price-badge {
+    display: none;
+}
+
+/* Enquiry Popup Form */
+.enquiry-popup {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+}
+.enquiry-popup.active {
+    display: flex;
+}
+.enquiry-popup-content {
+    background: white;
+    padding: 30px 35px;
+    border-radius: 12px;
+    max-width: 420px;
+    width: 90%;
+    position: relative;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    animation: slideUp 0.3s ease;
+}
+@keyframes slideUp {
+    from { transform: translateY(30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+.enquiry-popup-content .close-enquiry {
+    position: absolute;
+    top: 12px;
+    right: 18px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #888;
+    transition: color 0.2s;
+}
+.enquiry-popup-content .close-enquiry:hover { color: #e74c3c; }
+.enquiry-popup-content h2 {
+    margin-bottom: 20px;
+    color: #2c3e50;
+    font-size: 1.6rem;
+}
+.enquiry-popup-content .form-group {
+    margin-bottom: 18px;
+}
+.enquiry-popup-content .form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #333;
+}
+.enquiry-popup-content .form-group input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border 0.2s;
+}
+.enquiry-popup-content .form-group input:focus {
+    border-color: #e74c3c;
+    outline: none;
+}
+.enquiry-popup-content .btn-submit-enquiry {
+    width: 100%;
+    padding: 14px;
+    background: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.enquiry-popup-content .btn-submit-enquiry:hover {
+    background: #c0392b;
+}
+
+/* Brochure Popup Form */
+.brochure-popup {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+}
+.brochure-popup.active {
+    display: flex;
+}
+.brochure-popup-content {
+    background: white;
+    padding: 30px 35px;
+    border-radius: 12px;
+    max-width: 420px;
+    width: 90%;
+    position: relative;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    animation: slideUp 0.3s ease;
+}
+.brochure-popup-content .close-brochure {
+    position: absolute;
+    top: 12px;
+    right: 18px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #888;
+    transition: color 0.2s;
+}
+.brochure-popup-content .close-brochure:hover { color: #e74c3c; }
+.brochure-popup-content h2 {
+    margin-bottom: 20px;
+    color: #2c3e50;
+    font-size: 1.6rem;
+}
+.brochure-popup-content .form-group {
+    margin-bottom: 18px;
+}
+.brochure-popup-content .form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #333;
+}
+.brochure-popup-content .form-group input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border 0.2s;
+}
+.brochure-popup-content .form-group input:focus {
+    border-color: #e74c3c;
+    outline: none;
+}
+.brochure-popup-content .btn-submit-brochure {
+    width: 100%;
+    padding: 14px;
+    background: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.brochure-popup-content .btn-submit-brochure:hover {
+    background: #c0392b;
+}
+
+/* Enquiry Now Button - Vertical Left */
+.enquiry-vertical-btn {
+    position: fixed;
+    left: 15px;
+    top: 70%;
+    transform: translateY(-50%) rotate(-90deg);
+    transform-origin: left center;
+    z-index: 999;
+    background-color: #e74c3c;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 0 0 8px 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+.enquiry-vertical-btn:hover {
+    background-color: #c0392b;
+    padding: 12px 28px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+}
+@media (max-width: 768px) {
+    .enquiry-vertical-btn {
+        padding: 8px 14px;
+        font-size: 0.8rem;
+        left: 15px;
+    }
+}
+
+/* Footer */
+.footer {
+    background-color: var(--dark);
+    color: white;
+    padding: 60px 0 20px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.footer-col h3 {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-col h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: 2px;
+    background-color: var(--secondary);
+}
+
+.footer-col p {
+    margin-bottom: 20px;
+    color: #bdc3c7;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: white;
+    transition: var(--transition);
+}
+
+.social-links a:hover {
+    background-color: var(--secondary);
+    transform: translateY(-3px);
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    color: #bdc3c7;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.footer-col ul li a:hover {
+    color: var(--secondary);
+    padding-left: 5px;
+}
+
+.footer-col ul li i {
+    margin-right: 10px;
+    color: var(--secondary);
+    width: 20px;
+    text-align: center;
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: #bdc3c7;
+    font-size: 0.9rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .bangalore-header h1 {
+        font-size: 2rem;
+    }
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 15px;
+    }
+    .hamburger {
+        display: block;
+    }
+    .navbar.active .nav-links {
+        display: flex;
+        background-color: #fff;
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+    .navbar.active .nav-links a,
+    .navbar.active .login-btn {
+        width: 100%;
+        text-align: left;
+    }
+    .dropdown-content {
+        position: static;
+        box-shadow: none;
+        display: none;
+    }
+    .navbar.active .dropdown.active .dropdown-content {
+        display: block;
+        padding-left: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .bangalore-header {
+        padding: 100px 0 40px;
+    }
+    .bangalore-header h1 {
+        font-size: 2rem;
+    }
+    .filter-tabs {
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding-bottom: 10px;
+        -webkit-overflow-scrolling: touch;
+    }
+    .property-actions {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 576px) {
+    .bangalore-header h1 {
+        font-size: 1.8rem;
+    }
+    .property-actions {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+<body>
+
+<!-- Enquiry Now Vertical Button -->
+<button class="enquiry-vertical-btn" id="enquiryVerticalBtn">Enquiry Now</button>
+
+<!-- Enquiry Popup Form -->
+<div class="enquiry-popup" id="enquiryPopup">
+    <div class="enquiry-popup-content">
+        <span class="close-enquiry" id="closeEnquiry">&times;</span>
+        <h2>Get in Touch</h2>
+        <form id="enquiryForm">
+            <div class="form-group">
+                <label for="enquiryName">Full Name</label>
+                <input type="text" id="enquiryName" placeholder="Your full name" required>
+            </div>
+            <div class="form-group">
+                <label for="enquiryEmail">Email Address</label>
+                <input type="email" id="enquiryEmail" placeholder="your@email.com" required>
+            </div>
+            <div class="form-group">
+                <label for="enquiryPhone">Phone Number</label>
+                <input type="tel" id="enquiryPhone" placeholder="+91-6366850754" required>
+            </div>
+            <button type="submit" class="btn-submit-enquiry">Submit Enquiry</button>
+        </form>
+    </div>
+</div>
+
+<!-- Brochure Popup Form -->
+<div class="brochure-popup" id="brochurePopup">
+    <div class="brochure-popup-content">
+        <span class="close-brochure" id="closeBrochure">&times;</span>
+        <h2>Download Brochure</h2>
+        <form id="brochureForm">
+            <div class="form-group">
+                <label for="brochureName">Full Name</label>
+                <input type="text" id="brochureName" placeholder="Your full name" required>
+            </div>
+            <div class="form-group">
+                <label for="brochureEmail">Email Address</label>
+                <input type="email" id="brochureEmail" placeholder="your@email.com" required>
+            </div>
+            <div class="form-group">
+                <label for="brochurePhone">Phone Number</label>
+                <input type="tel" id="brochurePhone" placeholder="+91-6366850754" required>
+            </div>
+            <button type="submit" class="btn-submit-brochure">Download Brochure</button>
+        </form>
+    </div>
+</div>
+
+<!-- Navigation -->
+<nav class="navbar">
+    <div class="container">
+        <a href="index.html" class="logo">Prime<span>Apartment</span></a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            
+            <!-- Properties dropdown with builders -->
+            <div class="dropdown">
+                <a href="properties.html" class="dropbtn">Builders <i class="fas fa-chevron-down"></i></a>
+                <div class="dropdown-content">
+                    <a href="total-environment.html">Total Environment</a>
+                    <a href="lnt-projects.html">L&T Projects</a>
+                     <a href="prestige-group.html">Prestige Group</a>
+                    <a href="sobha-developers.html">Sobha Limited</a>
+                    <a href="godrej-properties.html">Godrej Properties</a>
+                   
+                    <a href="brigade-group.html">Brigade Group</a>
+                    <a href="#">Lodha Group</a>
+                    <a href="assetz.html">Assetz</a>
+                    <a href="puravankara.html">Puravankara</a>
+                    <a href="century-builders.html">Century Builders</a>
+                    <a href="birla-estates.html">Birla Estates</a>
+                    <a href="#">Signature Global</a>
+                </div>
+            </div>
+            
+            <a href="calculator.html">Upcoming Projects</a>
+            <a href="blog.html">Investment Guide</a>
+            <a href="contact.html">Contact</a>
+            <!-- Investor Login replaced with Enquiry button -->
+            <button class="btn login-btn" id="navEnquiryBtn">Enquiry</button>
+        </div>
+        <button class="hamburger"><i class="fas fa-bars"></i></button>
+    </div>
+</nav>
+
+<script>
+    // Mobile menu toggle
+    document.querySelector('.hamburger').addEventListener('click', function() {
+        document.querySelector('.navbar').classList.toggle('active');
+    });
+    
+    // Dropdown toggle for mobile
+    if (window.innerWidth <= 992) {
+        const dropdowns = document.querySelectorAll('.dropdown');
+        dropdowns.forEach(dropdown => {
+            const dropbtn = dropdown.querySelector('.dropbtn');
+            dropbtn.addEventListener('click', function(e) {
+                if (window.innerWidth <= 992) {
+                    e.preventDefault();
+                    dropdown.classList.toggle('active');
+                }
+            });
+        });
+    }
+</script>
+
+<!-- Bangalore Plots Header -->
+<section class="bangalore-header">
+    <div class="container">
+        <h1>SOBHA APARTMENT FOR SALE IN BANGALORE</h1>
+        <p>Explore over 100+ Apartment developments in Bangalore, offering a wide range of options with prices starting from ₹18 lakhs to ₹5 crore. Find your perfect plot in premium localities across the city</p>
+    </div>
+</section>
+
+<!-- Location Filters -->
+<section class="location-filters">
+    <div class="container">
+        <div class="filter-tabs">
+            <button class="filter-btn active" data-filter="all">All Projects</button>
+            <button class="filter-btn" data-filter="north">North Bangalore</button>
+            <button class="filter-btn" data-filter="south">South Bangalore</button>
+            <button class="filter-btn" data-filter="east">East Bangalore</button>
+            <button class="filter-btn" data-filter="west">West Bangalore</button>
+            <button class="filter-btn" data-filter="whitefield">whitefield</button>
+        </div>
+    </div>
+</section>
+
+<!-- Plots Grid -->
+<section class="plots-grid">
+    <div class="container">
+        <div class="property-grid">
+            <!-- Sobha Town Park Phase 3 -->
+            <div class="property-card" data-location="south">
+                <div class="property-image">
+                    <img src="sobha-images/sobha-town-park-phase-3.jpg" alt="Sobha Town Park Phase 3">
+                </div>
+                <div class="property-details">
+                    <h3>Sobha Town Park Phase 3</h3>
+                    <div class="property-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Hosur Road, Attibele, Bangalore</span>
+                    </div>
+                    <div class="property-actions">
+                        <a href="sobha-town-park-phase-3.html" class="action-btn" aria-label="About Sobha Town Park Phase 3 Project">
+                            <i class="fas fa-info-circle"></i> About Project
+                        </a>
+                        <button class="action-btn brochure-btn" data-project="Sobha Town Park Phase 3">
+                            <i class="fas fa-download"></i> Brochure
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sobha Ayana at Dream Acres -->
+            <div class="property-card" data-location="east">
+                <div class="property-image">
+                    <img src="sobha-images/sobha-ayana-at-dream-acres.jpg" alt="Sobha Ayana at Dream Acres">
+                </div>
+                <div class="property-details">
+                    <h3>Sobha Ayana at Dream Acres</h3>
+                    <div class="property-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Panathur Road, Varthur, Bangalore</span>
+                    </div>
+                    <div class="property-actions">
+                        <a href="sobha-ayana-at-dream-acres.html" class="action-btn" aria-label="About Sobha Ayana at Dream Acres Project">
+                            <i class="fas fa-info-circle"></i> About Project
+                        </a>
+                        <button class="action-btn brochure-btn" data-project="Sobha Ayana at Dream Acres">
+                            <i class="fas fa-download"></i> Brochure
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sobha Infinia Phase 2 -->
+            <div class="property-card" data-location="central">
+                <div class="property-image">
+                    <img src="sobha-images/sobha-infinia-phase-2.webp" alt="Sobha Infinia Phase 2">
+                </div>
+                <div class="property-details">
+                    <h3>Sobha Infinia Phase 2</h3>
+                    <div class="property-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Koramangala 1st Block, Bangalore</span>
+                    </div>
+                    <div class="property-actions">
+                        <a href="sobha-infinia-phase-2.html" class="action-btn" aria-label="About Sobha Infinia Phase 2 Project">
+                            <i class="fas fa-info-circle"></i> About Project
+                        </a>
+                        <button class="action-btn brochure-btn" data-project="Sobha Infinia Phase 2">
+                            <i class="fas fa-download"></i> Brochure
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sobha Neopolis -->
+            <div class="property-card" data-location="east">
+                <div class="property-image">
+                    <img src="sobha-images/sobha-neopolis.jpg" alt="Sobha Neopolis">
+                </div>
+                <div class="property-details">
+                    <h3>Sobha Neopolis</h3>
+                    <div class="property-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Panathur Road, Balagere, Bangalore</span>
+                    </div>
+                    <div class="property-actions">
+                        <a href="sobha-neopolis.html" class="action-btn" aria-label="About Sobha Neopolis Project">
+                            <i class="fas fa-info-circle"></i> About Project
+                        </a>
+                        <button class="action-btn brochure-btn" data-project="Sobha Neopolis">
+                            <i class="fas fa-download"></i> Brochure
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sobha Tropical Greens at Dream Acres -->
+            <div class="property-card" data-location="east">
+                <div class="property-image">
+                    <img src="sobha-images/sobha-tropical-greens.jpg" alt="Sobha Tropical Greens at Dream Acres">
+                </div>
+                <div class="property-details">
+                    <h3>Sobha Tropical Greens at Dream Acres</h3>
+                    <div class="property-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Panathur Road, Bangalore</span>
+                    </div>
+                    <div class="property-actions">
+                        <a href="sobha-tropical-greens-at-dream-acres.html" class="action-btn" aria-label="About Sobha Tropical Greens at Dream Acres Project">
+                            <i class="fas fa-info-circle"></i> About Project
+                        </a>
+                        <button class="action-btn brochure-btn" data-project="Sobha Tropical Greens at Dream Acres">
+                            <i class="fas fa-download"></i> Brochure
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sobha Insignia -->
+            <div class="property-card" data-location="east">
+                <div class="property-image">
+                    <img src="sobha-images/sobha-insignia.jpg" alt="Sobha Insignia">
+                </div>
+                <div class="property-details">
+                    <h3>Sobha Insignia</h3>
+                    <div class="property-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Bellandur, Bangalore</span>
+                    </div>
+                    <div class="property-actions">
+                        <a href="sobha-insignia.html" class="action-btn" aria-label="About Sobha Insignia Project">
+                            <i class="fas fa-info-circle"></i> About Project
+                        </a>
+                        <button class="action-btn brochure-btn" data-project="Sobha Insignia">
+                            <i class="fas fa-download"></i> Brochure
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sobha Royal Crest -->
+            <div class="property-card" data-location="south">
+                <div class="property-image">
+                    <img src="sobha-images/sobha-royal-crest.jpg" alt="Sobha Royal Crest">
+                </div>
+                <div class="property-details">
+                    <h3>Sobha Royal Crest</h3>
+                    <div class="property-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Banashankari (near NICE Junction), Bangalore</span>
+                    </div>
+                    <div class="property-actions">
+                        <a href="sobha-royal-crest.html" class="action-btn" aria-label="About Sobha Royal Crest Project">
+                            <i class="fas fa-info-circle"></i> About Project
+                        </a>
+                        <button class="action-btn brochure-btn" data-project="Sobha Royal Crest">
+                            <i class="fas fa-download"></i> Brochure
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sobha Victoria Park -->
+            <div class="property-card" data-location="north">
+                <div class="property-image">
+                    <img src="sobha-images/sobha-victoria-park.jpg" alt="Sobha Victoria Park">
+                </div>
+                <div class="property-details">
+                    <h3>Sobha Victoria Park</h3>
+                    <div class="property-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Hennur Road, Bangalore</span>
+                    </div>
+                    <div class="property-actions">
+                        <a href="sobha-victoria-park.html" class="action-btn" aria-label="About Sobha Victoria Park Project">
+                            <i class="fas fa-info-circle"></i> About Project
+                        </a>
+                        <button class="action-btn brochure-btn" data-project="Sobha Victoria Park">
+                            <i class="fas fa-download"></i> Brochure
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sobha Sentosa -->
+            <div class="property-card" data-location="east">
+                <div class="property-image">
+                    <img src="sobha-images/sobha-sentosa.jpg" alt="Sobha Sentosa">
+                </div>
+                <div class="property-details">
+                    <h3>Sobha Sentosa</h3>
+                    <div class="property-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Panathur Road, Balagere, Bangalore</span>
+                    </div>
+                    <div class="property-actions">
+                        <a href="sobha-sentosa.html" class="action-btn" aria-label="About Sobha Sentosa Project">
+                            <i class="fas fa-info-circle"></i> About Project
+                        </a>
+                        <button class="action-btn brochure-btn" data-project="Sobha Sentosa">
+                            <i class="fas fa-download"></i> Brochure
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sobha Manhattan Towers (Sobha Town Park) -->
+            <div class="property-card" data-location="south">
+                <div class="property-image">
+                    <img src="sobha-images/sobha-manhattan-towers.jpg" alt="Sobha Manhattan Towers">
+                </div>
+                <div class="property-details">
+                    <h3>Sobha Manhattan Towers (Sobha Town Park)</h3>
+                    <div class="property-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Hosur Road, Bangalore</span>
+                    </div>
+                    <div class="property-actions">
+                        <a href="sobha-town-park.html" class="action-btn" aria-label="About Sobha Town Park Project">
+                            <i class="fas fa-info-circle"></i> About Project
+                        </a>
+                        <button class="action-btn brochure-btn" data-project="Sobha Manhattan Towers">
+                            <i class="fas fa-download"></i> Brochure
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sobha City Athena -->
+            <div class="property-card" data-location="north">
+                <div class="property-image">
+                    <img src="sobha-images/sobha-city-athena.jpg" alt="Sobha City Athena">
+                </div>
+                <div class="property-details">
+                    <h3>Sobha City Athena</h3>
+                    <div class="property-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Thanisandra, Hebbal, Bangalore</span>
+                    </div>
+                    <div class="property-actions">
+                        <a href="sobha-city-athena.html" class="action-btn" aria-label="About Sobha City Athena Project">
+                            <i class="fas fa-info-circle"></i> About Project
+                        </a>
+                        <button class="action-btn brochure-btn" data-project="Sobha City Athena">
+                            <i class="fas fa-download"></i> Brochure
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sobha Dream Gardens -->
+            <div class="property-card" data-location="north">
+                <div class="property-image">
+                    <img src="sobha-images/sobha-dream-gardens.jpg" alt="Sobha Dream Gardens">
+                </div>
+                <div class="property-details">
+                    <h3>Sobha Dream Gardens</h3>
+                    <div class="property-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Thanisandra Road, Bangalore</span>
+                    </div>
+                    <div class="property-actions">
+                        <a href="sobha-dream-gardens.html" class="action-btn" aria-label="About Sobha Dream Gardens Project">
+                            <i class="fas fa-info-circle"></i> About Project
+                        </a>
+                        <button class="action-btn brochure-btn" data-project="Sobha Dream Gardens">
+                            <i class="fas fa-download"></i> Brochure
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sobha Royal Pavilion -->
+            <div class="property-card" data-location="south-east">
+                <div class="property-image">
+                    <img src="sobha-images/sobha-royal-pavilion.webp" alt="Sobha Royal Pavilion">
+                </div>
+                <div class="property-details">
+                    <h3>Sobha Royal Pavilion</h3>
+                    <div class="property-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Sarjapur Road (Hadosiddapura), Bangalore</span>
+                    </div>
+                    <div class="property-actions">
+                        <a href="sobha-royal-pavilion.html" class="action-btn" aria-label="About Sobha Royal Pavilion Project">
+                            <i class="fas fa-info-circle"></i> About Project
+                        </a>
+                        <button class="action-btn brochure-btn" data-project="Sobha Royal Pavilion">
+                            <i class="fas fa-download"></i> Brochure
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sobha Saptrang -->
+            <div class="property-card" data-location="central">
+                <div class="property-image">
+                    <img src="sobha-images/sobha-saptrang.jpg" alt="Sobha Saptrang">
+                </div>
+                <div class="property-details">
+                    <h3>Sobha Saptrang</h3>
+                    <div class="property-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Koramangala 1st Block, Bangalore</span>
+                    </div>
+                    <div class="property-actions">
+                        <a href="sobha-saptrang.html" class="action-btn" aria-label="About Sobha Saptrang Project">
+                            <i class="fas fa-info-circle"></i> About Project
+                        </a>
+                        <button class="action-btn brochure-btn" data-project="Sobha Saptrang">
+                            <i class="fas fa-download"></i> Brochure
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sobha HRC Pristine -->
+            <div class="property-card" data-location="north">
+                <div class="property-image">
+                    <img src="sobha-images/sobha-hrc-pristine.jpg" alt="Sobha HRC Pristine">
+                </div>
+                <div class="property-details">
+                    <h3>Sobha HRC Pristine</h3>
+                    <div class="property-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Jakkur, Bangalore</span>
+                    </div>
+                    <div class="property-actions">
+                        <a href="sobha-hrc-pristine.html" class="action-btn" aria-label="About Sobha HRC Pristine Project">
+                            <i class="fas fa-info-circle"></i> About Project
+                        </a>
+                        <button class="action-btn brochure-btn" data-project="Sobha HRC Pristine">
+                            <i class="fas fa-download"></i> Brochure
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sobha Forest Edge -->
+            <div class="property-card" data-location="south">
+                <div class="property-image">
+                    <img src="sobha-images/sobha-forest-edge.jpg" alt="Sobha Forest Edge">
+                </div>
+                <div class="property-details">
+                    <h3>Sobha Forest Edge</h3>
+                    <div class="property-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Kanakapura Road, Bangalore</span>
+                    </div>
+                    <div class="property-actions">
+                        <a href="sobha-forest-edge.html" class="action-btn" aria-label="About Sobha Forest Edge Project">
+                            <i class="fas fa-info-circle"></i> About Project
+                        </a>
+                        <button class="action-btn brochure-btn" data-project="Sobha Forest Edge">
+                            <i class="fas fa-download"></i> Brochure
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sobha Lake Garden -->
+            <div class="property-card" data-location="east">
+                <div class="property-image">
+                    <img src="sobha-images/sobha-lake-garden.jpg" alt="Sobha Lake Garden">
+                </div>
+                <div class="property-details">
+                    <h3>Sobha Lake Garden</h3>
+                    <div class="property-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>KR Puram (Old Madras Road), Bangalore</span>
+                    </div>
+                    <div class="property-actions">
+                        <a href="sobha-lake-garden.html" class="action-btn" aria-label="About Sobha Lake Garden Project">
+                            <i class="fas fa-info-circle"></i> About Project
+                        </a>
+                        <button class="action-btn brochure-btn" data-project="Sobha Lake Garden">
+                            <i class="fas fa-download"></i> Brochure
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sobha Dream Acres -->
+            <div class="property-card" data-location="east">
+                <div class="property-image">
+                    <img src="sobha-images/sobha-dream-acres.jpg" alt="Sobha Dream Acres">
+                </div>
+                <div class="property-details">
+                    <h3>Sobha Dream Acres</h3>
+                    <div class="property-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Panathur Road, Bangalore</span>
+                    </div>
+                    <div class="property-actions">
+                        <a href="sobha-dream-acres.html" class="action-btn" aria-label="About Sobha Dream Acres Project">
+                            <i class="fas fa-info-circle"></i> About Project
+                        </a>
+                        <button class="action-btn brochure-btn" data-project="Sobha Dream Acres">
+                            <i class="fas fa-download"></i> Brochure
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sobha Avenue -->
+            <div class="property-card" data-location="east">
+                <div class="property-image">
+                    <img src="sobha-images/sobha-avenue.jpg" alt="Sobha Avenue">
+                </div>
+                <div class="property-details">
+                    <h3>Sobha Avenue</h3>
+                    <div class="property-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Whitefield, Bangalore</span>
+                    </div>
+                    <div class="property-actions">
+                        <a href="sobha-avenue.html" class="action-btn" aria-label="About Sobha Avenue Project">
+                            <i class="fas fa-info-circle"></i> About Project
+                        </a>
+                        <button class="action-btn brochure-btn" data-project="Sobha Avenue">
+                            <i class="fas fa-download"></i> Brochure
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sobha Palladian -->
+            <div class="property-card" data-location="east">
+                <div class="property-image">
+                    <img src="sobha-images/sobha-palladian.jpg" alt="Sobha Palladian">
+                </div>
+                <div class="property-details">
+                    <h3>Sobha Palladian</h3>
+                    <div class="property-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Yemalur, Bangalore</span>
+                    </div>
+                    <div class="property-actions">
+                        <a href="sobha-palladian.html" class="action-btn" aria-label="About Sobha Palladian Project">
+                            <i class="fas fa-info-circle"></i> About Project
+                        </a>
+                        <button class="action-btn brochure-btn" data-project="Sobha Palladian">
+                            <i class="fas fa-download"></i> Brochure
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sobha Park Plaza (Sobha Arena) -->
+            <div class="property-card" data-location="south">
+                <div class="property-image">
+                    <img src="sobha-images/sobha-park-plaza.jpg" alt="Sobha Park Plaza">
+                </div>
+                <div class="property-details">
+                    <h3>Sobha Park Plaza (Sobha Arena)</h3>
+                    <div class="property-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Kanakapura Road, Bangalore</span>
+                    </div>
+                    <div class="property-actions">
+                        <a href="sobha-arena.html" class="action-btn" aria-label="About Sobha Arena Project">
+                            <i class="fas fa-info-circle"></i> About Project
+                        </a>
+                        <button class="action-btn brochure-btn" data-project="Sobha Park Plaza">
+                            <i class="fas fa-download"></i> Brochure
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sobha City -->
+            <div class="property-card" data-location="north">
+                <div class="property-image">
+                    <img src="sobha-images/sobha-city.jpg" alt="Sobha City">
+                </div>
+                <div class="property-details">
+                    <h3>Sobha City</h3>
+                    <div class="property-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Thanisandra, Hebbal, Bangalore</span>
+                    </div>
+                    <div class="property-actions">
+                        <a href="sobha-city.html" class="action-btn" aria-label="About Sobha City Project">
+                            <i class="fas fa-info-circle"></i> About Project
+                        </a>
+                        <button class="action-btn brochure-btn" data-project="Sobha City">
+                            <i class="fas fa-download"></i> Brochure
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sobha Silicon Oasis -->
+            <div class="property-card" data-location="south">
+                <div class="property-image">
+                    <img src="sobha-images/sobha-silicon-oasis.jpg" alt="Sobha Silicon Oasis">
+                </div>
+                <div class="property-details">
+                    <h3>Sobha Silicon Oasis</h3>
+                    <div class="property-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Hosa Road (Electronic City), Bangalore</span>
+                    </div>
+                    <div class="property-actions">
+                        <a href="sobha-silicon-oasis.html" class="action-btn" aria-label="About Sobha Silicon Oasis Project">
+                            <i class="fas fa-info-circle"></i> About Project
+                        </a>
+                        <button class="action-btn brochure-btn" data-project="Sobha Silicon Oasis">
+                            <i class="fas fa-download"></i> Brochure
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sobha Heritage -->
+            <div class="property-card" data-location="south">
+                <div class="property-image">
+                    <img src="sobha-images/sobha-heritage.jpg" alt="Sobha Heritage">
+                </div>
+                <div class="property-details">
+                    <h3>Sobha Heritage</h3>
+                    <div class="property-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Banashankari 3rd Stage, Bangalore</span>
+                    </div>
+                    <div class="property-actions">
+                        <a href="sobha-heritage.html" class="action-btn" aria-label="About Sobha Heritage Project">
+                            <i class="fas fa-info-circle"></i> About Project
+                        </a>
+                        <button class="action-btn brochure-btn" data-project="Sobha Heritage">
+                            <i class="fas fa-download"></i> Brochure
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sobha Indraprastha -->
+            <div class="property-card" data-location="west">
+                <div class="property-image">
+                    <img src="sobha-images/sobha-indraprastha.jpg" alt="Sobha Indraprastha">
+                </div>
+                <div class="property-details">
+                    <h3>Sobha Indraprastha</h3>
+                    <div class="property-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Rajajinagar (Old Mysore Road), Bangalore</span>
+                    </div>
+                    <div class="property-actions">
+                        <a href="sobha-indraprastha.html" class="action-btn" aria-label="About Sobha Indraprastha Project">
+                            <i class="fas fa-info-circle"></i> About Project
+                        </a>
+                        <button class="action-btn brochure-btn" data-project="Sobha Indraprastha">
+                            <i class="fas fa-download"></i> Brochure
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>PrimeLand Investments</h3>
+                <p>Delivering exceptional real estate investment opportunities through rigorous research and strategic acquisitions.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="properties.html">Available Properties</a></li>
+                    <li><a href="blog.html">Investment Strategies</a></li>
+                    <li><a href="#">Due Diligence Process</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Disclosures</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact Us</h3>
+                <ul>
+                    <!--<li><i class="fas fa-map-marker-alt"></i> 123 Investment Plaza, Mumbai</li>-->
+                    <li><i class="fas fa-phone"></i> +91-6366850754</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2026 PrimeLand Investments. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- JavaScript -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    // Filter functionality
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+            const filterValue = this.getAttribute('data-filter');
+            const propertyCards = document.querySelectorAll('.property-card');
+            propertyCards.forEach(card => {
+                if (filterValue === 'all') {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = card.getAttribute('data-location') === filterValue ? 'block' : 'none';
+                }
+            });
+        });
+    });
+
+    // Enquiry Popup logic
+    const enquiryBtn = document.getElementById('enquiryVerticalBtn');
+    const navEnquiryBtn = document.getElementById('navEnquiryBtn');
+    const enquiryPopup = document.getElementById('enquiryPopup');
+    const closeEnquiry = document.getElementById('closeEnquiry');
+    const enquiryForm = document.getElementById('enquiryForm');
+
+    function openEnquiry(e) {
+        if (e) e.preventDefault();
+        enquiryPopup.classList.add('active');
+    }
+
+    function closeEnquiryPopup() {
+        enquiryPopup.classList.remove('active');
+    }
+
+    if (enquiryBtn) enquiryBtn.addEventListener('click', openEnquiry);
+    if (navEnquiryBtn) navEnquiryBtn.addEventListener('click', openEnquiry);
+    if (closeEnquiry) closeEnquiry.addEventListener('click', closeEnquiryPopup);
+    if (enquiryPopup) {
+        enquiryPopup.addEventListener('click', function(e) {
+            if (e.target === this) closeEnquiryPopup();
+        });
+    }
+    if (enquiryForm) {
+        enquiryForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('enquiryName').value.trim();
+            const email = document.getElementById('enquiryEmail').value.trim();
+            const phone = document.getElementById('enquiryPhone').value.trim();
+            if (name && email && phone) {
+                alert('Thank you for your enquiry! We will get back to you soon.');
+                enquiryForm.reset();
+                closeEnquiryPopup();
+            } else {
+                alert('Please fill in all fields.');
+            }
+        });
+    }
+
+    // Brochure Popup logic
+    const brochurePopup = document.getElementById('brochurePopup');
+    const closeBrochure = document.getElementById('closeBrochure');
+    const brochureForm = document.getElementById('brochureForm');
+
+    document.querySelectorAll('.brochure-btn').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const projectName = this.dataset.project || 'Project';
+            const nameInput = document.getElementById('brochureName');
+            if (nameInput) nameInput.placeholder = 'Your full name for ' + projectName;
+            if (brochurePopup) brochurePopup.classList.add('active');
+        });
+    });
+
+    function closeBrochurePopup() {
+        if (brochurePopup) brochurePopup.classList.remove('active');
+    }
+
+    if (closeBrochure) closeBrochure.addEventListener('click', closeBrochurePopup);
+    if (brochurePopup) {
+        brochurePopup.addEventListener('click', function(e) {
+            if (e.target === this) closeBrochurePopup();
+        });
+    }
+    if (brochureForm) {
+        brochureForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('brochureName').value.trim();
+            const email = document.getElementById('brochureEmail').value.trim();
+            const phone = document.getElementById('brochurePhone').value.trim();
+            if (name && email && phone) {
+                alert('Thank you! Your brochure download will start shortly.');
+                brochureForm.reset();
+                closeBrochurePopup();
+            } else {
+                alert('Please fill in all fields to download the brochure.');
+            }
+        });
+    }
+});
+</script>
+
+</body>
+</html>

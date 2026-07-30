@@ -1,0 +1,2212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Standard Meta Tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="google-site-verification" content="F6TJwo6B0lI_t0ZxLLzjlWLTFIObnvjbKXYo_dvoXB0" />
+    
+    <title>PrimeLand — Luxury Apartments for Sale in Bangalore</title>
+    <meta name="description" content="Explore premium apartments for sale in Bangalore. Luxury residences by top builders like Prestige, Sobha, Brigade, Godrej & more." />
+    <meta name="author" content="PrimeLand Investments" />
+    
+    <!-- Robots -->
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+    <meta name="googlebot" content="index, follow" />
+    
+    <!-- Mobile -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="theme-color" content="#12181a" />
+    
+    <!-- Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="urbanflathub1.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="urbanflathub1.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="urbanflathub1.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="urbanflathub1.png" color="#0d9488" />
+    <link rel="shortcut icon" href="urbanflathub1.png" />
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <style>
+        /* ===== ROOT ===== */
+        :root {
+            --basalt: #12181a;
+            --basalt-2: #f7f9f9;
+            --ice: #ffffff;
+            --ink: #12181a;
+            --glacier: #5c6d73;
+            --aurora: #0d9488;
+            --aurora-dark: #0b7d73;
+            --hairline: rgba(18,24,26,0.08);
+            --mist: #eef3f2;
+            --gold: #c9a84c;
+            --rose: #d45a5a;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        html, body {
+            background: var(--ice);
+            font-family: 'Inter', sans-serif;
+            color: var(--ink);
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+        
+        .font-display { font-family: 'Fraunces', serif; }
+        .font-body { font-family: 'Inter', sans-serif; }
+        
+        .container {
+            width: 90%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* ===== BUTTONS ===== */
+        .btn-primary {
+            background: var(--ink);
+            color: #fff;
+            border: none;
+            padding: 14px 32px;
+            border-radius: 9999px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn-primary:hover { background: var(--aurora-dark); transform: translateY(-2px); }
+        
+        .btn-secondary {
+            background: transparent;
+            border: 1px solid var(--hairline);
+            color: var(--ink);
+            padding: 14px 32px;
+            border-radius: 9999px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            cursor: pointer;
+            transition: border-color 0.3s ease, color 0.3s ease, background 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn-secondary:hover { border-color: var(--aurora); color: var(--aurora-dark); background: rgba(13,148,136,0.05); }
+        
+        .btn-on-dark {
+            background: var(--aurora);
+            color: #0c1112;
+            border: none;
+            padding: 14px 32px;
+            border-radius: 9999px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn-on-dark:hover { background: #14b8a0; }
+        
+        /* ===== NAVIGATION ===== */
+        #site-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255,255,255,0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--hairline);
+            transition: background 0.3s ease, box-shadow 0.3s ease, height 0.3s ease;
+            height: 80px;
+        }
+        #site-nav.nav-condensed {
+            background: rgba(255,255,255,0.97);
+            box-shadow: 0 1px 24px rgba(18,24,26,0.08);
+            height: 64px;
+        }
+        
+        .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 100%;
+            padding: 0 20px;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+        
+        .nav-logo {
+            display: flex;
+            flex-direction: column;
+            line-height: 1;
+            text-decoration: none;
+            user-select: none;
+        }
+        .nav-logo h1 {
+            font-family: 'Fraunces', serif;
+            font-size: 1.5rem;
+            letter-spacing: -0.02em;
+            color: var(--ink);
+        }
+        .nav-logo h1 span {
+            font-style: italic;
+            color: var(--glacier);
+            font-weight: 400;
+        }
+        .nav-logo h4 {
+            font-size: 0.55rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--glacier);
+            margin-top: 2px;
+        }
+        
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+        .nav-links a {
+            text-decoration: none;
+            font-size: 0.7rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            color: var(--glacier);
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        .nav-links a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            width: 100%;
+            height: 1.5px;
+            background: var(--aurora);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.35s cubic-bezier(.3,.7,.3,1);
+        }
+        .nav-links a:hover::after { transform: scaleX(1); }
+        .nav-links a:hover { color: var(--ink); }
+        
+        .nav-call-btn {
+            background: transparent;
+            border: 1px solid var(--hairline);
+            padding: 8px 20px;
+            border-radius: 9999px;
+            font-size: 0.65rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            color: var(--ink);
+            cursor: pointer;
+            transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+            text-decoration: none;
+        }
+        .nav-call-btn:hover { background: var(--aurora); border-color: var(--aurora); color: #fff; }
+        
+        /* ===== HAMBURGER ===== */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            z-index: 1001;
+        }
+        .hamburger span {
+            display: block;
+            width: 24px;
+            height: 1.5px;
+            background: var(--ink);
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+        .hamburger.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+        .hamburger.open span:nth-child(2) { opacity: 0; }
+        .hamburger.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+        
+        #mobile-menu {
+            display: none;
+            position: fixed;
+            top: 80px;
+            left: 0;
+            right: 0;
+            background: var(--basalt-2);
+            border-bottom: 1px solid var(--hairline);
+            padding: 24px 20px;
+            z-index: 999;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(.3,.7,.3,1);
+        }
+        #mobile-menu.open { max-height: 600px; display: block; }
+        #mobile-menu a {
+            display: block;
+            padding: 12px 0;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            color: var(--glacier);
+            text-decoration: none;
+            border-bottom: 1px solid var(--hairline);
+            transition: color 0.3s ease;
+        }
+        #mobile-menu a:hover { color: var(--ink); }
+        #mobile-menu .mobile-call {
+            margin-top: 16px;
+            width: 100%;
+            text-align: center;
+        }
+        
+        /* ===== HERO ===== */
+        .hero-section {
+            padding: 140px 0 80px;
+            background: linear-gradient(180deg, var(--basalt-2) 0%, var(--ice) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-section .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .hero-badge {
+            font-size: 0.65rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            color: var(--aurora-dark);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+        .hero-badge span {
+            display: inline-block;
+            width: 40px;
+            height: 1.5px;
+            background: var(--aurora);
+        }
+        
+        .hero-title {
+            font-family: 'Fraunces', serif;
+            font-size: clamp(2.8rem, 5.5vw, 4.5rem);
+            font-weight: 400;
+            line-height: 1.05;
+            color: var(--ink);
+            margin-bottom: 24px;
+        }
+        .hero-title i { color: var(--aurora-dark); font-style: italic; }
+        
+        .hero-desc {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: var(--glacier);
+            max-width: 520px;
+            margin-bottom: 32px;
+        }
+        
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-top: 40px;
+        }
+        .hero-stat h2 {
+            font-family: 'Fraunces', serif;
+            font-size: 2rem;
+            color: var(--ink);
+            letter-spacing: -0.02em;
+        }
+        .hero-stat p {
+            font-size: 0.6rem;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            color: var(--glacier);
+            margin-top: 2px;
+        }
+        
+        .hero-form {
+            background: var(--ice);
+            border: 1px solid var(--hairline);
+            border-radius: 24px;
+            padding: 36px 40px;
+            box-shadow: 0 20px 60px rgba(18,24,26,0.06);
+        }
+        .hero-form h2 {
+            font-family: 'Fraunces', serif;
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 24px;
+            color: var(--ink);
+        }
+        .form-group {
+            margin-bottom: 18px;
+        }
+        .form-group label {
+            display: block;
+            font-size: 0.6rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--glacier);
+            margin-bottom: 6px;
+        }
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid var(--hairline);
+            border-radius: 12px;
+            background: var(--basalt-2);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            color: var(--ink);
+            transition: border-color 0.25s ease, background 0.25s ease;
+            appearance: none;
+        }
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--aurora);
+            background: #ffffff;
+        }
+        .form-group select { cursor: pointer; }
+        .form-status {
+            font-size: 0.85rem;
+            text-align: center;
+            padding: 8px;
+            display: none;
+        }
+        .form-status.show { display: block; }
+        .form-status.success { color: var(--aurora-dark); }
+        .form-status.error { color: var(--rose); }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 16px;
+            background: var(--ink);
+            color: #fff;
+            border: none;
+            border-radius: 9999px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            margin-top: 8px;
+        }
+        .submit-btn:hover { background: var(--aurora-dark); }
+        .submit-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+        
+        /* ===== SECTION COMMON ===== */
+        section { padding: 80px 0; }
+        .section-badge {
+            font-size: 0.6rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            color: var(--aurora-dark);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        .section-badge span {
+            display: inline-block;
+            width: 40px;
+            height: 1.5px;
+            background: var(--aurora);
+        }
+        .section-title {
+            font-family: 'Fraunces', serif;
+            font-size: clamp(2rem, 3.6vw, 3rem);
+            font-weight: 400;
+            line-height: 1.15;
+            color: var(--ink);
+            margin-bottom: 16px;
+        }
+        .section-sub {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--glacier);
+            max-width: 560px;
+        }
+        .section-dark {
+            background: var(--ink);
+            color: #fff;
+        }
+        .section-dark .section-title { color: #fff; }
+        .section-dark .section-sub { color: #9aa7ab; }
+        .section-dark .section-badge { color: var(--aurora); }
+        .section-dark .section-badge span { background: var(--aurora); }
+        
+        /* ===== PROPERTY GRID ===== */
+        .property-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 24px;
+            margin-top: 40px;
+        }
+        
+        .property-card {
+            background: var(--ice);
+            border: 1px solid var(--hairline);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+        .property-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(18,24,26,0.08);
+        }
+        .property-card-img {
+            height: 200px;
+            overflow: hidden;
+            background: var(--basalt-2);
+            position: relative;
+        }
+        .property-card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(.2,.7,.2,1);
+        }
+        .property-card:hover .property-card-img img { transform: scale(1.05); }
+        
+        .property-card-body {
+            padding: 20px 24px 24px;
+        }
+        .property-card-body h3 {
+            font-family: 'Fraunces', serif;
+            font-size: 1.15rem;
+            font-weight: 500;
+            color: var(--ink);
+            margin-bottom: 4px;
+        }
+        .property-location {
+            font-size: 0.8rem;
+            color: var(--glacier);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 12px;
+        }
+        .property-location i { color: var(--aurora-dark); font-size: 0.75rem; }
+        
+        .property-actions {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 14px;
+        }
+        .action-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            padding: 10px 12px;
+            background: var(--basalt-2);
+            border: 1px solid var(--hairline);
+            border-radius: 10px;
+            font-size: 0.7rem;
+            font-weight: 500;
+            color: var(--ink);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            font-family: 'Inter', sans-serif;
+        }
+        .action-btn:hover {
+            background: var(--aurora);
+            border-color: var(--aurora);
+            color: #fff;
+        }
+        .action-btn i { font-size: 0.8rem; }
+        
+        /* ===== FILTER TABS ===== */
+        .filter-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 24px 0 8px;
+        }
+        .filter-btn {
+            padding: 8px 20px;
+            background: var(--ice);
+            border: 1px solid var(--hairline);
+            border-radius: 9999px;
+            font-size: 0.7rem;
+            font-weight: 500;
+            color: var(--glacier);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
+        }
+        .filter-btn:hover { border-color: var(--aurora); color: var(--ink); }
+        .filter-btn.active {
+            background: var(--ink);
+            color: #fff;
+            border-color: var(--ink);
+        }
+        
+        /* ===== DARK SECTION ===== */
+        .section-dark .property-card {
+            background: rgba(255,255,255,0.05);
+            border-color: rgba(255,255,255,0.08);
+        }
+        .section-dark .property-card-body h3 { color: #fff; }
+        .section-dark .property-location { color: #9aa7ab; }
+        .section-dark .action-btn {
+            background: rgba(255,255,255,0.06);
+            border-color: rgba(255,255,255,0.1);
+            color: #d3dadc;
+        }
+        .section-dark .action-btn:hover {
+            background: var(--aurora);
+            border-color: var(--aurora);
+            color: #0c1112;
+        }
+        
+        /* ===== TESTIMONIALS ===== */
+        .testimonial-slider {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+        .testimonial-track {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        .testimonial-card {
+            min-width: 100%;
+            padding: 40px;
+            background: var(--basalt-2);
+            border-radius: 20px;
+            border: 1px solid var(--hairline);
+            text-align: center;
+        }
+        .testimonial-card .quote {
+            font-family: 'Fraunces', serif;
+            font-style: italic;
+            font-size: 1.3rem;
+            line-height: 1.6;
+            color: var(--ink);
+            margin-bottom: 16px;
+        }
+        .testimonial-card .author {
+            font-weight: 600;
+            color: var(--ink);
+        }
+        .testimonial-card .role {
+            font-size: 0.85rem;
+            color: var(--glacier);
+        }
+        .testimonial-dots {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 24px;
+        }
+        .testimonial-dots button {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            border: 1px solid var(--hairline);
+            background: transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            padding: 0;
+        }
+        .testimonial-dots button.active {
+            background: var(--aurora);
+            border-color: var(--aurora);
+            transform: scale(1.2);
+        }
+        
+        /* ===== FOOTER ===== */
+        .footer {
+            background: var(--ink);
+            border-top: 1px solid rgba(255,255,255,0.06);
+            padding: 60px 0 24px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .footer-col h3 {
+            font-family: 'Fraunces', serif;
+            font-size: 1.2rem;
+            color: #fff;
+            margin-bottom: 16px;
+        }
+        .footer-col p {
+            color: #9aa7ab;
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+        .footer-col ul {
+            list-style: none;
+        }
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+        .footer-col ul li a {
+            color: #9aa7ab;
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.3s ease;
+        }
+        .footer-col ul li a:hover { color: #fff; }
+        .footer-col ul li i {
+            width: 20px;
+            color: var(--aurora);
+            margin-right: 8px;
+        }
+        .social-links {
+            display: flex;
+            gap: 12px;
+            margin-top: 16px;
+        }
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #9aa7ab;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        .social-links a:hover {
+            background: var(--aurora);
+            border-color: var(--aurora);
+            color: #0c1112;
+            transform: translateY(-3px);
+        }
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.06);
+            padding-top: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        .footer-bottom p {
+            color: #6b7a7e;
+            font-size: 0.8rem;
+        }
+        .footer-bottom a {
+            color: #6b7a7e;
+            text-decoration: none;
+            font-size: 0.8rem;
+            transition: color 0.3s ease;
+        }
+        .footer-bottom a:hover { color: #fff; }
+        
+        /* ===== CONTACT RAIL ===== */
+        #contact-rail {
+            position: fixed;
+            right: 20px;
+            bottom: 24px;
+            z-index: 100;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .contact-fab {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 20px rgba(18,24,26,0.18);
+            transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+        }
+        .contact-fab:hover { transform: translateY(-2px) scale(1.05); box-shadow: 0 10px 26px rgba(18,24,26,0.24); }
+        .contact-fab svg { width: 22px; height: 22px; }
+        .contact-fab-call { background: var(--ink); color: #fff; }
+        .contact-fab-call:hover { background: var(--aurora-dark); }
+        .contact-fab-whatsapp { background: #25D366; color: #fff; }
+        .contact-fab-whatsapp:hover { background: #1fb956; }
+        .contact-fab-email { background: #fff; color: var(--ink); border: 1px solid var(--hairline); }
+        .contact-fab-email:hover { border-color: var(--aurora); color: var(--aurora-dark); }
+        
+        /* ===== MODAL/POPUP ===== */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            backdrop-filter: blur(4px);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .modal-overlay.active {
+            display: flex;
+            opacity: 1;
+        }
+        .modal-box {
+            background: #fff;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 440px;
+            width: 92%;
+            position: relative;
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+        }
+        .modal-overlay.active .modal-box { transform: scale(1); }
+        .modal-close {
+            position: absolute;
+            top: 16px;
+            right: 20px;
+            font-size: 24px;
+            cursor: pointer;
+            color: #999;
+            background: none;
+            border: none;
+            transition: color 0.3s ease;
+        }
+        .modal-close:hover { color: var(--rose); }
+        .modal-box h2 {
+            font-family: 'Fraunces', serif;
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            color: var(--ink);
+        }
+        .modal-box .form-group input {
+            background: var(--basalt-2);
+        }
+        
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .hero-section .container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .hero-title { font-size: clamp(2.4rem, 4vw, 3.2rem); }
+            .hero-stats { grid-template-columns: repeat(2, 1fr); }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+        
+        @media (max-width: 768px) {
+            #site-nav { height: 64px; }
+            #site-nav.nav-condensed { height: 56px; }
+            #mobile-menu { top: 64px; }
+            
+            .nav-links { display: none; }
+            .hamburger { display: flex; }
+            #mobile-menu { display: block; }
+            
+            .hero-section { padding: 100px 0 60px; }
+            .hero-stats { grid-template-columns: 1fr 1fr; gap: 12px; }
+            .hero-stat h2 { font-size: 1.5rem; }
+            .hero-form { padding: 24px 20px; }
+            
+            .property-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+            
+            #contact-rail { right: 12px; bottom: 16px; }
+            .contact-fab { width: 44px; height: 44px; }
+            .contact-fab svg { width: 18px; height: 18px; }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-title { font-size: 2rem; }
+            .filter-tabs { gap: 6px; }
+            .filter-btn { font-size: 0.6rem; padding: 6px 14px; }
+            .property-actions { grid-template-columns: 1fr; }
+        }
+        
+        /* ===== REDUCED MOTION ===== */
+        @media (prefers-reduced-motion: reduce) {
+            * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+            .property-card:hover { transform: none; }
+            .property-card:hover .property-card-img img { transform: none; }
+        }
+        /* ===== NAVIGATION ===== */
+#site-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--hairline);
+    transition: background 0.3s ease, box-shadow 0.3s ease, height 0.3s ease;
+    height: 80px;
+}
+
+#site-nav.nav-condensed {
+    background: rgba(255,255,255,0.97);
+    box-shadow: 0 1px 24px rgba(18,24,26,0.08);
+    height: 64px;
+}
+
+.nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    padding: 0 20px;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    font-size: 0.7rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--glacier);
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 1.5px;
+    background: var(--aurora);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.35s cubic-bezier(.3,.7,.3,1);
+}
+
+.nav-links a:hover::after {
+    transform: scaleX(1);
+}
+
+.nav-links a:hover {
+    color: var(--ink);
+}
+
+.nav-call-btn {
+    background: transparent;
+    border: 1px solid var(--hairline);
+    padding: 8px 20px;
+    border-radius: 9999px;
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--ink);
+    cursor: pointer;
+    transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+    text-decoration: none;
+}
+
+.nav-call-btn:hover {
+    background: var(--aurora);
+    border-color: var(--aurora);
+    color: #fff;
+}
+
+/* ===== DROPDOWN ===== */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: #fff;
+    min-width: 220px;
+    box-shadow: 0 8px 24px rgba(18,24,26,0.12);
+    border-radius: 12px;
+    padding: 8px 0;
+    top: 100%;
+    left: 0;
+    z-index: 100;
+    border: 1px solid var(--hairline);
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 10px 20px;
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--glacier);
+    text-decoration: none;
+    text-transform: none;
+    letter-spacing: 0.02em;
+    transition: all 0.25s ease;
+    border-bottom: 1px solid transparent;
+}
+
+.dropdown-content a:last-child {
+    border-bottom: none;
+}
+
+.dropdown-content a:hover {
+    background: var(--basalt-2);
+    color: var(--ink);
+    padding-left: 24px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropbtn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.dropbtn i {
+    font-size: 0.65rem;
+    transition: transform 0.3s ease;
+}
+
+.dropdown:hover .dropbtn i {
+    transform: rotate(180deg);
+}
+
+/* ===== HAMBURGER ===== */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 1001;
+}
+
+.hamburger span {
+    display: block;
+    width: 24px;
+    height: 1.5px;
+    background: var(--ink);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.hamburger.open span:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+}
+
+.hamburger.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+}
+
+/* ===== MOBILE MENU ===== */
+#mobile-menu {
+    display: none;
+    position: fixed;
+    top: 80px;
+    left: 0;
+    right: 0;
+    background: var(--basalt-2);
+    border-bottom: 1px solid var(--hairline);
+    padding: 24px 20px;
+    z-index: 999;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(.3,.7,.3,1);
+}
+
+#mobile-menu.open {
+    max-height: 600px;
+    display: block;
+    overflow-y: auto;
+}
+
+#mobile-menu a {
+    display: block;
+    padding: 12px 0;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--glacier);
+    text-decoration: none;
+    border-bottom: 1px solid var(--hairline);
+    transition: color 0.3s ease;
+}
+
+#mobile-menu a:hover {
+    color: var(--ink);
+}
+
+#mobile-menu .dropdown {
+    width: 100%;
+    border-bottom: 1px solid var(--hairline);
+}
+
+#mobile-menu .dropbtn {
+    padding: 12px 0;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--glacier);
+    text-decoration: none;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#mobile-menu .dropdown-content {
+    position: static;
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+    padding-left: 16px;
+    display: none;
+    background: transparent;
+}
+
+#mobile-menu .dropdown.active .dropdown-content {
+    display: block;
+}
+
+#mobile-menu .dropdown-content a {
+    padding: 10px 16px;
+    font-size: 0.78rem;
+    text-transform: none;
+    letter-spacing: 0.02em;
+    border-bottom: 1px solid var(--hairline);
+}
+
+#mobile-menu .dropdown-content a:last-child {
+    border-bottom: none;
+}
+
+#mobile-menu .dropdown-content a:hover {
+    background: transparent;
+    color: var(--ink);
+    padding-left: 20px;
+}
+
+.mobile-call {
+    display: block;
+    text-align: center;
+    padding: 14px;
+    margin-top: 12px;
+    background: var(--aurora);
+    color: #0c1112;
+    border-radius: 9999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.mobile-call:hover {
+    background: #14b8a0;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    #site-nav {
+        height: 64px;
+    }
+    
+    #site-nav.nav-condensed {
+        height: 56px;
+    }
+    
+    #mobile-menu {
+        top: 64px;
+    }
+    
+    .nav-links {
+        display: none;
+    }
+    
+    .hamburger {
+        display: flex;
+    }
+    
+    #mobile-menu {
+        display: block;
+    }
+}
+     /* ===== LOGO ===== */
+.nav-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.nav-logo img {
+    height: 50px;
+    width: auto;
+    display: block;
+}
+
+/* Mobile Logo */
+.mobile-logo {
+    display: flex;
+    align-items: center;
+    padding: 8px 0 16px 0;
+    border-bottom: 1px solid var(--hairline);
+    margin-bottom: 8px;
+}
+
+.mobile-logo img {
+    height: 40px;
+    width: auto;
+    display: block;
+}
+
+/* Responsive Logo */
+@media (max-width: 768px) {
+    .nav-logo img {
+        height: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-logo img {
+        height: 34px;
+    }
+    
+    .mobile-logo img {
+        height: 34px;
+    }
+} 
+    </style>
+</head>
+<body>
+
+<!-- ===== NAVIGATION ===== -->
+<!-- ===== NAVIGATION ===== -->
+<nav id="site-nav">
+    <div class="nav-inner">
+       <a href="index.html" class="nav-logo">
+            <img src="/direct sales team.png" alt="PrimeLand Logo" />
+        </a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            
+            <!-- Builders Dropdown -->
+            <div class="dropdown">
+                <a href="properties.html" class="dropbtn">Builders <i class="fas fa-chevron-down"></i></a>
+                <div class="dropdown-content">
+                    <a href="total-environment.html">Total Environment</a>
+                    <a href="lnt-projects.html">L&T Projects</a>
+                    <a href="sobha-developers.html">Sobha Limited</a>
+                    <a href="godrej-properties.html">Godrej Properties</a>
+                    <a href="brigade-group.html">Brigade Group</a>
+                    <a href="#">Lodha Group</a>
+                    <a href="assetz.html">Assetz</a>
+                    <a href="puravankara.html">Puravankara</a>
+                    <a href="century-builders.html">Century Builders</a>
+                    <a href="birla-estates.html">Birla Estates</a>
+                    <a href="#">Signature Global</a>
+                </div>
+            </div>
+            
+            <a href="#properties">Properties</a>
+            <a href="#testimonials">Testimonials</a>
+            <a href="#contact">Contact</a>
+            <a href="tel:6366850754" class="nav-call-btn">Call Now</a>
+        </div>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- ===== MOBILE MENU ===== -->
+<div id="mobile-menu">
+    <a href="index.html" class="nav-logo">
+            <img src="/direct sales team.png" alt="PrimeLand Logo" />
+        </a>
+    
+    <!-- Mobile Builders Dropdown -->
+    <div class="dropdown">
+        <a href="properties.html" class="dropbtn">Builders <i class="fas fa-chevron-down"></i></a>
+        <div class="dropdown-content">
+            <a href="total-environment.html">Total Environment</a>
+            <a href="lnt-projects.html">L&T Projects</a>
+            <a href="sobha-developers.html">Sobha Limited</a>
+            <a href="godrej-properties.html">Godrej Properties</a>
+            <a href="brigade-group.html">Brigade Group</a>
+            <a href="#">Lodha Group</a>
+            <a href="assetz.html">Assetz</a>
+            <a href="puravankara.html">Puravankara</a>
+            <a href="century-builders.html">Century Builders</a>
+            <a href="birla-estates.html">Birla Estates</a>
+            <a href="#">Signature Global</a>
+        </div>
+    </div>
+    
+    <a href="#properties">Properties</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="#contact">Contact</a>
+    <a href="tel:6366850754" class="mobile-call" style="display:block;text-align:center;padding:14px;margin-top:12px;background:var(--aurora);color:#0c1112;border-radius:9999px;font-size:0.8rem;font-weight:600;text-transform:uppercase;letter-spacing:0.16em;text-decoration:none;transition:background 0.3s ease;">📞 Call Now</a>
+</div>
+
+<!-- ===== HERO ===== -->
+<section class="hero-section" id="home">
+    <div class="container">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span></span> Bangalore · Luxury Living
+            </div>
+            <h1 class="hero-title">
+                Find Your <i>Dream</i><br />Apartment in Bangalore
+            </h1>
+            <p class="hero-desc">
+                Explore premium residences from India's most trusted developers — Prestige, Sobha, Brigade, Godrej, L&T, and more. From 2 BHK to 7 BHK luxury villas.
+            </p>
+            <div style="display:flex;gap:12px;flex-wrap:wrap;">
+                <a href="#properties" class="btn-primary">Explore Properties</a>
+                <a href="tel:6366850754" class="btn-secondary">Call Now</a>
+            </div>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <h2>100+</h2>
+                    <p>Projects</p>
+                </div>
+                <div class="hero-stat">
+                    <h2>15+</h2>
+                    <p>Developers</p>
+                </div>
+                <div class="hero-stat">
+                    <h2>₹18L</h2>
+                    <p>Starting Price</p>
+                </div>
+                <div class="hero-stat">
+                    <h2>70%</h2>
+                    <p>Open Space</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- HERO FORM -->
+        <div class="hero-form">
+            <h2>Get in touch with our team</h2>
+            <form id="mainForm">
+                <div class="form-group">
+                    <label for="mainName">Full Name</label>
+                    <input type="text" id="mainName" placeholder="Enter your name" required />
+                </div>
+                <div class="form-group">
+                    <label for="mainPhone">Phone Number</label>
+                    <input type="tel" id="mainPhone" placeholder="Enter your phone number" required />
+                </div>
+                <div class="form-group">
+                    <label for="mainEmail">Email Address</label>
+                    <input type="email" id="mainEmail" placeholder="Enter your email" required />
+                </div>
+                <div class="form-group">
+                    <label for="mainTimeline">Investment Timeline</label>
+                    <select id="mainTimeline">
+                        <option value="" disabled selected>Select a timeframe</option>
+                        <option value="Within 3 months">Within 3 months</option>
+                        <option value="3-6 months">3 – 6 months</option>
+                        <option value="6-12 months">6 – 12 months</option>
+                        <option value="More than 12 months">More than 12 months</option>
+                        <option value="Just exploring">Just exploring</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="mainBudget">Budget Range</label>
+                    <select id="mainBudget">
+                        <option value="" disabled selected>Select a budget range</option>
+                        <option value="Under ₹50L">Under ₹50L</option>
+                        <option value="₹50L-1Cr">₹50L – 1Cr</option>
+                        <option value="₹1Cr-3Cr">₹1Cr – 3Cr</option>
+                        <option value="₹3Cr-5Cr">₹3Cr – 5Cr</option>
+                        <option value="₹5Cr+">₹5Cr+</option>
+                    </select>
+                </div>
+                <p id="mainFormStatus" class="form-status"></p>
+                <button type="button" class="submit-btn" id="mainSubmitBtn">Submit Enquiry</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- ===== FILTER + PROPERTIES ===== -->
+<section id="properties">
+    <div class="container">
+        <div class="section-badge"><span></span> Discover</div>
+        <h2 class="section-title">Premium Apartments for Sale in Bangalore</h2>
+        <p class="section-sub">
+            Handpicked luxury residences from top developers across Bangalore's most sought-after localities.
+        </p>
+        
+        <div class="filter-tabs" id="filterTabs">
+            <button class="filter-btn active" data-filter="all">All Projects</button>
+            <button class="filter-btn" data-filter="north">North Bangalore</button>
+            <button class="filter-btn" data-filter="south">South Bangalore</button>
+            <button class="filter-btn" data-filter="east">East Bangalore</button>
+            <button class="filter-btn" data-filter="west">West Bangalore</button>
+            <button class="filter-btn" data-filter="central">Central Bangalore</button>
+            <button class="filter-btn" data-filter="whitefield">Whitefield</button>
+        </div>
+        
+        <div class="property-grid" id="propertyGrid">
+            <!-- Properties will be injected by JavaScript -->
+        </div>
+    </div>
+</section>
+
+<!-- ===== WHY INVEST ===== -->
+<section class="section-dark">
+    <div class="container">
+        <div class="section-badge"><span></span> Why Invest</div>
+        <h2 class="section-title">Bangalore — India's <i>Real Estate</i> Powerhouse</h2>
+        <p class="section-sub" style="max-width:600px;">
+            With a thriving IT ecosystem, world-class infrastructure, and a 15-20% annual appreciation rate, Bangalore offers unmatched investment potential.
+        </p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;margin-top:40px;">
+            <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);border-radius:16px;padding:24px;text-align:center;">
+                <h3 style="font-family:'Fraunces',serif;font-size:2.5rem;color:var(--aurora);">22%</h3>
+                <p style="color:#9aa7ab;font-size:0.85rem;">Average Annual Appreciation</p>
+            </div>
+            <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);border-radius:16px;padding:24px;text-align:center;">
+                <h3 style="font-family:'Fraunces',serif;font-size:2.5rem;color:var(--aurora);">#1</h3>
+                <p style="color:#9aa7ab;font-size:0.85rem;">IT/Startup Hub in India</p>
+            </div>
+            <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);border-radius:16px;padding:24px;text-align:center;">
+                <h3 style="font-family:'Fraunces',serif;font-size:2.5rem;color:var(--aurora);">50+</h3>
+                <p style="color:#9aa7ab;font-size:0.85rem;">Upcoming Infrastructure Projects</p>
+            </div>
+            <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);border-radius:16px;padding:24px;text-align:center;">
+                <h3 style="font-family:'Fraunces',serif;font-size:2.5rem;color:var(--aurora);">35%</h3>
+                <p style="color:#9aa7ab;font-size:0.85rem;">Projected Growth by 2030</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== TESTIMONIALS ===== -->
+<section id="testimonials" style="background:var(--basalt-2);">
+    <div class="container">
+        <div style="text-align:center;">
+            <div class="section-badge" style="justify-content:center;"><span></span> What Our Clients Say</div>
+            <h2 class="section-title">Real Stories from <i>Real Investors</i></h2>
+        </div>
+        
+        <div class="testimonial-slider">
+            <div class="testimonial-track" id="testimonialTrack">
+                <div class="testimonial-card">
+                    <p class="quote">"PrimeLand helped me identify an emerging corridor before prices skyrocketed. My investment has appreciated 35% in just 2 years."</p>
+                    <p class="author">Rajesh Mehta</p>
+                    <p class="role">Serial Investor</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="quote">"Their due diligence process is unmatched. I feel completely confident investing through PrimeLand's vetted opportunities."</p>
+                    <p class="author">Priya Sharma</p>
+                    <p class="role">NRI Investor</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="quote">"The team's market intelligence helped me diversify my portfolio across different asset classes for optimal returns."</p>
+                    <p class="author">Vikram Patel</p>
+                    <p class="role">Portfolio Manager</p>
+                </div>
+            </div>
+            <div class="testimonial-dots" id="testimonialDots">
+                <button class="active" data-index="0"></button>
+                <button data-index="1"></button>
+                <button data-index="2"></button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== CALL TO ACTION ===== -->
+<section class="section-dark" style="padding:60px 0;">
+    <div class="container" style="text-align:center;">
+        <h2 class="section-title" style="font-size:clamp(1.8rem,3vw,2.8rem);">
+            Ready to Find Your <i>Dream Home</i>?
+        </h2>
+        <p class="section-sub" style="max-width:600px;margin:0 auto 32px;color:#9aa7ab;">
+            Speak with our expert team today and get personalized recommendations tailored to your needs.
+        </p>
+        <a href="tel:6366850754" class="btn-on-dark" style="font-size:0.8rem;padding:16px 48px;">Call Now — +916366850754</a>
+    </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer" id="contact">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>PrimeLand</h3>
+                <p>Delivering exceptional real estate investment opportunities through rigorous research and strategic acquisitions across Bangalore's premium locations.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#properties">Available Properties</a></li>
+                    <li><a href="#">Investment Guide</a></li>
+                    <li><a href="#">Due Diligence</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Disclosures</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact</h3>
+                <ul>
+                    <li><i class="fas fa-phone"></i> <a href="tel:6366850754" style="color:#9aa7ab;">+916366850754</a></li>
+                    <li><i class="fas fa-envelope"></i> <a href="mailto:info@primeland.in" style="color:#9aa7ab;">info@primeland.in</a></li>
+                    <li><i class="fas fa-map-marker-alt"></i> <span style="color:#9aa7ab;">Bangalore, India</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 PrimeLand Investments. All rights reserved.</p>
+            <div style="display:flex;gap:20px;">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- ===== CONTACT RAIL ===== -->
+<div id="contact-rail">
+    <a href="mailto:info@primeland.in" aria-label="Email" class="contact-fab contact-fab-email">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3.5 6.5C3.5 5.67 4.17 5 5 5h14c.83 0 1.5.67 1.5 1.5v11c0 .83-.67 1.5-1.5 1.5H5c-.83 0-1.5-.67-1.5-1.5v-11Z" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M4 6.5 12 13l8-6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </a>
+    <a href="https://wa.me/916366850754" target="_blank" rel="noopener" aria-label="WhatsApp" class="contact-fab contact-fab-whatsapp">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.5 14.4c-.3-.15-1.77-.87-2.04-.97-.28-.1-.48-.15-.68.15-.2.3-.78.97-.96 1.17-.18.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.48-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.15-.15.3-.35.44-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.08-.15-.68-1.63-.93-2.24-.25-.6-.5-.5-.68-.5-.18-.01-.4-.01-.6-.01-.2 0-.53.07-.8.37-.28.3-1.06 1.04-1.06 2.53 0 1.5 1.08 2.94 1.24 3.14.15.2 2.1 3.2 5.1 4.36 3 1.17 3 .78 3.54.73.55-.05 1.77-.72 2.03-1.42.25-.7.25-1.3.18-1.42-.08-.13-.28-.2-.58-.35Z" fill="currentColor"/>
+            <path d="M20.5 3.5A11 11 0 0 0 3.6 17.2L2.5 21.5l4.4-1.15A11 11 0 1 0 20.5 3.5Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+        </svg>
+    </a>
+    <a href="tel:6366850754" aria-label="Call" class="contact-fab contact-fab-call">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1 .5 1 1v3.8c0 .6-.5 1-1 1C10.9 21.3 2.7 13.1 2.7 3.7c0-.6.5-1 1-1h3.8c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1L6.6 10.8Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+        </svg>
+    </a>
+</div>
+
+<!-- ===== MODAL ===== -->
+<div class="modal-overlay" id="brochureModal">
+    <div class="modal-box">
+        <button class="modal-close" id="modalClose">&times;</button>
+        <h2 id="modalTitle">Download Brochure</h2>
+        <form id="brochureForm">
+            <div class="form-group">
+                <label for="brochureName">Full Name</label>
+                <input type="text" id="brochureName" placeholder="Enter your name" required />
+            </div>
+            <div class="form-group">
+                <label for="brochureEmail">Email Address</label>
+                <input type="email" id="brochureEmail" placeholder="Enter your email" required />
+            </div>
+            <div class="form-group">
+                <label for="brochurePhone">Phone Number</label>
+                <input type="tel" id="brochurePhone" placeholder="Enter your phone" required />
+            </div>
+            <button type="submit" class="submit-btn">Download Brochure</button>
+        </form>
+        <p id="brochureStatus" class="form-status"></p>
+    </div>
+</div>
+
+<!-- ===== JAVASCRIPT ===== -->
+<script>
+    // ===== GSAP REGISTER =====
+    gsap.registerPlugin(ScrollTrigger);
+
+    // ===== NAVIGATION =====
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const nav = document.getElementById('site-nav');
+
+    hamburger.addEventListener('click', () => {
+        const isOpen = mobileMenu.classList.toggle('open');
+        hamburger.classList.toggle('open');
+        hamburger.setAttribute('aria-expanded', isOpen);
+    });
+
+    // Close mobile menu on link click
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.remove('open');
+            hamburger.classList.remove('open');
+            hamburger.setAttribute('aria-expanded', 'false');
+        });
+    });
+
+    // Scroll nav condense
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 80) {
+            nav.classList.add('nav-condensed');
+        } else {
+            nav.classList.remove('nav-condensed');
+        }
+    });
+
+    // ===== GSAP ANIMATIONS =====
+    document.addEventListener('DOMContentLoaded', () => {
+        // Hero fade-in
+        gsap.from('.hero-content', {
+            opacity: 0,
+            y: 40,
+            duration: 1,
+            ease: 'power3.out'
+        });
+        gsap.from('.hero-form', {
+            opacity: 0,
+            y: 40,
+            duration: 1,
+            delay: 0.2,
+            ease: 'power3.out'
+        });
+        
+        // Stats stagger
+        gsap.from('.hero-stat', {
+            scrollTrigger: {
+                trigger: '.hero-stats',
+                start: 'top 85%',
+            },
+            opacity: 0,
+            y: 20,
+            stagger: 0.1,
+            duration: 0.6,
+            ease: 'power2.out'
+        });
+
+        // Property cards stagger
+        gsap.from('.property-card', {
+            scrollTrigger: {
+                trigger: '#propertyGrid',
+                start: 'top 90%',
+            },
+            opacity: 0,
+            y: 30,
+            stagger: 0.06,
+            duration: 0.6,
+            ease: 'power2.out'
+        });
+
+        // Contact rail
+        gsap.from('#contact-rail .contact-fab', {
+            opacity: 0,
+            scale: 0.6,
+            y: 20,
+            stagger: 0.08,
+            duration: 0.5,
+            delay: 0.5,
+            ease: 'back.out(1.7)'
+        });
+    });
+
+    // ===== PROPERTY DATA =====
+    const properties = [
+        // North Bangalore
+        { id: 1, name: "Prestige Falcon City", location: "Kanakapura Road", area: "south", img: "images/Prestige-Falcon-City.webp" },
+        { id: 2, name: "Sobha Dream Gardens", location: "Thanisandra Main Road", area: "north", img: "images/dream-gardens.webp" },
+        { id: 3, name: "Godrej Ananda", location: "Bagalur, KIADB Aerospace Park", area: "north", img: "images/Godrej-Ananda.webp" },
+        { id: 4, name: "L&T Raintree Boulevard", location: "Hebbal", area: "north", img: "images/l&t-raintree-boulevard.jpg" },
+        { id: 5, name: "Tata One Bangalore", location: "Devanahalli", area: "north", img: "images/tata-one-bangalore.webp" },
+        { id: 6, name: "Prestige Willow Tree", location: "Vidyaranyapura", area: "north", img: "images/prestige-willow-tree.webp" },
+        { id: 7, name: "Sobha HRC Pristine", location: "Jakkur", area: "north", img: "images/sobha-hrc-pristine.jpg" },
+        { id: 8, name: "Brigade Orchards", location: "Devanahalli", area: "north", img: "images/brigade-orchards.jpg" },
+        { id: 9, name: "Assetz Zen and Sato", location: "Bagalur Main Road, Yelahanka", area: "north", img: "assetz-images/assetz-zen-and-sato.webp" },
+        { id: 10, name: "Brigade Eternia", location: "Yelahanka (Airport Road)", area: "north", img: "brigade-images/brigade-eternia.webp" },
+        { id: 11, name: "Brigade Insignia", location: "Yelahanka (Bellary Road NH4)", area: "north", img: "brigade-images/brigade-insignia.jpg" },
+        { id: 12, name: "Brigade Laguna", location: "Jakkur (Rachenahalli Lake)", area: "north", img: "brigade-images/brigade-laguna.webp" },
+        { id: 13, name: "Brigade Northridge Neo", location: "Kogilu Main Road", area: "north", img: "brigade-images/brigade-northridge-neo.jpg" },
+        { id: 14, name: "Brigade El Dorado", location: "Bagalur", area: "north", img: "images/Brigade-El-Dorado.webp" },
+        { id: 15, name: "Brigade Parkside North", location: "Jalahalli (Tumkur Road)", area: "north", img: "brigade-images/brigade-parkside-north.jpg" },
+        { id: 16, name: "Brigade Bricklane", location: "Jakkur (Kogilu Road)", area: "north", img: "brigade-images/brigade-bricklane.jpg" },
+        { id: 17, name: "Brigade Parkside North", location: "Jalahalli, Tumkur Road", area: "north", img: "brigade-images/brigade-parkside-north.jpg" },
+        { id: 18, name: "Godrej MSR City", location: "Shettigere, Devanahalli", area: "north", img: "godrej-images/godrej-msr-city.webp" },
+        { id: 19, name: "Godrej Shettigere Apartments", location: "Shettigere, Devanahalli", area: "north", img: "godrej-images/godrej-shettigere-apartments.webp" },
+        { id: 20, name: "Godrej Reserve", location: "Devanahalli", area: "north", img: "godrej-images/godrej-reserve.jpg" },
+        { id: 21, name: "Godrej Aqua", location: "Hosahalli, Bellary-Airport Road", area: "north", img: "godrej-images/godrej-aqua.jpg" },
+        { id: 22, name: "Godrej Royale Woods", location: "Devanahalli, Bellary Road", area: "north", img: "godrej-images/godrej-royale-woods.webp" },
+        { id: 23, name: "Godrej Platinum", location: "Hebbal", area: "north", img: "godrej-images/godrej-platinum.webp" },
+        { id: 24, name: "Godrej Avenues", location: "Yelahanka", area: "north", img: "godrej-images/godrej-avenues.webp" },
+        { id: 25, name: "Sobha City Athena", location: "Thanisandra, Hebbal", area: "north", img: "sobha-images/sobha-city-athena.jpg" },
+        { id: 26, name: "Sobha City", location: "Thanisandra, Hebbal", area: "north", img: "sobha-images/sobha-city.jpg" },
+        { id: 27, name: "Sobha Victoria Park", location: "Hennur Road", area: "north", img: "sobha-images/sobha-victoria-park.jpg" },
+        { id: 28, name: "Purva Codename Infinity", location: "Chikkajala, Airport Road", area: "north", img: "puravankara-images/purva-codename-infinity.jpg" },
+        { id: 29, name: "Purva Celestial", location: "Hosahalli, Airport Road", area: "north", img: "puravankara-images/purva-celestial.webp" },
+        { id: 30, name: "Purva Promenade", location: "Hennur Road", area: "north", img: "puravankara-images/purva-promenade.webp" },
+        { id: 31, name: "Purva Atmosphere", location: "Thanisandra Road", area: "north", img: "puravankara-images/purva-atmosphere.webp" },
+        { id: 32, name: "Purva Zenium", location: "Hosahalli, Bellary Road", area: "north", img: "puravankara-images/purva-zenium.webp" },
+        { id: 33, name: "Purva Sammys Dreamland", location: "Yelahanka, Airport Road", area: "north", img: "puravankara-images/purva-sammys-dreamland.jpg" },
+        { id: 34, name: "Purva Waves", location: "Hennur Road", area: "north", img: "puravankara-images/purva-waves.avif" },
+        { id: 35, name: "Purva Palm Beach", location: "Hennur Road", area: "north", img: "puravankara-images/purva-palm-beach.avif" },
+        { id: 36, name: "Century Codename New You (Novus)", location: "Jakkur", area: "north", img: "century-images/century-codename-new-you(novus).webp" },
+        { id: 37, name: "Century Horizon", location: "Jakkur (Bellary Road)", area: "north", img: "century-images/century-horizon.jpg" },
+        { id: 38, name: "Century Ethos", location: "Hebbal (Jakkur)", area: "north", img: "century-images/century-ethos.avif" },
+        { id: 39, name: "Century Breeze", location: "Jakkur (Airport Road)", area: "north", img: "century-images/century-breeze.avif" },
+        { id: 40, name: "Century Immencity", location: "Jakkur", area: "north", img: "lodha-sadahalli-images/lodha-sadahalli.webp" },
+        { id: 41, name: "Godrej Aveline", location: "Yelahanka", area: "north", img: "godrej-images/godrej-aveline.jpg" },
+        { id: 42, name: "Total Environment After the Rain", location: "Yelahanka", area: "north", img: "total-images/after-the-rain.jpg" },
+        { id: 43, name: "Total Environment Down by the Water", location: "Jakkur", area: "north", img: "total-images/down-by-the-water.jpg" },
+        { id: 44, name: "Total Environment In That Quiet Earth", location: "Hennur Main Road", area: "north", img: "total-images/in-that-quiet-earth.jpg" },
+        { id: 45, name: "Total Environment Over the Rainbow", location: "Nandi Hills", area: "north", img: "total-images/over-the-rainbow.jpg" },
+        { id: 46, name: "Total Environment Tangled Up in Green", location: "Devanahalli Main Road", area: "north", img: "total-images/tangled-up-in-green.jpg" },
+        { id: 47, name: "L&T Elara Celestia", location: "Hebbal", area: "north", img: "lnt-images/lnt-elara-celestia.jpg" },
+        { id: 48, name: "Adani The Meadows", location: "Sanjay Nagar", area: "north", img: "images/adani-the-meadows.jpg" },
+        { id: 49, name: "Kolte Patil Raaga", location: "Kannur Road", area: "north", img: "images/kolte-patil-raaga.jpg" },
+        { id: 50, name: "Montira by Rare Earth", location: "Nandi Hills", area: "north", img: "images/montira-by-rare-earth.jpg" },
+        { id: 51, name: "Northern Boulevard", location: "IVC Road, Devanahalli", area: "north", img: "images/northern-boulevard.jpg" },
+        { id: 52, name: "Prestige Royale Gardens", location: "Yelahanka", area: "north", img: "prestige-images/prestige-royale-gardens.webp" },
+        { id: 53, name: "Prestige Gulmohar", location: "Horamavu", area: "north", img: "prestige-images/prestige-gulmohar.webp" },
+        { id: 54, name: "Prestige Camden Gardens", location: "Thanisandra Road", area: "north", img: "prestige-images/prestige-camden-gardens.webp" },
+        { id: 55, name: "Prestige North Point", location: "Kammanahalli", area: "north", img: "prestige-images/prestige-north-point.jpg" },
+        { id: 56, name: "Prestige Fairfield", location: "Dollars Colony, Hebbal", area: "north", img: "prestige-images/prestige-fairfield.webp" },
+        { id: 57, name: "Prestige Woodland Park", location: "Banaswadi", area: "north", img: "prestige-images/prestige-woodland-park.webp" },
+        { id: 58, name: "Assetz Sora and Saki", location: "KIADB Aerospace Park, Bagalur", area: "north", img: "assetz-images/assetz-sora-and-saki.jpg" },
+        { id: 59, name: "Assetz Codename MIWA", location: "KIADB Aerospace Park, Bagalur", area: "north", img: "assetz-images/assetz-codename-miwa.webp" },
+        { id: 60, name: "Assetz Earth & Essence", location: "Airport Road, Yelahanka", area: "north", img: "assetz-images/assetz-earth-&-essence.jpg" },
+        { id: 61, name: "Assetz Soho & Sky", location: "Jakkur", area: "north", img: "assetz-images/assetz-soho-&-sky.jpg" },
+        { id: 62, name: "Assetz Here & Now", location: "Thanisandra", area: "north", img: "assetz-images/assetz-here-&-now.jpg" },
+        { id: 63, name: "Assetz Soul & Soil", location: "Hennur Road", area: "north", img: "assetz-images/assetz-soul-&-soil.jpg" },
+        
+        // East Bangalore
+        { id: 64, name: "Assetz Marq", location: "Whitefield - Hoskote Road", area: "east", img: "assetz-images/assetz-marq.webp" },
+        { id: 65, name: "Mahindra Windchimes", location: "Whitefield", area: "east", img: "images/mahindra-windchimes.jpg" },
+        { id: 66, name: "Lodha Bellissimo", location: "Whitefield", area: "east", img: "images/lodha-bellissimo.webp" },
+        { id: 67, name: "Provident Park Square", location: "Kannamangala", area: "east", img: "images/provident-park-square.jpg" },
+        { id: 68, name: "Shriram Chirping Woods", location: "Budigere Cross", area: "east", img: "images/shriram-chirping-woods.jpg" },
+        { id: 69, name: "Salarpuria Sattva Greenage", location: "Whitefield", area: "east", img: "images/salarpuria-greenage.jpg" },
+        { id: 70, name: "Brigade Metropolis", location: "Whitefield", area: "east", img: "images/brigade-metropolis.jpg" },
+        { id: 71, name: "Prestige Shantiniketan", location: "Whitefield", area: "east", img: "images/prestige-shantiniketan.jpg" },
+        { id: 72, name: "Mahindra Happinest", location: "Chennasandra", area: "east", img: "images/mahindra-happinest.webp" },
+        { id: 73, name: "Lodha High Street", location: "Whitefield", area: "east", img: "images/lodha-high-street.jpg" },
+        { id: 74, name: "Provident Welworth", location: "Whitefield", area: "east", img: "images/provident-welworth.jpg" },
+        { id: 75, name: "Shriram Properties", location: "Budigere Cross", area: "east", img: "images/shriram-properties.jpg" },
+        { id: 76, name: "Puravankara Purva West", location: "Whitefield", area: "east", img: "images/puravankara-purva-west.jpg" },
+        { id: 77, name: "Tata New Haven", location: "Budigere Road", area: "east", img: "images/tata-new-haven.jpg" },
+        { id: 78, name: "Mantri Espana", location: "Whitefield", area: "east", img: "images/mantri-espana.jpg" },
+        { id: 79, name: "Sumadhura Folium", location: "Whitefield", area: "east", img: "images/sumadhura-folium.jpg" },
+        { id: 80, name: "Vaishnavi Serene", location: "Whitefield", area: "east", img: "images/vaishnavi-serene.jpg" },
+        { id: 81, name: "Century Orient", location: "Whitefield", area: "east", img: "images/century-orient.jpg" },
+        { id: 82, name: "Joyville", location: "Whitefield", area: "east", img: "images/joyville.webp" },
+        { id: 83, name: "Adarsh Palm Retreat", location: "Bellandur", area: "east", img: "images/adarsh-palm-retreat.jpg" },
+        { id: 84, name: "Prestige Tranquility", location: "Sarjapur Road", area: "east", img: "images/prestige-tranquility.jpg" },
+        { id: 85, name: "Brigade Citrine", location: "Budigere Cross (Old Madras Road)", area: "east", img: "brigade-images/brigade-citrine.webp" },
+        { id: 86, name: "Brigade Calista", location: "Budigere Cross (Old Madras Road)", area: "east", img: "images/brigade-calista.jpg" },
+        { id: 87, name: "Brigade Sanctuary", location: "Varthur Road", area: "east", img: "images/brigade-sanctuary.jpg" },
+        { id: 88, name: "The Residences at Brigade Tech Gardens", location: "Brookefield, Whitefield", area: "east", img: "brigade-images/brigade-tech-gardens.jpg" },
+        { id: 89, name: "Brigade Parkside East", location: "Sarjapur Road (Near Bellandur)", area: "east", img: "brigade-images/brigade-parkside-east.jpg" },
+        { id: 90, name: "Brigade Woods", location: "Whitefield (ITPL)", area: "east", img: "brigade-images/brigade-woods.jpg" },
+        { id: 91, name: "Brigade Exotica", location: "Old Madras Road", area: "east", img: "images/brigade-exotica.jpg" },
+        { id: 92, name: "Brigade Buena Vista", location: "Budigere Cross (Old Madras Road)", area: "east", img: "brigade-images/brigade-buena-vista.jpg" },
+        { id: 93, name: "Brigade Golden Triangle", location: "Old Madras Road", area: "east", img: "brigade-images/brigade-golden-triangle.jpg" },
+        { id: 94, name: "Brigade Utopia", location: "Varthur Road", area: "east", img: "images/brigade-utopia.webp" },
+        { id: 95, name: "Brigade LakeFront", location: "Whitefield", area: "east", img: "brigade-images/brigade-lake-front.jpg" },
+        { id: 96, name: "Brigade Cosmopolis", location: "Whitefield", area: "east", img: "images/brigade-cosmopolis.jpg" },
+        { id: 97, name: "Godrej Woodscapes", location: "Budigere Cross, Whitefield", area: "east", img: "godrej-images/godrej-woodscapes.webp" },
+        { id: 98, name: "Godrej Whitefield", location: "Budigere Cross, Old Madras Road", area: "east", img: "godrej-images/godrej-whitefield.webp" },
+        { id: 99, name: "Godrej Athena", location: "Indiranagar Extension, Kaggadasapura", area: "east", img: "godrej-images/godrej-athena.webp" },
+        { id: 100, name: "Godrej Splendour", location: "Belathur, Whitefield-Hoskote Road", area: "east", img: "godrej-images/godrej-splendour.jpg" },
+        { id: 101, name: "Godrej Air", location: "Hoodi, Whitefield", area: "east", img: "godrej-images/godrej-air.jpg" },
+        { id: 102, name: "Godrej Air NXT", location: "Whitefield", area: "east", img: "godrej-images/godrej-air-nxt.webp" },
+        { id: 103, name: "Godrej United", location: "Hoodi, Whitefield", area: "east", img: "godrej-images/godrej-united.webp" },
+        { id: 104, name: "Prestige Waterford", location: "ECC Road, Whitefield", area: "whitefield", img: "prestige-images/prestige-waterford.webp" },
+        { id: 105, name: "Prestige Fontaine Bleau", location: "ECC Road, Whitefield", area: "whitefield", img: "prestige-images/prestige-fontaine-bleau.webp" },
+        { id: 106, name: "Prestige Dolce Vita", location: "ECC Road, Whitefield", area: "whitefield", img: "prestige-images/prestige-dolce-vita.webp" },
+        { id: 107, name: "Prestige Boulevard", location: "Whitefield", area: "whitefield", img: "prestige-images/prestige-boulevard.webp" },
+        { id: 108, name: "Prestige Pine Forest", location: "ECC Road, Whitefield", area: "whitefield", img: "prestige-images/prestige-pine-forest.webp" },
+        { id: 109, name: "Prestige Raintree Park", location: "Varthur Road, Whitefield", area: "whitefield", img: "prestige-images/prestige-raintree-park.webp" },
+        { id: 110, name: "Prestige Somerville", location: "Varthur Road, Whitefield", area: "whitefield", img: "prestige-images/prestige-somerville.jpeg" },
+        { id: 111, name: "Prestige Glenbrook", location: "Whitefield", area: "whitefield", img: "prestige-images/prestige-glenbrook.webp" },
+        { id: 112, name: "Prestige Serenity Shores", location: "Varthur Road, Whitefield", area: "whitefield", img: "prestige-images/prestige-serenity-shores.webp" },
+        { id: 113, name: "Prestige Lavender Fields", location: "Varthur Road", area: "whitefield", img: "prestige-images/prestige-lavender-fields.jpeg" },
+        { id: 114, name: "Prestige Elm Park", location: "Whitefield", area: "whitefield", img: "prestige-images/prestige-elm-park.webp" },
+        { id: 115, name: "Sobha Ayana at Dream Acres", location: "Panathur Road, Varthur", area: "east", img: "sobha-images/sobha-ayana-at-dream-acres.jpg" },
+        { id: 116, name: "Sobha Neopolis", location: "Panathur Road, Balagere", area: "east", img: "sobha-images/sobha-neopolis.jpg" },
+        { id: 117, name: "Sobha Tropical Greens at Dream Acres", location: "Panathur Road", area: "east", img: "sobha-images/sobha-tropical-greens.jpg" },
+        { id: 118, name: "Sobha Insignia", location: "Bellandur", area: "east", img: "sobha-images/sobha-insignia.jpg" },
+        { id: 119, name: "Sobha Sentosa", location: "Panathur Road, Balagere", area: "east", img: "sobha-images/sobha-sentosa.jpg" },
+        { id: 120, name: "Sobha Lake Garden", location: "KR Puram (Old Madras Road)", area: "east", img: "sobha-images/sobha-lake-garden.jpg" },
+        { id: 121, name: "Sobha Dream Acres", location: "Panathur Road", area: "east", img: "sobha-images/sobha-dream-acres.jpg" },
+        { id: 122, name: "Sobha Avenue", location: "Whitefield", area: "east", img: "sobha-images/sobha-avenue.jpg" },
+        { id: 123, name: "Sobha Palladian", location: "Yemalur", area: "east", img: "sobha-images/sobha-palladian.jpg" },
+        { id: 124, name: "Purva 270", location: "CV Raman Nagar", area: "east", img: "puravankara-images/purva-270.jpg" },
+        { id: 125, name: "Century Regalia", location: "Indiranagar (Old Airport Road)", area: "east", img: "century-images/century-regalia.jpg" },
+        { id: 126, name: "Birla Evara", location: "Gattahalli Road, Sarjapur Road", area: "east", img: "birla-images/birla-evara.webp" },
+        { id: 127, name: "Birla Sarjapur Apartments", location: "Gattahalli Road, Sarjapur Road", area: "east", img: "birla-images/birla-sarjapur-apartments.webp" },
+        { id: 128, name: "Assetz Bloom & Dell", location: "Whitefield-Hoskote Road", area: "east", img: "assetz-images/assetz-bloom-&-dell.jpg" },
+        { id: 129, name: "Assetz Marq Series", location: "Whitefield", area: "east", img: "assetz-images/assetz-marq-series.jpg" },
+        { id: 130, name: "Assetz Sun and Sanctum", location: "Old Madras Road, KR Puram", area: "east", img: "assetz-images/assetz-sun-and-sanctum.jpg" },
+        { id: 131, name: "Assetz 38 & Banyan", location: "CV Raman Nagar", area: "east", img: "assetz-images/assetz-38-&-banyan.jpg" },
+        { id: 132, name: "Total Environment Pursuit of a Radical Rhapsody", location: "Whitefield", area: "east", img: "total-images/pursuit-of-a-radical-rhapsody.jpg" },
+        { id: 133, name: "Total Environment Windmills of Your Mind", location: "Whitefield", area: "east", img: "total-images/windmills-of-your-mind.jpg" },
+        { id: 134, name: "L&T Sarjapur Road", location: "Sarjapur Road", area: "east", img: "lnt-images/lnt-sarjapur.jpg" },
+        { id: 135, name: "Lodha Sadahalli", location: "Lodha Sadahalli", area: "east", img: "lodha-images/lodha-sadahalli.webp" },
+        { id: 136, name: "Lodha Elanza Sarjapur", location: "Sarjapur Road", area: "east", img: "lodha-images/lodha-elanza-banner.webp" },
+        { id: 137, name: "Nambiar District 25 Phase 3", location: "Sarjapur Road", area: "east", img: "nambiar-images/nambiar-bannerghatta-banner.webp" },
+        { id: 138, name: "Nambiar Ellegenza Phase 2", location: "Sarjapur Road", area: "east", img: "images/dream-gardens.webp" },
+        
+        // South Bangalore
+        { id: 139, name: "Prestige Southern Star", location: "Kanakapura Road", area: "south", img: "images/prestige-southern-star.jpg" },
+        { id: 140, name: "Purva Fountain Square", location: "Kanakapura Road", area: "south", img: "images/purva-fountain-square.jpg" },
+        { id: 141, name: "Salarpuria Sattva Greenage", location: "Bannerghatta Road", area: "south", img: "images/salarpuria-sattva-greenage.jpg" },
+        { id: 142, name: "Mahindra Lifespaces Windchimes", location: "Bannerghatta Road", area: "south", img: "images/mahindra-windchimes.jpg" },
+        { id: 143, name: "Tata New Haven", location: "Electronic City", area: "south", img: "images/tata-new-haven.jpg" },
+        { id: 144, name: "Godrej South Ridge", location: "Kanakapura Road", area: "south", img: "images/godrej-south-ridge.jpg" },
+        { id: 145, name: "Salarpuria Sattva East Crest", location: "Sarjapur Road", area: "south", img: "images/salarpuria-sattva-east-crest.jpg" },
+        { id: 146, name: "Prestige Ivy League", location: "Sarjapur Road", area: "south", img: "images/prestige-ivy-league.jpg" },
+        { id: 147, name: "Prestige Brooklyn Heights", location: "Banashankari", area: "south", img: "prestige-images/prestige-brooklyn-heights.webp" },
+        { id: 148, name: "Prestige Park Square", location: "Bannerghatta Road", area: "south", img: "prestige-images/prestige-park-square.webp" },
+        { id: 149, name: "Prestige Pine Wood", location: "Koramangala", area: "south", img: "prestige-images/prestige-pine-wood.webp" },
+        { id: 150, name: "Prestige Song of the South", location: "Begur Road", area: "south", img: "prestige-images/prestige-song-of-the-south.webp" },
+        { id: 151, name: "Prestige Ferns Residency", location: "Haralur Road", area: "south", img: "prestige-images/prestige-ferns-residency.jpg" },
+        { id: 152, name: "Prestige Lake Ridge", location: "Subramanyapura, Kanakapura Road", area: "south", img: "prestige-images/prestige-lake-ridge.jpeg" },
+        { id: 153, name: "Prestige Sunrise Park", location: "Electronic City", area: "south", img: "prestige-images/prestige-sunrise-park.jpg" },
+        { id: 154, name: "Prestige Suncrest Apartments", location: "Electronic City", area: "south", img: "prestige-images/prestige-suncrest-apartments.webp" },
+        { id: 155, name: "Prestige E-City Apartments", location: "Electronic City", area: "south", img: "prestige-images/prestige-e-city-apartments.jpg" },
+        { id: 156, name: "Prestige Primrose Hills", location: "Kanakapura Road, Banashankari", area: "south", img: "prestige-images/prestige-primrose-hills.webp" },
+        { id: 157, name: "Prestige Elysian", location: "Bannerghatta Road (Arekere)", area: "south", img: "prestige-images/prestige-elysian.jpg" },
+        { id: 158, name: "Prestige Botanique", location: "RV Road, Basavanagudi", area: "south", img: "prestige-images/prestige-botanique.webp" },
+        { id: 159, name: "Godrej Lakeside Orchard", location: "Kodathi, Sarjapur Road", area: "south", img: "godrej-images/godrej-lakeside-orchard.webp" },
+        { id: 160, name: "Godrej Park Retreat Phase 3", location: "Chikkakannalli, Sarjapur Road", area: "south", img: "godrej-images/godrej-park-retreat-phase-3.jpg" },
+        { id: 161, name: "Godrej Lake Gardens", location: "Sarjapur Road", area: "south", img: "godrej-images/godrej-lake-gardens.jpg" },
+        { id: 162, name: "Godrej 24 Bangalore", location: "Off Sarjapur Road", area: "south", img: "godrej-images/godrej-24-bangalore.webp" },
+        { id: 163, name: "Godrej Nurture", location: "Electronic City Phase 1", area: "south", img: "godrej-images/godrej-nurture.jpg" },
+        { id: 164, name: "Godrej Sarjapur Road Apartments", location: "Sarjapur Road", area: "south", img: "godrej-images/godrej-sarjapur-road-apartments.jpg" },
+        { id: 165, name: "Godrej Reflections Phase 2", location: "Haralur Road, Sarjapur Road", area: "south", img: "godrej-images/godrej-reflections-phase-2.webp" },
+        { id: 166, name: "Godrej Eternity", location: "Kanakapura Road", area: "south", img: "godrej-images/godrej-eternity.jpg" },
+        { id: 167, name: "Godrej E City", location: "Electronics City", area: "south", img: "godrej-images/godrej-e-city.jpg" },
+        { id: 168, name: "Godrej Reflections", location: "Haralur Road, Sarjapur Road", area: "south", img: "godrej-images/godrej-reflections.webp" },
+        { id: 169, name: "Sobha Town Park Phase 3", location: "Hosur Road, Attibele", area: "south", img: "sobha-images/sobha-town-park-phase-3.jpg" },
+        { id: 170, name: "Sobha Royal Crest", location: "Banashankari (near NICE Junction)", area: "south", img: "sobha-images/sobha-royal-crest.jpg" },
+        { id: 171, name: "Sobha Manhattan Towers", location: "Hosur Road", area: "south", img: "sobha-images/sobha-manhattan-towers.jpg" },
+        { id: 172, name: "Sobha Royal Pavilion", location: "Sarjapur Road (Hadosiddapura)", area: "south-east", img: "sobha-images/sobha-royal-pavilion.webp" },
+        { id: 173, name: "Sobha Forest Edge", location: "Kanakapura Road", area: "south", img: "sobha-images/sobha-forest-edge.jpg" },
+        { id: 174, name: "Sobha Park Plaza", location: "Kanakapura Road", area: "south", img: "sobha-images/sobha-park-plaza.jpg" },
+        { id: 175, name: "Sobha Silicon Oasis", location: "Hosa Road, Electronic City", area: "south", img: "sobha-images/sobha-silicon-oasis.jpg" },
+        { id: 176, name: "Sobha Heritage", location: "Banashankari 3rd Stage", area: "south", img: "sobha-images/sobha-heritage.jpg" },
+        { id: 177, name: "Purva Meraki", location: "HSR Layout", area: "south", img: "puravankara-images/purva-meraki.webp" },
+        { id: 178, name: "Purva Park Hill", location: "Kanakapura Road", area: "south", img: "puravankara-images/purva-park-hill.jpg" },
+        { id: 179, name: "Purva Coronation Square", location: "JP Nagar", area: "south", img: "puravankara-images/purva-coronation-square.jpg" },
+        { id: 180, name: "Purva Skydale", location: "Haralur Road, Sarjapur Road", area: "south-east", img: "puravankara-images/purva-skydale.jpg" },
+        { id: 181, name: "Purva Westend", location: "Kudlu Gate, Hosur Road", area: "south", img: "puravankara-images/purva-westend.jpg" },
+        { id: 182, name: "Purva Whitehall", location: "Sarjapur Road", area: "south-east", img: "puravankara-images/purva-whitehall.jpg" },
+        { id: 183, name: "Century Central", location: "Kanakapura Road", area: "south", img: "century-images/Century-central.avif" },
+        { id: 184, name: "Brigade Valencia", location: "Hosur Road (Bommasandra/Chandapura)", area: "south", img: "brigade-images/brigade-valencia.webp" },
+        { id: 185, name: "Brigade Nanda Heights", location: "Padmanabhanagar (Uttarahalli)", area: "south", img: "brigade-images/brigade-nanda-heights.jpg" },
+        { id: 186, name: "Brigade Komarla Heights", location: "Padmanabhanagar (Banashankari)", area: "south", img: "brigade-images/brigade-komarla-heights.jpg" },
+        { id: 187, name: "Brigade Meadows Plumeria", location: "Kanakapura Road", area: "south", img: "brigade-images/brigade-meadows-plumeria.jpg" },
+        { id: 188, name: "Brigade Omega", location: "Kanakapura Road (Banashankari)", area: "south", img: "brigade-images/brigade-omega.jpg" },
+        { id: 189, name: "Brigade 7 Gardens", location: "Banashankari 6th Stage", area: "south", img: "brigade-images/brigade-7-gardens.jpg" },
+        { id: 190, name: "Godrej Vanantara", location: "Bannerghatta Road", area: "south", img: "godrej-images/godrej-vanantara.jpg" },
+        { id: 191, name: "Nambiar Bannerghatta Villas", location: "Bannerghatta", area: "south", img: "nambiar-images/nambiar-bannerghatta-banner.webp" },
+        { id: 192, name: "Assetz Codename Altitude", location: "Kanakapura Road", area: "south", img: "assetz-images/assetz-codename-altitude.jpg" },
+        { id: 193, name: "Assetz Canvas and Cove", location: "Begur Road", area: "south", img: "assetz-images/assetz-canvas-and-cove.jpg" },
+        { id: 194, name: "Assetz Codename Micropolis", location: "Kudlu, Hosa Road", area: "south", img: "assetz-images/assetz-codename-micropolis.jpg" },
+        { id: 195, name: "Assetz Trees and Tandem", location: "Kodathi, Sarjapur Road", area: "south", img: "assetz-images/assetz-trees-and-tandem.jpg" },
+        { id: 196, name: "Assetz Codename The Oasis", location: "Kodathi, Sarjapur Road", area: "south", img: "assetz-images/assetz-codename-the-oasis.jpg" },
+        { id: 197, name: "Assetz Ren & Rei Apartments", location: "Gattahalli, Sarjapur Road", area: "south", img: "assetz-images/assetz-ren-&-rei-apartments.jpg" },
+        { id: 198, name: "Total Environment The Magic Faraway Tree", location: "Kanakapura Road", area: "south", img: "total-images/the-magic-faraway-tree.jpg" },
+        { id: 199, name: "L&T Electronic City", location: "Electronic City", area: "south", img: "lnt-images/lnt-electronic-city.jpg" },
+        { id: 200, name: "Godrej Azur", location: "Bannerghatta", area: "south", img: "godrej-azur-img/godrej-land.jpg" },
+        { id: 201, name: "Godrej Sarjapur", location: "Sarjapur", area: "south", img: "godrej-azur-img/godrej-land.jpg" },
+        
+        // West Bangalore
+        { id: 202, name: "Prestige Park Grove", location: "Yelahanka", area: "west", img: "images/prestige-park-grove.jpeg" },
+        { id: 203, name: "Godrej Woodsman Estate", location: "Sarjapur Road", area: "west", img: "images/godrej-woodsman-estate.jpg" },
+        { id: 204, name: "Lodha Belmondo", location: "Off Mysore Road", area: "west", img: "images/lodha-belmondo.jpg" },
+        { id: 205, name: "Total Environment Windmill", location: "Whitefield", area: "west", img: "images/total-environment-windmill.jpg" },
+        { id: 206, name: "Mahindra Happinest", location: "Chennasandra", area: "west", img: "images/mahindra-happinest.jpg" },
+        { id: 207, name: "Provident Park Square", location: "Kanakapura Road", area: "west", img: "images/provident-park.jpg" },
+        { id: 208, name: "Shriram Chirping Woods", location: "North Bangalore", area: "west", img: "images/shriram-chirping.jpg" },
+        { id: 209, name: "Mantri Serenity", location: "Banashankari", area: "west", img: "images/mantri-serenity.jpg" },
+        { id: 210, name: "Salarpuria Sattva Greenage", location: "Bannerghatta Road", area: "west", img: "images/salarpuria-greenage.jpg" },
+        { id: 211, name: "Puravankara Purva West Park", location: "Kanakapura Road", area: "west", img: "images/puravankara-purva-west-park.jpg" },
+        { id: 212, name: "Mahindra Lifespaces Aqualily", location: "Whitefield", area: "west", img: "images/mahindra-lifespaces-aqualily.jpg" },
+        { id: 213, name: "Sobha Forest View", location: "Yelahanka", area: "west", img: "images/sobha-forest.jpg" },
+        { id: 214, name: "Lodha Sterling", location: "Whitefield", area: "west", img: "images/lodha-sterling.jpg" },
+        { id: 215, name: "Prestige Jindal City", location: "Tumkur Road", area: "west", img: "images/prestige-jindal-city.webp" },
+        { id: 216, name: "Godrej Palm Retreat", location: "Electronic City", area: "west", img: "images/godrej-palm-retreat.webp" },
+        { id: 217, name: "Prestige Misty Waters", location: "Sarjapur Road", area: "west", img: "images/prestige-misty-waters.jpg" },
+        { id: 218, name: "Prestige West Woods", location: "Rajajinagar", area: "west", img: "prestige-images/prestige-west-woods.jpg" },
+        { id: 219, name: "Prestige Temple Bells", location: "Rajarajeshwari Nagar", area: "west", img: "prestige-images/prestige-temple-bells.jpg" },
+        { id: 220, name: "Godrej Tiara", location: "Yeshwanthpur, Tumkur Road", area: "west", img: "godrej-images/godrej-tiara.webp" },
+        { id: 221, name: "Godrej Yeshwanthpur", location: "Yeshwanthpur, Tumkur Road", area: "west", img: "godrej-images/godrej-yeshwanthpur.jpg" },
+        { id: 222, name: "Godrej Gold County", location: "Tumkur Road", area: "west", img: "godrej-images/godrej-gold-county.webp" },
+        { id: 223, name: "Brigade Horizon", location: "Mysore Road (Near NICE Road)", area: "west", img: "brigade-images/brigade-horizon.jpg" },
+        { id: 224, name: "Brigade Parkside West", location: "Mysore Road", area: "west", img: "brigade-images/brigade-parkside-north.jpg" },
+        { id: 225, name: "Brigade Panorama", location: "Mysore Road", area: "west", img: "brigade-images/brigade-panorama.jpg" },
+        { id: 226, name: "Sobha Indraprastha", location: "Rajajinagar (Old Mysore Road)", area: "west", img: "sobha-images/sobha-indraprastha.jpg" },
+        { id: 227, name: "Purva Blubelle", location: "Magadi Road", area: "west", img: "puravankara-images/purva-blubelle.jpg" },
+        { id: 228, name: "Purva Sunflower", location: "Magadi Road", area: "west", img: "puravankara-images/purva-sunflower.jpg" },
+        { id: 229, name: "Century Indus Phase 2", location: "Rajarajeshwari Nagar", area: "west", img: "century-images/century-indus-phase-2.jpg" },
+        { id: 230, name: "Birla Ojasvi", location: "RR Nagar (Rajarajeshwari Nagar)", area: "south-west", img: "birla-images/birla-ojasvi.webp" },
+        { id: 231, name: "Birla Advaya", location: "RR Nagar (Rajarajeshwari Nagar)", area: "south-west", img: "birla-images/birla-advaya.jpg" },
+        { id: 232, name: "Birla RR Nagar (Birla Estates)", location: "Rajarajeshwari Nagar", area: "south-west", img: "birla-images/birla-rr-nagar-(birla-estates).webp" },
+        { id: 233, name: "Birla Tisya", location: "Magadi Main Road, Rajajinagar", area: "west-central", img: "birla-images/birla-tisya.jpg" },
+        { id: 234, name: "Assetz Lumos", location: "Yeshwanthpur", area: "west", img: "assetz-images/assetz-lumos.jpg" },
+        { id: 235, name: "Assetz 22 & Crest", location: "Yeshwanthpur, Near Orion Mall", area: "west", img: "assetz-images/assetz-22-&-crest.jpg" },
+        
+        // Central Bangalore
+        { id: 236, name: "Prestige Leela Residences", location: "Old Airport Road", area: "central", img: "prestige-images/prestige-leela-residences.webp" },
+        { id: 237, name: "Prestige Deja Vu", location: "Frazer Town", area: "central", img: "prestige-images/prestige-deja-vu.webp" },
+        { id: 238, name: "Prestige Kenilworth", location: "Cunningham Road", area: "central", img: "prestige-images/prestige-kenilworth.jpg" },
+        { id: 239, name: "Prestige Edwardian", location: "Cunningham Road", area: "central", img: "prestige-images/prestige-edwardian.jpg" },
+        { id: 240, name: "Sobha Infinia Phase 2", location: "Koramangala 1st Block", area: "central", img: "sobha-images/sobha-infinia-phase-2.webp" },
+        { id: 241, name: "Sobha Saptrang", location: "Koramangala 1st Block", area: "central", img: "sobha-images/sobha-saptrang.jpg" },
+        { id: 242, name: "Purva Orient Grand", location: "Sudhama Nagar, Richmond Road", area: "central", img: "puravankara-images/purva-orient-grand.webp" },
+        { id: 243, name: "Century Renata", location: "Richmond Road", area: "central", img: "century-images/century-renata.jpg" },
+    ];
+
+    // ===== RENDER PROPERTIES =====
+    function renderProperties(filter = 'all') {
+        const grid = document.getElementById('propertyGrid');
+        const filtered = filter === 'all' 
+            ? properties 
+            : properties.filter(p => p.area === filter);
+        
+        grid.innerHTML = '';
+        filtered.forEach(p => {
+            const card = document.createElement('div');
+            card.className = 'property-card';
+            card.setAttribute('data-area', p.area);
+            card.innerHTML = `
+                <div class="property-card-img">
+                    <img src="${p.img}" alt="${p.name}" loading="lazy" onerror="this.src='images/placeholder.jpg'">
+                </div>
+                <div class="property-card-body">
+                    <h3>${p.name}</h3>
+                    <div class="property-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>${p.location}</span>
+                    </div>
+                    <div class="property-actions">
+                        <button class="action-btn" onclick="window.location.href='${p.name.toLowerCase().replace(/ /g,'-')}.html'">
+                            <i class="fas fa-info-circle"></i> About
+                        </button>
+                        <button class="action-btn brochure-btn" data-project="${p.name}">
+                            <i class="fas fa-download"></i> Brochure
+                        </button>
+                    </div>
+                </div>
+            `;
+            grid.appendChild(card);
+        });
+        
+        // Re-attach brochure event listeners
+        document.querySelectorAll('.brochure-btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                const projectName = this.dataset.project || 'Project';
+                document.getElementById('modalTitle').textContent = `Download Brochure — ${projectName}`;
+                document.getElementById('brochureName').placeholder = `Your name for ${projectName}`;
+                document.getElementById('brochureModal').classList.add('active');
+            });
+        });
+    }
+
+    // ===== FILTER TABS =====
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            const filter = this.dataset.filter;
+            renderProperties(filter);
+            
+            // Re-trigger GSAP animation
+            gsap.from('.property-card', {
+                scrollTrigger: {
+                    trigger: '#propertyGrid',
+                    start: 'top 90%',
+                },
+                opacity: 0,
+                y: 30,
+                stagger: 0.05,
+                duration: 0.5,
+                ease: 'power2.out'
+            });
+        });
+    });
+
+    // ===== INITIAL RENDER =====
+    document.addEventListener('DOMContentLoaded', () => {
+        renderProperties('all');
+    });
+
+    // ===== TESTIMONIAL SLIDER =====
+    document.addEventListener('DOMContentLoaded', () => {
+        const track = document.getElementById('testimonialTrack');
+        const dots = document.querySelectorAll('#testimonialDots button');
+        let current = 0;
+        const total = dots.length;
+
+        function goTo(index) {
+            current = index;
+            track.style.transform = `translateX(-${current * 100}%)`;
+            dots.forEach((d, i) => d.classList.toggle('active', i === current));
+        }
+
+        dots.forEach((dot, i) => {
+            dot.addEventListener('click', () => goTo(i));
+        });
+
+        // Auto-rotate
+        setInterval(() => {
+            goTo((current + 1) % total);
+        }, 5000);
+    });
+
+    // ===== MODAL =====
+    const modal = document.getElementById('brochureModal');
+    const modalClose = document.getElementById('modalClose');
+    const brochureForm = document.getElementById('brochureForm');
+    const brochureStatus = document.getElementById('brochureStatus');
+
+    modalClose.addEventListener('click', () => {
+        modal.classList.remove('active');
+        brochureStatus.classList.remove('show', 'success', 'error');
+    });
+
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.classList.remove('active');
+            brochureStatus.classList.remove('show', 'success', 'error');
+        }
+    });
+
+    brochureForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = document.getElementById('brochureName').value.trim();
+        const email = document.getElementById('brochureEmail').value.trim();
+        const phone = document.getElementById('brochurePhone').value.trim();
+
+        if (!name || !email || !phone) {
+            brochureStatus.textContent = '⚠️ Please fill in all fields.';
+            brochureStatus.className = 'form-status show error';
+            return;
+        }
+
+        brochureStatus.textContent = '✅ Thank you! Your brochure download will start shortly.';
+        brochureStatus.className = 'form-status show success';
+        setTimeout(() => {
+            modal.classList.remove('active');
+            brochureStatus.className = 'form-status';
+            brochureForm.reset();
+        }, 2000);
+    });
+
+    // ===== MAIN FORM SUBMIT =====
+    document.getElementById('mainSubmitBtn').addEventListener('click', function() {
+        const name = document.getElementById('mainName').value.trim();
+        const phone = document.getElementById('mainPhone').value.trim();
+        const email = document.getElementById('mainEmail').value.trim();
+        const timeline = document.getElementById('mainTimeline').value;
+        const budget = document.getElementById('mainBudget').value;
+        const status = document.getElementById('mainFormStatus');
+
+        if (!name || !phone || !email || !timeline || !budget) {
+            status.textContent = '⚠️ Please fill in all fields.';
+            status.className = 'form-status show error';
+            return;
+        }
+
+        this.textContent = 'Submitting...';
+        this.disabled = true;
+        status.className = 'form-status';
+
+        setTimeout(() => {
+            status.textContent = '✅ Thank you! We\'ll be in touch soon.';
+            status.className = 'form-status show success';
+            this.textContent = 'Submitted ✓';
+            this.disabled = true;
+            document.getElementById('mainForm').reset();
+        }, 1000);
+    });
+
+    // ===== NAVIGATION LINK ACTIVE =====
+    document.querySelectorAll('.nav-links a, #mobile-menu a').forEach(link => {
+        link.addEventListener('click', function() {
+            document.querySelectorAll('.nav-links a').forEach(l => l.style.color = '');
+            this.style.color = 'var(--aurora-dark)';
+        });
+    });
+
+    console.log('🚀 PrimeLand — Luxury Apartments in Bangalore');
+    console.log(`📊 Loaded ${properties.length} properties`);
+</script>
+
+<!-- ===== FALLBACK PLACEHOLDER IMAGES ===== -->
+<script>
+    // Handle missing images gracefully
+    document.addEventListener('error', function(e) {
+        const target = e.target;
+        if (target.tagName === 'IMG') {
+            target.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300"%3E%3Crect width="400" height="300" fill="%23eef3f2"/%3E%3Ctext x="200" y="150" font-family="Inter" font-size="16" fill="%235c6d73" text-anchor="middle"%3EPrimeLand%3C/text%3E%3C/svg%3E';
+        }
+    }, true);
+</script>
+<script>// ===== MOBILE DROPDOWN TOGGLE =====
+// ===== NAVIGATION JAVASCRIPT =====
+document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const nav = document.getElementById('site-nav');
+
+    // Toggle mobile menu
+    hamburger.addEventListener('click', function() {
+        const isOpen = mobileMenu.classList.toggle('open');
+        this.classList.toggle('open');
+        this.setAttribute('aria-expanded', isOpen);
+    });
+
+    // Close mobile menu on link click
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+        link.addEventListener('click', function() {
+            mobileMenu.classList.remove('open');
+            hamburger.classList.remove('open');
+            hamburger.setAttribute('aria-expanded', 'false');
+        });
+    });
+
+    // Scroll nav condense
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 80) {
+            nav.classList.add('nav-condensed');
+        } else {
+            nav.classList.remove('nav-condensed');
+        }
+    });
+
+    // ===== MOBILE DROPDOWN TOGGLE =====
+    const dropdowns = document.querySelectorAll('.dropdown');
+    
+    dropdowns.forEach(dropdown => {
+        const dropbtn = dropdown.querySelector('.dropbtn');
+        
+        if (dropbtn) {
+            dropbtn.addEventListener('click', function(e) {
+                // Only for mobile (screen width <= 768px)
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    // Close other dropdowns
+                    dropdowns.forEach(other => {
+                        if (other !== dropdown && other.classList.contains('active')) {
+                            other.classList.remove('active');
+                        }
+                    });
+                    dropdown.classList.toggle('active');
+                }
+            });
+        }
+        
+        // Close dropdown when clicking a link inside
+        const links = dropdown.querySelectorAll('.dropdown-content a');
+        links.forEach(link => {
+            link.addEventListener('click', function() {
+                dropdown.classList.remove('active');
+                // Close mobile menu
+                const mobileMenu = document.getElementById('mobile-menu');
+                const hamburger = document.getElementById('hamburger');
+                if (window.innerWidth <= 768) {
+                    mobileMenu.classList.remove('open');
+                    hamburger.classList.remove('open');
+                }
+            });
+        });
+    });
+
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', function(e) {
+        if (window.innerWidth <= 768) {
+            dropdowns.forEach(dropdown => {
+                if (!dropdown.contains(e.target) && dropdown.classList.contains('active')) {
+                    dropdown.classList.remove('active');
+                }
+            });
+        }
+    });
+
+    // Handle window resize
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 768) {
+            dropdowns.forEach(dropdown => {
+                dropdown.classList.remove('active');
+            });
+        }
+    });
+});</script>
+</body>
+</html>

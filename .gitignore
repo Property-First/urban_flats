@@ -1,0 +1,8 @@
+node_modules/
+*.zip
+*.mp4
+.ds_store
+.htaccess
+.assetz-images
+.birla-images
+.brigade-images

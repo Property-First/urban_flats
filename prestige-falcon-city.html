@@ -1,0 +1,1708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Luxury Apartments on Lavelle Road, Bangalore</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #b8860b;
+            --secondary-color: #1a1a1a;
+            --accent-color: #f5f5f5;
+            --text-color: #333;
+            --light-text: #777;
+            --white: #ffffff;
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+        
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .logo-text h1 {
+            font-size: 24px;
+            color: var(--secondary-color);
+            margin: 0;
+            line-height: 1.2;
+        }
+        
+        .logo-text span {
+            font-size: 12px;
+            color: var(--light-text);
+            letter-spacing: 1px;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+            position: relative;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--secondary-color);
+            font-weight: 500;
+            font-size: 15px;
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            bottom: -5px;
+            left: 0;
+            transition: var(--transition);
+        }
+        
+        nav ul li a:hover:after {
+            width: 100%;
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+        
+        .header-cta {
+            display: flex;
+            align-items: center;
+        }
+        
+        .header-cta .phone {
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+        }
+        
+        .header-cta .phone i {
+            color: var(--primary-color);
+            margin-right: 8px;
+            font-size: 18px;
+        }
+        
+        .header-cta .phone span {
+            font-weight: 600;
+            font-size: 15px;
+        }
+        
+        .header-cta .btn {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        
+        .header-cta .btn:hover {
+            background-color: #a5770a;
+            transform: translateY(-2px);
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://preossdev.s3.ap-south-1.amazonaws.com/projectgallery/115d615e-57cb-4068-8700-6cb3d24accf7.webp') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            color: var(--white);
+            text-align: center;
+            padding: 0 20px;
+            margin-top: 80px;
+        }
+        
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .hero-btn {
+            padding: 15px 30px;
+            border-radius: 4px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 16px;
+        }
+        
+        .primary-btn {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+        
+        .secondary-btn {
+            background-color: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+        
+        .primary-btn:hover {
+            background-color: #a5770a;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .secondary-btn:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Project Gallery */
+        .project-gallery {
+            padding: 80px 5%;
+            background-color: var(--accent-color);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary-color);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+            aspect-ratio: 4/3;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* Project Description */
+        .project-description {
+            padding: 80px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .project-description p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        /* Project Details */
+        .project-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+            padding: 60px 5%;
+            background-color: var(--secondary-color);
+            color: var(--white);
+        }
+        
+        .detail-section {
+            max-width: 600px;
+        }
+        
+        .detail-section h3 {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .detail-section h3:after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 2px;
+            background-color: var(--primary-color);
+            bottom: 0;
+            left: 0;
+        }
+        
+        .detail-item {
+            margin-bottom: 15px;
+            display: flex;
+        }
+        
+        .detail-item strong {
+            min-width: 120px;
+            display: inline-block;
+            font-weight: 600;
+        }
+        
+        .amenities-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        
+        .amenities-list li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .amenities-list i {
+            margin-right: 10px;
+            color: var(--primary-color);
+            width: 20px;
+            text-align: center;
+        }
+        
+        /* Location Section */
+        .location-section {
+            padding: 80px 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .location-map {
+            height: 400px;
+            margin: 40px 0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .location-map img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 80px 5%;
+            text-align: center;
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+        
+        .cta-section h3 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+        
+        .cta-section p {
+            max-width: 700px;
+            margin: 0 auto 40px;
+            font-size: 1.1rem;
+        }
+        
+        .cta-btns {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .cta-btn {
+            padding: 15px 30px;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: var(--transition);
+            font-size: 16px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .primary-cta {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            border: 2px solid var(--secondary-color);
+        }
+        
+        .secondary-cta {
+            background-color: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+        
+        .primary-cta:hover {
+            background-color: #2a2a2a;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .secondary-cta:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Floor Plans */
+        .floor-plans {
+            padding: 80px 5%;
+            background-color: var(--accent-color);
+        }
+        
+        .plans-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 40px auto 0;
+        }
+        
+        .plan-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+        
+        .plan-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .plan-img {
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .plan-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .plan-card:hover .plan-img img {
+            transform: scale(1.05);
+        }
+        
+        .plan-details {
+            padding: 20px;
+        }
+        
+        .plan-details h4 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+        
+        .plan-specs {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin: 15px 0;
+        }
+        
+        .plan-spec {
+            display: flex;
+            align-items: center;
+        }
+        
+        .plan-spec i {
+            color: var(--primary-color);
+            margin-right: 8px;
+        }
+        
+        .plan-price {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin: 15px 0;
+        }
+        
+        .plan-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .plan-btn:hover {
+            background-color: #a5770a;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .testimonial-slider {
+            margin-top: 50px;
+            position: relative;
+        }
+        
+        .testimonial-card {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin: 0 15px;
+            position: relative;
+        }
+        
+        .testimonial-card:before {
+            content: '\201C';
+            font-family: Georgia, serif;
+            font-size: 60px;
+            color: var(--primary-color);
+            opacity: 0.3;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+        
+        .testimonial-content {
+            margin-bottom: 20px;
+            font-style: italic;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+        }
+        
+        .author-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .author-info h5 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+        
+        .author-info p {
+            font-size: 0.9rem;
+            color: var(--light-text);
+        }
+        
+        /* Developer Section */
+        .developer-section {
+            padding: 80px 5%;
+            background-color: var(--secondary-color);
+            color: var(--white);
+        }
+        
+        .developer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+            align-items: center;
+        }
+        
+        .developer-img {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .developer-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .developer-info h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        
+        .developer-info p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+        
+        .developer-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #111;
+            color: var(--white);
+            padding: 80px 5% 30px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .footer-col h4 {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-col h4:after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 2px;
+            background-color: var(--primary-color);
+            bottom: 0;
+            left: 0;
+        }
+        
+        .footer-col p {
+            margin-bottom: 20px;
+            opacity: 0.8;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+        
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            opacity: 0.8;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+        }
+        
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--primary-color);
+            padding-left: 5px;
+        }
+        
+        .footer-links i {
+            margin-right: 10px;
+            color: var(--primary-color);
+            width: 20px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--white);
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 50px;
+            margin-top: 50px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            nav ul {
+                display: none;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .header-cta .phone {
+                display: none;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                height: 80vh;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .project-details {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-btns {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .header-container {
+                padding: 15px 20px;
+            }
+            
+            .logo img {
+                height: 40px;
+            }
+            
+            .logo-text h1 {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <!-- <img src="https://www.prestigeconstructions.com/images/logo.png" alt="Prestige Group Logo"> -->
+                <div class="logo-text">
+                    <h1>Prestige Falcon City</h1>
+                    <span>Kanakapura Road, Bangalore</span>
+                </div>
+            </div>
+            
+            <nav>
+                <ul>
+                    <li><a href="#overview">Overview</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#amenities">Amenities</a></li>
+                    <li><a href="#floor-plans">Floor Plans</a></li>
+                    <li><a href="#location">Location</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-cta">
+                <!-- <div class="phone">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>+91-6366850754</span>
+                </div> -->
+                <button class="btn">Enquire Now</button>
+            </div>
+            
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Experience Premium Living at Prestige Falcon City</h1>
+            <p>Bangalore's most sought-after residential project offering luxurious 2, 3 & 4 BHK residences with world-class amenities on Kanakapura Road.</p>
+            <div class="hero-btns">
+                <a href="#contact" class="hero-btn primary-btn">Schedule Site Visit</a>
+                <a href="#gallery" class="hero-btn secondary-btn">View Gallery</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Project Gallery -->
+    <section class="project-gallery" id="gallery">
+        <div class="section-title">
+            <h2>Project Gallery</h2>
+        </div>
+        
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Prestige Falcon City Exterior">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Modern Living Room">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Contemporary Kitchen">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1565538810643-b5bdb714032a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Swimming Pool">
+            </div>
+        </div>
+    </section>
+    
+    <!-- Project Description -->
+    <section class="project-description" id="overview">
+        <p>Prestige Falcon City is a premium residential development located in the rapidly growing Kanakapura Road corridor of Bangalore. This expansive project offers meticulously designed residences with modern amenities and lush green surroundings. The development features contemporary architecture with high-quality finishes, spacious layouts, and excellent connectivity to key areas of the city.</p>
+        
+        <p>Developed by Prestige Group, one of India's most respected real estate developers, Falcon City represents quality living with its thoughtfully planned residences, extensive amenities, and strategic location in one of Bangalore's most promising neighborhoods.</p>
+    </section>
+    
+    <!-- Project Details -->
+    <div class="project-details">
+        <div class="detail-section">
+            <h3>Project Specifications</h3>
+            <div class="detail-item">
+                <strong>Project Name:</strong> Prestige Falcon City
+            </div>
+            <div class="detail-item">
+                <strong>Developer:</strong> Prestige Group
+            </div>
+            <div class="detail-item">
+                <strong>Location:</strong> Kanakapura Road, Bangalore
+            </div>
+            <div class="detail-item">
+                <strong>Total Units:</strong> 1500+ Apartments
+            </div>
+            <div class="detail-item">
+                <strong>Unit Types:</strong> 2, 3 & 4 BHK Residences
+            </div>
+            <div class="detail-item">
+                <strong>Size Range:</strong> 1,200 - 3,500 sq.ft.
+            </div>
+            <div class="detail-item">
+                <strong>Price Range:</strong> ₹80 Lakhs - ₹2.5 Cr*
+            </div>
+            <div class="detail-item">
+                <strong>Possession:</strong> Phase-wise from 2024
+            </div>
+        </div>
+        
+        <div class="detail-section">
+            <h3>Key Highlights</h3>
+            <ul class="amenities-list">
+                <li><i class="fas fa-check"></i> Modern contemporary design</li>
+                <li><i class="fas fa-check"></i> Spacious well-ventilated apartments</li>
+                <li><i class="fas fa-check"></i> Premium quality fittings</li>
+                <li><i class="fas fa-check"></i> Earthquake-resistant RCC structure</li>
+                <li><i class="fas fa-check"></i> 80% open space with lush landscaping</li>
+                <li><i class="fas fa-check"></i> 24/7 security with CCTV surveillance</li>
+                <li><i class="fas fa-check"></i> Rainwater harvesting system</li>
+                <li><i class="fas fa-check"></i> Power backup for common areas</li>
+            </ul>
+        </div>
+    </div>
+    
+    <!-- Amenities Section -->
+    <section class="location-section" id="amenities">
+        <div class="section-title">
+            <h2>Amenities</h2>
+        </div>
+        
+        <ul class="amenities-list">
+            <li><i class="fas fa-swimming-pool"></i> Swimming pool with deck</li>
+            <li><i class="fas fa-dumbbell"></i> Fully equipped gymnasium</li>
+            <li><i class="fas fa-child"></i> Children's play area</li>
+            <li><i class="fas fa-basketball-ball"></i> Indoor games room</li>
+            <li><i class="fas fa-tree"></i> Landscaped gardens</li>
+            <li><i class="fas fa-walking"></i> Jogging track</li>
+            <li><i class="fas fa-book"></i> Reading lounge</li>
+            <li><i class="fas fa-utensils"></i> Community hall</li>
+            <li><i class="fas fa-car"></i> Ample parking space</li>
+            <li><i class="fas fa-shield-alt"></i> 24/7 security</li>
+            <li><i class="fas fa-wifi"></i> High-speed internet</li>
+            <li><i class="fas fa-tint"></i> Water treatment plant</li>
+        </ul>
+    </section>
+    
+    <!-- Floor Plans -->
+    <section class="floor-plans" id="floor-plans">
+        <div class="section-title">
+            <h2>Floor Plans</h2>
+        </div>
+        
+        <div class="plans-container">
+            <div class="plan-card">
+                <div class="plan-img">
+                    <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="2 BHK Floor Plan">
+                </div>
+                <div class="plan-details">
+                    <h4>2 BHK Residence</h4>
+                    <div class="plan-specs">
+                        <div class="plan-spec">
+                            <i class="fas fa-ruler-combined"></i> 1,200 sq.ft.
+                        </div>
+                        <div class="plan-spec">
+                            <i class="fas fa-bed"></i> 2 Bedrooms
+                        </div>
+                        <div class="plan-spec">
+                            <i class="fas fa-bath"></i> 2 Bathrooms
+                        </div>
+                        <div class="plan-spec">
+                            <i class="fas fa-vector-square"></i> 1 Balcony
+                        </div>
+                    </div>
+                    <div class="plan-price">₹80 Lakhs Onwards</div>
+                    <button class="plan-btn">Download Brochure</button>
+                </div>
+            </div>
+            
+            <div class="plan-card">
+                <div class="plan-img">
+                    <img src="https://cms.interiorcompany.com/wp-content/uploads/2025/01/36x47-plan-for-2-bhk-house.jpg" alt="3 BHK Floor Plan">
+                </div>
+                <div class="plan-details">
+                    <h4>3 BHK Residence</h4>
+                    <div class="plan-specs">
+                        <div class="plan-spec">
+                            <i class="fas fa-ruler-combined"></i> 1,800 sq.ft.
+                        </div>
+                        <div class="plan-spec">
+                            <i class="fas fa-bed"></i> 3 Bedrooms
+                        </div>
+                        <div class="plan-spec">
+                            <i class="fas fa-bath"></i> 3 Bathrooms
+                        </div>
+                        <div class="plan-spec">
+                            <i class="fas fa-vector-square"></i> 2 Balconies
+                        </div>
+                    </div>
+                    <div class="plan-price">₹1.4 Cr Onwards</div>
+                    <button class="plan-btn">Download Brochure</button>
+                </div>
+            </div>
+            
+            <div class="plan-card">
+                <div class="plan-img">
+                    <img src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="4 BHK Floor Plan">
+                </div>
+                <div class="plan-details">
+                    <h4>4 BHK Residence</h4>
+                    <div class="plan-specs">
+                        <div class="plan-spec">
+                            <i class="fas fa-ruler-combined"></i> 3,500 sq.ft.
+                        </div>
+                        <div class="plan-spec">
+                            <i class="fas fa-bed"></i> 4 Bedrooms
+                        </div>
+                        <div class="plan-spec">
+                            <i class="fas fa-bath"></i> 4 Bathrooms
+                        </div>
+                        <div class="plan-spec">
+                            <i class="fas fa-vector-square"></i> 3 Balconies
+                        </div>
+                    </div>
+                    <div class="plan-price">₹2.5 Cr Onwards</div>
+                    <button class="plan-btn">Download Brochure</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Location Section -->
+    <section class="location-section" id="location">
+        <div class="section-title">
+            <h2>Location Advantages</h2>
+        </div>
+        
+        <div class="location-map">
+            <!-- In a real implementation, this would be a Google Maps embed -->
+            <img src="https://maps.googleapis.com/maps/api/staticmap?center=Kanakapura+Road,Bangalore&zoom=14&size=800x300&maptype=roadmap&markers=color:red%7CKanakapura+Road,Bangalore&key=YOUR_API_KEY" alt="Location Map" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <ul class="amenities-list">
+            <li><i class="fas fa-building"></i> 10 minutes to Orion Mall</li>
+            <li><i class="fas fa-subway"></i> 15 minutes to Metro Station</li>
+            <li><i class="fas fa-hospital"></i> 12 minutes to Fortis Hospital</li>
+            <li><i class="fas fa-graduation-cap"></i> Nearby to reputed schools</li>
+            <li><i class="fas fa-plane"></i> 45 minutes to Kempegowda Airport</li>
+            <li><i class="fas fa-shopping-bag"></i> Close to retail outlets</li>
+            <li><i class="fas fa-utensils"></i> Proximity to restaurants</li>
+            <li><i class="fas fa-leaf"></i> Near to parks</li>
+        </ul>
+    </section>
+    
+    <!-- Developer Section -->
+    <section class="developer-section">
+        <div class="developer-content">
+            <div class="developer-img">
+                <img src="https://preossdev.s3.ap-south-1.amazonaws.com/projectgallery/40ed042a-b12a-4d44-aad9-639fda0092b2.webp" alt="Prestige Group">
+            </div>
+            <div class="developer-info">
+                <h3>About Prestige Group</h3>
+                <p>Prestige Group is one of India's leading real estate developers with over three decades of experience in creating landmark properties across residential, commercial, retail, hospitality, and education sectors. Headquartered in Bangalore, the group has completed over 280 projects spanning 160 million square feet.</p>
+                <p>Known for their commitment to quality and timely delivery, Prestige Group has won numerous awards and accolades for their innovative designs and sustainable development practices.</p>
+                
+                <div class="developer-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">30+</div>
+                        <div class="stat-label">Years of Experience</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">280+</div>
+                        <div class="stat-label">Projects Completed</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">160M+</div>
+                        <div class="stat-label">Sq.Ft. Developed</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">50K+</div>
+                        <div class="stat-label">Happy Customers</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Testimonials
+    <section class="testimonials">
+        <div class="section-title">
+            <h2>What Our Customers Say</h2>
+        </div>
+        
+        <div class="testimonial-slider">
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <p>Investing in Sobha Royal Crest was the best decision we made. The attention to detail in construction and the quality of finishes is unmatched. The location is perfect with everything we need within a short distance.</p>
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-img">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Rajesh Kumar">
+                    </div>
+                    <div class="author-info">
+                        <h5>Rajesh Kumar</h5>
+                        <p>Resident at Sobha Emerald</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <p>Sobha's reputation for quality is well-deserved. The construction quality and design sensibility at Royal Crest is exceptional. The amenities rival five-star hotels and the concierge services make life so convenient.</p>
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-img">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Priya Nair">
+                    </div>
+                    <div class="author-info">
+                        <h5>Priya Nair</h5>
+                        <p>Investor in Sobha Projects</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <p>As an NRI, I was looking for a premium property in Bangalore that would offer good returns and hassle-free maintenance. Sobha Royal Crest exceeded my expectations with their professional approach and high standards.</p>
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-img">
+                        <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Arvind Patel">
+                    </div>
+                    <div class="author-info">
+                        <h5>Arvind Patel</h5>
+                        <p>NRI Investor</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+    <!-- Add this section before the footer section in your existing code -->
+
+
+
+
+<style>
+.inquiry-form {
+  max-width: 500px;
+  /*margin: 40px auto;*/
+  padding: 20px;
+  background: #f9f9f9;
+  border: 1px solid #ccc;
+  z-index: 10;
+  position: relative;
+}
+.submit-btn {
+  background-color: #0066cc;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  z-index: 20;
+  position: relative;
+}
+.submit-btn:hover {
+  background-color: #004c99;
+}
+</style>
+<!-- Inquiry Form Section -->
+<section class="inquiry-section" id="inquiry">
+    <div class="section-title">
+        <h2>Enquire Now</h2>
+        <p>Fill out the form below and our sales representative will contact you shortly</p>
+    </div>
+    
+    <div class="form-container">
+<form id="propertyInquiryForm" action="send-email.php" method="POST" class="inquiry-form">
+  <input type="hidden" name="project" value="Prestige Falcon City">
+  
+  <div class="form-group">
+    <label for="name">Full Name*</label>
+    <input type="text" id="name" name="name" required placeholder="Enter your full name">
+  </div>
+  
+  <div class="form-group">
+    <label for="email">Email*</label>
+    <input type="email" id="email" name="email" required placeholder="Enter your email address">
+  </div>
+  
+  <div class="form-group">
+    <label for="phone">Phone Number*</label>
+    <input type="tel" id="full_number" name="full_number" required placeholder="Enter your phone number">
+  </div>
+  
+  <div class="form-submit">
+    <button type="submit" class="submit-btn">
+      <i class="fas fa-paper-plane"></i> Submit Inquiry
+    </button>
+  </div>
+</form>
+
+        
+        <div class="form-sidebar">
+            <div class="sidebar-box">
+                <h4><i class="fas fa-headset"></i> Need Immediate Assistance?</h4>
+                <p>Call our sales team directly for instant support</p>
+                <a href="tel:+919876543210" class="sidebar-phone">
+                    <i class="fas fa-phone-alt"></i> +91-6366850754
+                </a>
+            </div>
+            
+            <!-- <div class="sidebar-box">
+                <h4><i class="fas fa-map-marker-alt"></i> Sales Office</h4>
+                <address>
+                    Sobha Royal Crest Sales Gallery<br>
+                    123 Lavelle Road<br>
+                    Bangalore - 560001<br>
+                    Karnataka, India
+                </address>
+                <a href="#" class="sidebar-link">
+                    <i class="fas fa-directions"></i> Get Directions
+                </a>
+            </div> -->
+        </div>
+    </div>
+</section>
+
+<!-- Add this CSS to your existing style section -->
+<style>
+    /* Inquiry Form Styles */
+    .inquiry-section {
+        padding: 80px 5%;
+        background-color: #f9f9f9;
+    }
+    
+    .inquiry-section .section-title {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    
+    .inquiry-section .section-title p {
+        max-width: 700px;
+        margin: 10px auto 0;
+        color: var(--light-text);
+    }
+    
+    .form-container {
+        display: grid;
+        grid-template-columns: 1fr 350px;
+        gap: 40px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    .inquiry-form {
+        background-color: var(--white);
+        padding: 40px;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+    
+    .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .form-group {
+        margin-bottom: 20px;
+    }
+    
+    .form-group.full-width {
+        grid-column: span 2;
+    }
+    
+    .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 500;
+        color: var(--secondary-color);
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        width: 100%;
+        padding: 12px 15px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 15px;
+        transition: var(--transition);
+    }
+    
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+        border-color: var(--primary-color);
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(184, 134, 11, 0.2);
+    }
+    
+    .form-group textarea {
+        resize: vertical;
+        min-height: 100px;
+    }
+    
+    .form-submit {
+        grid-column: span 2;
+        text-align: center;
+        margin-top: 20px;
+    }
+    
+    .submit-btn {
+        background-color: var(--primary-color);
+        color: var(--white);
+        padding: 15px 30px;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: var(--transition);
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .submit-btn:hover {
+        background-color: #a5770a;
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Form Sidebar */
+    .form-sidebar {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .sidebar-box {
+        background-color: var(--white);
+        padding: 25px;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+    
+    .sidebar-box h4 {
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+        color: var(--secondary-color);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .sidebar-box h4 i {
+        color: var(--primary-color);
+    }
+    
+    .sidebar-box p {
+        margin-bottom: 15px;
+        color: var(--light-text);
+    }
+    
+    .sidebar-phone {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--primary-color);
+        font-weight: 600;
+        text-decoration: none;
+        transition: var(--transition);
+    }
+    
+    .sidebar-phone:hover {
+        color: #a5770a;
+    }
+    
+    .sidebar-phone i {
+        font-size: 1.2rem;
+    }
+    
+    address {
+        font-style: normal;
+        margin-bottom: 15px;
+        line-height: 1.6;
+    }
+    
+    .sidebar-link {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: var(--primary-color);
+        text-decoration: none;
+        font-weight: 500;
+        transition: var(--transition);
+    }
+    
+    .sidebar-link:hover {
+        color: #a5770a;
+    }
+    
+    /* Form Validation */
+    .form-group.error input,
+    .form-group.error select,
+    .form-group.error textarea {
+        border-color: #e74c3c;
+    }
+    
+    .form-group .error-message {
+        color: #e74c3c;
+        font-size: 13px;
+        margin-top: 5px;
+        display: none;
+    }
+    
+    .form-group.error .error-message {
+        display: block;
+    }
+    
+    /* Success Message */
+    .form-success {
+        display: none;
+        text-align: center;
+        padding: 40px;
+        background-color: var(--white);
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+    
+    .form-success i {
+        font-size: 60px;
+        color: #2ecc71;
+        margin-bottom: 20px;
+    }
+    
+    .form-success h3 {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+        color: var(--secondary-color);
+    }
+    
+    .form-success p {
+        margin-bottom: 20px;
+        color: var(--light-text);
+    }
+    
+    /* Responsive Styles */
+    @media (max-width: 992px) {
+        .form-container {
+            grid-template-columns: 1fr;
+        }
+        
+        .form-sidebar {
+            grid-row: 1;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .form-row {
+            grid-template-columns: 1fr;
+        }
+        
+        .form-group.full-width {
+            grid-column: span 1;
+        }
+        
+        .inquiry-form {
+            padding: 30px 20px;
+        }
+    }
+</style>
+
+<!--<script>-->
+<!--    document.getElementById('propertyInquiryForm').addEventListener('submit', function(e) {-->
+<!--        e.preventDefault();-->
+        
+<!--        let isValid = true;-->
+<!--        const form = this;-->
+<!--        const requiredFields = form.querySelectorAll('[required]');-->
+        
+<!--        form.querySelectorAll('.form-group').forEach(group => {-->
+<!--            group.classList.remove('error');-->
+<!--            const errorMsg = group.querySelector('.error-message');-->
+<!--            if (errorMsg) errorMsg.remove();-->
+<!--        });-->
+        
+<!--        requiredFields.forEach(field => {-->
+<!--            if (!field.value.trim()) {-->
+<!--                isValid = false;-->
+<!--                const formGroup = field.closest('.form-group');-->
+<!--                formGroup.classList.add('error');-->
+                
+<!--                if (!formGroup.querySelector('.error-message')) {-->
+<!--                    const errorMsg = document.createElement('div');-->
+<!--                    errorMsg.className = 'error-message';-->
+<!--                    errorMsg.textContent = 'This field is required';-->
+<!--                    formGroup.appendChild(errorMsg);-->
+<!--                }-->
+<!--            }-->
+<!--        });-->
+        
+<!--        const emailField = form.querySelector('#email');-->
+<!--        if (emailField.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailField.value)) {-->
+<!--            isValid = false;-->
+<!--            const formGroup = emailField.closest('.form-group');-->
+<!--            formGroup.classList.add('error');-->
+            
+<!--            if (!formGroup.querySelector('.error-message')) {-->
+<!--                const errorMsg = document.createElement('div');-->
+<!--                errorMsg.className = 'error-message';-->
+<!--                errorMsg.textContent = 'Please enter a valid email address';-->
+<!--                formGroup.appendChild(errorMsg);-->
+<!--            }-->
+<!--        }-->
+        
+<!--        const phoneField = form.querySelector('#phone');-->
+<!--        if (phoneField.value && !/^[0-9]{10,15}$/.test(phoneField.value)) {-->
+<!--            isValid = false;-->
+<!--            const formGroup = phoneField.closest('.form-group');-->
+<!--            formGroup.classList.add('error');-->
+            
+<!--            if (!formGroup.querySelector('.error-message')) {-->
+<!--                const errorMsg = document.createElement('div');-->
+<!--                errorMsg.className = 'error-message';-->
+<!--                errorMsg.textContent = 'Please enter a valid phone number';-->
+<!--                formGroup.appendChild(errorMsg);-->
+<!--            }-->
+<!--        }-->
+        
+<!--        if (isValid) {-->
+            
+<!--            let successMsg = form.querySelector('.form-success');-->
+<!--            if (!successMsg) {-->
+<!--                successMsg = document.createElement('div');-->
+<!--                successMsg.className = 'form-success';-->
+<!--                successMsg.innerHTML = `-->
+<!--                    <i class="fas fa-check-circle"></i>-->
+<!--                    <h3>Thank You for Your Inquiry!</h3>-->
+<!--                    <p>We have received your details and our sales representative will contact you within 24 hours.</p>-->
+<!--                    <button class="submit-btn" onclick="location.reload()">-->
+<!--                        <i class="fas fa-undo"></i> Submit Another Inquiry-->
+<!--                    </button>-->
+<!--                `;-->
+<!--                form.parentNode.insertBefore(successMsg, form);-->
+<!--            }-->
+            
+<!--            form.style.display = 'none';-->
+<!--            successMsg.style.display = 'block';-->
+<!--        }-->
+<!--    });-->
+<!--</script>-->
+    
+    <!-- CTA Section -->
+    <section class="cta-section" id="contact">
+        <h3>Interested in Sobha Royal Crest?</h3>
+        <p>Contact our sales team for exclusive offers and personalized site visits. Limited units available in Bangalore's most prestigious address.</p>
+        <div class="cta-btns">
+            <button class="cta-btn primary-cta">
+                <i class="fas fa-phone-alt"></i> Call Sales Executive
+            </button>
+            <button class="cta-btn secondary-cta">
+                <i class="fas fa-calendar-alt"></i> Schedule Site Visit
+            </button>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>About Prestige Falcon City</h4>
+                <p>Prestige Falcon City is an ultra-luxurious residential project located on Lavelle Road, Bangalore, offering 3, 4 & 5 BHK residences with world-class amenities and finishes.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#overview"><i class="fas fa-chevron-right"></i> Overview</a></li>
+                    <li><a href="#gallery"><i class="fas fa-chevron-right"></i> Gallery</a></li>
+                    <li><a href="#amenities"><i class="fas fa-chevron-right"></i> Amenities</a></li>
+                    <li><a href="#floor-plans"><i class="fas fa-chevron-right"></i> Floor Plans</a></li>
+                    <li><a href="#location"><i class="fas fa-chevron-right"></i> Location</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <ul class="footer-links">
+                    <li><a href="#"><i class="fas fa-map-marker-alt"></i> Prestige Falcon City, Bangalore - 560001</a></li>
+                    <!-- <li><a href="tel:+919876543210"><i class="fas fa-phone-alt"></i> +91 98765 43210</a></li>
+                    <li><a href="mailto:sales@sobhacrest.com"><i class="fas fa-envelope"></i> sales@sobhacrest.com</a></li>
+                    <li><a href="#"><i class="fas fa-clock"></i> Mon-Sat: 9:00 AM - 7:00 PM</a></li> -->
+                </ul>
+            </div>
+            
+           
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 Prestige Falcon City Crest. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a></p>
+            <p>*Prices mentioned are subject to change without prior notice. E.&O.E.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple JavaScript for mobile menu toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            const nav = document.querySelector('nav ul');
+            if (nav.style.display === 'flex') {
+                nav.style.display = 'none';
+            } else {
+                nav.style.display = 'flex';
+            }
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+                header.style.background = 'var(--white)';
+            }
+        });
+    </script>
+</body>
+</html>

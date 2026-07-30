@@ -1,0 +1,2045 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>apartment Investments | Premium Real Estate Opportunities</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>/* Base Styles */
+        :root {
+            --primary: #2c3e50;
+            --secondary: #e74c3c;
+            --accent: #3498db;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --text: #333;
+            --text-light: #7f8c8d;
+            --success: #27ae60;
+            --warning: #f39c12;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: #f9f9f9;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: var(--secondary);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+        
+        .btn:hover {
+            background-color: #c0392b;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+        
+       
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../brigade-prestige-puravankara-images/hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 2500px 0 110px;
+            text-align: center;
+        }
+        
+        .hero-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .search-box {
+            display: flex;
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+        
+        .search-box input {
+            flex: 1;
+            padding: 15px;
+            border: none;
+            border-radius: 4px 0 0 4px;
+            font-size: 16px;
+        }
+        
+        .search-btn {
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .stat-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 20px 30px;
+            border-radius: 8px;
+            backdrop-filter: blur(5px);
+        }
+        
+        .stat-card h3 {
+            font-size: 2rem;
+            margin-bottom: 5px;
+            color: white;
+        }
+        
+        .stat-card p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        /* Featured Properties */
+        .featured-properties {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .featured-properties h2 {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2rem;
+            color: var(--primary);
+        }
+        
+        .property-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .property-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .property-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .property-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .property-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .property-card:hover .property-image img {
+            transform: scale(1.05);
+        }
+        
+        .property-details {
+            padding: 20px;
+        }
+        
+        .property-details h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+        
+        .property-location {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            color: var(--text-light);
+        }
+        
+        .property-location i {
+            margin-right: 5px;
+        }
+        
+        .property-features {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+            padding: 10px 0;
+        }
+        
+        .property-features span {
+            display: flex;
+            align-items: center;
+            font-size: 0.9rem;
+        }
+        
+        .property-features i {
+            margin-right: 5px;
+            color: var(--secondary);
+        }
+        
+        .property-price {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+        
+        .property-price span {
+            font-size: 0.9rem;
+            font-weight: normal;
+            color: var(--text-light);
+        }
+        
+        .view-all {
+            display: block;
+            width: fit-content;
+            margin: 0 auto;
+        }
+        
+        /* Calculator Preview */
+        .calculator-preview {
+            padding: 80px 0;
+            background-color: var(--light);
+        }
+        
+        .calc-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .calc-content h2 {
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        .calc-content p {
+            margin-bottom: 30px;
+            color: var(--text-light);
+        }
+        
+        .calc-preview {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            margin-bottom: 30px;
+        }
+        
+        .input-group {
+            margin-bottom: 20px;
+        }
+        
+        .input-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+        
+        .slider {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        
+        #investmentValue {
+            display: block;
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--secondary);
+        }
+        
+        .result {
+            margin-top: 20px;
+        }
+        
+        .result p {
+            margin-bottom: 5px;
+            color: var(--text-light);
+        }
+        
+        .result h3 {
+            font-size: 2rem;
+            color: var(--success);
+        }
+        
+        .calc-btn {
+            background-color: var(--primary);
+        }
+        
+        /* Market Insights */
+        .market-insights {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .market-insights h2 {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2rem;
+            color: var(--primary);
+        }
+        
+        .insights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .insight-card {
+            background-color: var(--light);
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .insight-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .chart-container {
+            height: 200px;
+            margin-bottom: 20px;
+        }
+        
+        .insight-card h3 {
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 0;
+            background-color: var(--light);
+        }
+        
+        .testimonials h2 {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2rem;
+            color: var(--primary);
+        }
+        
+        .testimonial-slider {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            color: var(--text);
+        }
+        
+        .testimonial-author {
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .testimonial-role {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-col h3 {
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--secondary);
+        }
+        
+        .footer-col p {
+            margin-bottom: 20px;
+            color: #bdc3c7;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background-color: var(--secondary);
+            transform: translateY(-3px);
+        }
+        
+        .footer-col ul {
+            list-style: none;
+        }
+        
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-col ul li a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-col ul li a:hover {
+            color: var(--secondary);
+            padding-left: 5px;
+        }
+        
+        .footer-col ul li i {
+            margin-right: 10px;
+            color: var(--secondary);
+            width: 20px;
+            text-align: center;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #bdc3c7;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-stats {
+                flex-wrap: wrap;
+            }
+            
+            .stat-card {
+                width: calc(50% - 15px);
+                margin-bottom: 15px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background-color: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: var(--shadow);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            .hero {
+                padding: 150px 0 80px;
+            }
+            
+            .search-box {
+                flex-direction: column;
+            }
+            
+            .search-box input {
+                border-radius: 4px;
+                margin-bottom: 10px;
+            }
+            
+            .search-btn {
+                border-radius: 4px;
+                width: 100%;
+            }
+            
+            .stat-card {
+                width: 100%;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero-content h1 {
+                font-size: 1.8rem;
+            }
+            
+            .hero-content p {
+                font-size: 1rem;
+            }
+            
+            .featured-properties, .calculator-preview, .market-insights, .testimonials {
+                padding: 60px 0;
+            }
+        }
+        /* Bangalore Plots Specific Styles */
+.bangalore-header {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('puravankara-images/purva-blubelle.jpg');
+
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 120px 0 210px;
+    text-align: center;
+    margin-top: 70px; /* Account for fixed navbar */
+}
+
+.bangalore-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.bangalore-header p {
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.location-filters {
+    padding: 30px 0;
+    background-color: #f5f5f5;
+}
+
+.filter-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.filter-btn {
+    padding: 10px 20px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: 500;
+}
+
+.filter-btn:hover {
+    background-color: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+.filter-btn.active {
+    background-color: var(--secondary);
+    color: white;
+    border-color: var(--secondary);
+}
+
+.plots-grid {
+    padding: 60px 0;
+}
+
+.price-badge {
+    display: none;
+}
+
+.property-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.action-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 8px;
+    background-color: var(--light);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: var(--transition);
+    text-decoration: none;
+    color: inherit;
+}
+
+.action-btn:hover {
+    background-color: var(--primary);
+    color: white;
+}
+
+.action-btn i {
+    font-size: 0.9rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .bangalore-header {
+        padding: 100px 0 40px;
+    }
+    
+    .bangalore-header h1 {
+        font-size: 2rem;
+    }
+    
+    .filter-tabs {
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding-bottom: 10px;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .property-actions {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Navigation */
+.navbar {
+    background-color: white;
+    box-shadow: var(--shadow);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    padding: 15px 0;
+    transition: var(--transition);
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between; /* Logo left, links right */
+    align-items: center;
+}
+
+.navbar.scrolled {
+    padding: 10px 0;
+    background-color: rgba(255, 255, 255, 0.95);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.logo span {
+    color: var(--secondary);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    color: var(--secondary);
+}
+
+.login-btn {
+    background-color: var(--primary);
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.login-btn:hover {
+    background-color: var(--secondary);
+}
+
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--primary);
+}
+
+/* Dropdown styles */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    border-radius: 8px;
+    padding: 10px 0;
+}
+
+.dropdown-content a {
+    color: var(--text);
+    padding: 10px 16px;
+    text-decoration: none;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: #f8f9fa;
+    color: var(--secondary);
+    padding-left: 20px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropbtn i {
+    margin-left: 5px;
+    font-size: 12px;
+    transition: transform 0.3s ease;
+}
+
+.dropdown:hover .dropbtn i {
+    transform: rotate(180deg);
+}
+
+/* Responsive styles for nav */
+@media (max-width: 992px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 15px;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .navbar.active .nav-links {
+        display: flex;
+        background-color: #fff;
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    .navbar.active .nav-links a,
+    .navbar.active .login-btn {
+        width: 100%;
+        text-align: left;
+    }
+
+    .dropdown-content {
+        position: static;
+        box-shadow: none;
+        display: none;
+    }
+
+    .navbar.active .dropdown.active .dropdown-content {
+        display: block;
+        padding-left: 10px;
+    }
+}
+
+/* Enquiry Popup Form */
+.enquiry-popup {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+}
+.enquiry-popup.active {
+    display: flex;
+}
+.enquiry-popup-content {
+    background: white;
+    padding: 30px 35px;
+    border-radius: 12px;
+    max-width: 420px;
+    width: 90%;
+    position: relative;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    animation: slideUp 0.3s ease;
+}
+@keyframes slideUp {
+    from { transform: translateY(30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+.enquiry-popup-content .close-enquiry {
+    position: absolute;
+    top: 12px;
+    right: 18px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #888;
+    transition: color 0.2s;
+}
+.enquiry-popup-content .close-enquiry:hover { color: #e74c3c; }
+.enquiry-popup-content h2 {
+    margin-bottom: 20px;
+    color: #2c3e50;
+    font-size: 1.6rem;
+}
+.enquiry-popup-content .form-group {
+    margin-bottom: 18px;
+}
+.enquiry-popup-content .form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #333;
+}
+.enquiry-popup-content .form-group input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border 0.2s;
+}
+.enquiry-popup-content .form-group input:focus {
+    border-color: #e74c3c;
+    outline: none;
+}
+.enquiry-popup-content .btn-submit-enquiry {
+    width: 100%;
+    padding: 14px;
+    background: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.enquiry-popup-content .btn-submit-enquiry:hover {
+    background: #c0392b;
+}
+
+/* Brochure Popup Form */
+.brochure-popup {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+}
+.brochure-popup.active {
+    display: flex;
+}
+.brochure-popup-content {
+    background: white;
+    padding: 30px 35px;
+    border-radius: 12px;
+    max-width: 420px;
+    width: 90%;
+    position: relative;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    animation: slideUp 0.3s ease;
+}
+.brochure-popup-content .close-brochure {
+    position: absolute;
+    top: 12px;
+    right: 18px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #888;
+    transition: color 0.2s;
+}
+.brochure-popup-content .close-brochure:hover { color: #e74c3c; }
+.brochure-popup-content h2 {
+    margin-bottom: 20px;
+    color: #2c3e50;
+    font-size: 1.6rem;
+}
+.brochure-popup-content .form-group {
+    margin-bottom: 18px;
+}
+.brochure-popup-content .form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #333;
+}
+.brochure-popup-content .form-group input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border 0.2s;
+}
+.brochure-popup-content .form-group input:focus {
+    border-color: #e74c3c;
+    outline: none;
+}
+.brochure-popup-content .btn-submit-brochure {
+    width: 100%;
+    padding: 14px;
+    background: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.brochure-popup-content .btn-submit-brochure:hover {
+    background: #c0392b;
+}
+
+/* Enquiry Now Button - Vertical Left */
+.enquiry-vertical-btn {
+    position: fixed;
+    left: 15px;
+    top: 70%;
+    transform: translateY(-50%) rotate(-90deg);
+    transform-origin: left center;
+    z-index: 999;
+    background-color: #e74c3c;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 0 0 8px 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+.enquiry-vertical-btn:hover {
+    background-color: #c0392b;
+    padding: 12px 28px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+}
+@media (max-width: 768px) {
+    .enquiry-vertical-btn {
+        padding: 8px 14px;
+        font-size: 0.8rem;
+        left: 15px;
+    }
+}
+</style>
+</head>
+<body>
+
+<!-- Enquiry Now Vertical Button -->
+<button class="enquiry-vertical-btn" id="enquiryVerticalBtn">Enquiry Now</button>
+
+<!-- Enquiry Popup Form -->
+<div class="enquiry-popup" id="enquiryPopup">
+    <div class="enquiry-popup-content">
+        <span class="close-enquiry" id="closeEnquiry">&times;</span>
+        <h2>Get in Touch</h2>
+        <form id="enquiryForm">
+            <div class="form-group">
+                <label for="enquiryName">Full Name</label>
+                <input type="text" id="enquiryName" placeholder="Your full name" required>
+            </div>
+            <div class="form-group">
+                <label for="enquiryEmail">Email Address</label>
+                <input type="email" id="enquiryEmail" placeholder="your@email.com" required>
+            </div>
+            <div class="form-group">
+                <label for="enquiryPhone">Phone Number</label>
+                <input type="tel" id="enquiryPhone" placeholder="+91-6366850754" required>
+            </div>
+            <button type="submit" class="btn-submit-enquiry">Submit Enquiry</button>
+        </form>
+    </div>
+</div>
+
+<!-- Brochure Popup Form -->
+<div class="brochure-popup" id="brochurePopup">
+    <div class="brochure-popup-content">
+        <span class="close-brochure" id="closeBrochure">&times;</span>
+        <h2>Download Brochure</h2>
+        <form id="brochureForm">
+            <div class="form-group">
+                <label for="brochureName">Full Name</label>
+                <input type="text" id="brochureName" placeholder="Your full name" required>
+            </div>
+            <div class="form-group">
+                <label for="brochureEmail">Email Address</label>
+                <input type="email" id="brochureEmail" placeholder="your@email.com" required>
+            </div>
+            <div class="form-group">
+                <label for="brochurePhone">Phone Number</label>
+                <input type="tel" id="brochurePhone" placeholder="+91-6366850754" required>
+            </div>
+            <button type="submit" class="btn-submit-brochure">Download Brochure</button>
+        </form>
+    </div>
+</div>
+
+    <!-- Navigation -->
+<nav class="navbar">
+    <div class="container">
+        <a href="index.html" class="logo">Prime<span>Apartment</span></a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            
+            <!-- Properties dropdown with builders -->
+            <div class="dropdown">
+                <a href="properties.html" class="dropbtn">Builders <i class="fas fa-chevron-down"></i></a>
+                <div class="dropdown-content">
+                    <a href="#">DLF Limited</a>
+                    <a href="#">Sobha Limited</a>
+                    <a href="#">Godrej Properties</a>
+                    <a href="#">Prestige Group</a>
+                    <a href="#">Brigade Group</a>
+                    <a href="#">Lodha Group</a>
+                    <a href="#">Oberoi Realty</a>
+                    <a href="#">Puravankara</a>
+                    <a href="#">Kolte-Patil</a>
+                    <a href="#">Signature Global</a>
+                </div>
+            </div>
+            
+            <a href="calculator.html">Upcoming Projects</a>
+            <a href="blog.html">Investment Guide</a>
+            <a href="contact.html">Contact</a>
+            <!-- Investor Login replaced with Enquiry button -->
+            <button class="btn login-btn" id="navEnquiryBtn">Enquiry</button>
+        </div>
+        <button class="hamburger"><i class="fas fa-bars"></i></button>
+    </div>
+</nav>
+
+<script>
+    // Mobile menu toggle
+    document.querySelector('.hamburger').addEventListener('click', function() {
+        document.querySelector('.navbar').classList.toggle('active');
+    });
+    
+    // Dropdown toggle for mobile
+    if (window.innerWidth <= 992) {
+        const dropdowns = document.querySelectorAll('.dropdown');
+        dropdowns.forEach(dropdown => {
+            const dropbtn = dropdown.querySelector('.dropbtn');
+            dropbtn.addEventListener('click', function(e) {
+                if (window.innerWidth <= 992) {
+                    e.preventDefault();
+                    dropdown.classList.toggle('active');
+                }
+            });
+        });
+    }
+</script>
+
+     <!-- Bangalore Plots Header -->
+     <section class="bangalore-header">
+        <div class="container">
+            <h1>PURVANKARA APARTMENT FOR SALE IN BANGALORE</h1>
+            <p>Explore over 100+ Apartment  developments in Bangalore, offering a wide range of options with prices starting from ₹18 lakhs to ₹5 crore. Find your perfect plot in premium localities across the city</p>
+        </div>
+    </section>
+
+    <!-- Location Filters -->
+    <section class="location-filters">
+        <div class="container">
+            <div class="filter-tabs">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="north">North Bangalore</button>
+                <button class="filter-btn" data-filter="south">South Bangalore</button>
+                <button class="filter-btn" data-filter="east">East Bangalore</button>
+                <button class="filter-btn" data-filter="west">West Bangalore</button>
+                <button class="filter-btn" data-filter="whitefield">whitefield</button>
+            </div>
+        </div>
+    </section>
+      <!-- Plots Grid -->
+    <section class="plots-grid">
+        <div class="container">
+            <div class="property-grid">
+    <!-- Purva Codename Infinity -->
+<div class="property-card" data-location="north">
+    <div class="property-image">
+        <img src="puravankara-images/purva-codename-infinity.jpg" alt="Purva Codename Infinity">
+    </div>
+    <div class="property-details">
+        <h3>Purva Codename Infinity</h3>
+        <div class="property-location">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Chikkajala, International Airport Road, Bangalore</span>
+        </div>
+        <div class="property-actions">
+            <a href="purva-codename-infinity.html" class="action-btn" aria-label="About Purva Codename Infinity Project">
+                <i class="fas fa-info-circle"></i> About Project
+            </a>
+            <button class="action-btn brochure-btn" data-project="Purva Codename Infinity">
+                <i class="fas fa-download"></i> Brochure
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Purva Codename AI -->
+<div class="property-card" data-location="south-east">
+    <div class="property-image">
+        <img src="puravankara-images/purva-codename.webp" alt="Purva Codename AI">
+    </div>
+    <div class="property-details">
+        <h3>Purva Codename AI</h3>
+        <div class="property-location">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Bellandur, Sarjapur Road, Bangalore</span>
+        </div>
+        <div class="property-actions">
+            <a href="purva-codename-ai.html" class="action-btn" aria-label="About Purva Codename AI Project">
+                <i class="fas fa-info-circle"></i> About Project
+            </a>
+            <button class="action-btn brochure-btn" data-project="Purva Codename AI">
+                <i class="fas fa-download"></i> Brochure
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Purva Blubelle -->
+<div class="property-card" data-location="west">
+    <div class="property-image">
+        <img src="puravankara-images/purva-blubelle.jpg" alt="Purva Blubelle">
+    </div>
+    <div class="property-details">
+        <h3>Purva Blubelle</h3>
+        <div class="property-location">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Magadi Road, Bangalore</span>
+        </div>
+        <div class="property-actions">
+            <a href="purva-blubelle.html" class="action-btn" aria-label="About Purva Blubelle Project">
+                <i class="fas fa-info-circle"></i> About Project
+            </a>
+            <button class="action-btn brochure-btn" data-project="Purva Blubelle">
+                <i class="fas fa-download"></i> Brochure
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Purva Meraki -->
+<div class="property-card" data-location="south">
+    <div class="property-image">
+        <img src="puravankara-images/purva-meraki.webp" alt="Purva Meraki">
+    </div>
+    <div class="property-details">
+        <h3>Purva Meraki</h3>
+        <div class="property-location">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>HSR Layout, Bangalore</span>
+        </div>
+        <div class="property-actions">
+            <a href="purva-meraki.html" class="action-btn" aria-label="About Purva Meraki Project">
+                <i class="fas fa-info-circle"></i> About Project
+            </a>
+            <button class="action-btn brochure-btn" data-project="Purva Meraki">
+                <i class="fas fa-download"></i> Brochure
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Purva Celestial -->
+<div class="property-card" data-location="north">
+    <div class="property-image">
+        <img src="puravankara-images/purva-celestial.webp" alt="Purva Celestial">
+    </div>
+    <div class="property-details">
+        <h3>Purva Celestial</h3>
+        <div class="property-location">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Hosahalli, Airport Road, Bangalore</span>
+        </div>
+        <div class="property-actions">
+            <a href="purva-celestial.html" class="action-btn" aria-label="About Purva Celestial Project">
+                <i class="fas fa-info-circle"></i> About Project
+            </a>
+            <button class="action-btn brochure-btn" data-project="Purva Celestial">
+                <i class="fas fa-download"></i> Brochure
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Purva Park Hill -->
+<div class="property-card" data-location="south">
+    <div class="property-image">
+        <img src="puravankara-images/purva-park-hill.jpg" alt="Purva Park Hill">
+    </div>
+    <div class="property-details">
+        <h3>Purva Park Hill</h3>
+        <div class="property-location">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Kanakapura Road, Bangalore</span>
+        </div>
+        <div class="property-actions">
+            <a href="purva-park-hill.html" class="action-btn" aria-label="About Purva Park Hill Project">
+                <i class="fas fa-info-circle"></i> About Project
+            </a>
+            <button class="action-btn brochure-btn" data-project="Purva Park Hill">
+                <i class="fas fa-download"></i> Brochure
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Purva Orient Grand -->
+<div class="property-card" data-location="central">
+    <div class="property-image">
+        <img src="puravankara-images/purva-orient-grand.webp" alt="Purva Orient Grand">
+    </div>
+    <div class="property-details">
+        <h3>Purva Orient Grand</h3>
+        <div class="property-location">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Sudhama Nagar, Richmond Road, Bangalore</span>
+        </div>
+        <div class="property-actions">
+            <a href="purva-orient-grand.html" class="action-btn" aria-label="About Purva Orient Grand Project">
+                <i class="fas fa-info-circle"></i> About Project
+            </a>
+            <button class="action-btn brochure-btn" data-project="Purva Orient Grand">
+                <i class="fas fa-download"></i> Brochure
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Nucleus at Purva Zenium -->
+<div class="property-card" data-location="north">
+    <div class="property-image">
+        <img src="puravankara-images/nucleus-at-purva-zenium.jpeg" alt="Nucleus at Purva Zenium">
+    </div>
+    <div class="property-details">
+        <h3>Nucleus at Purva Zenium</h3>
+        <div class="property-location">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Hosahalli, International Airport Road, Bangalore</span>
+        </div>
+        <div class="property-actions">
+            <a href="nucleus-at-purva-zenium.html" class="action-btn" aria-label="About Nucleus at Purva Zenium Project">
+                <i class="fas fa-info-circle"></i> About Project
+            </a>
+            <button class="action-btn brochure-btn" data-project="Nucleus at Purva Zenium">
+                <i class="fas fa-download"></i> Brochure
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Purva Promenade -->
+<div class="property-card" data-location="north">
+    <div class="property-image">
+        <img src="puravankara-images/purva-promenade.webp" alt="Purva Promenade">
+    </div>
+    <div class="property-details">
+        <h3>Purva Promenade</h3>
+        <div class="property-location">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Hennur Road, Bangalore</span>
+        </div>
+        <div class="property-actions">
+            <a href="purva-promenade.html" class="action-btn" aria-label="About Purva Promenade Project">
+                <i class="fas fa-info-circle"></i> About Project
+            </a>
+            <button class="action-btn brochure-btn" data-project="Purva Promenade">
+                <i class="fas fa-download"></i> Brochure
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Purva Atmosphere -->
+<div class="property-card" data-location="north">
+    <div class="property-image">
+        <img src="puravankara-images/purva-atmosphere.webp" alt="Purva Atmosphere">
+    </div>
+    <div class="property-details">
+        <h3>Purva Atmosphere</h3>
+        <div class="property-location">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Thanisandra Road, Bangalore</span>
+        </div>
+        <div class="property-actions">
+            <a href="purva-atmosphere.html" class="action-btn" aria-label="About Purva Atmosphere Project">
+                <i class="fas fa-info-circle"></i> About Project
+            </a>
+            <button class="action-btn brochure-btn" data-project="Purva Atmosphere">
+                <i class="fas fa-download"></i> Brochure
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Purva Zenium -->
+<div class="property-card" data-location="north">
+    <div class="property-image">
+        <img src="puravankara-images/purva-zenium.webp" alt="Purva Zenium">
+    </div>
+    <div class="property-details">
+        <h3>Purva Zenium</h3>
+        <div class="property-location">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Hosahalli, Bellary Road, Bangalore</span>
+        </div>
+        <div class="property-actions">
+            <a href="purva-zenium.html" class="action-btn" aria-label="About Purva Zenium Project">
+                <i class="fas fa-info-circle"></i> About Project
+            </a>
+            <button class="action-btn brochure-btn" data-project="Purva Zenium">
+                <i class="fas fa-download"></i> Brochure
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Purva Sammys Dreamland -->
+<div class="property-card" data-location="north">
+    <div class="property-image">
+        <img src="puravankara-images/purva-sammys-dreamland.jpg" alt="Purva Sammys Dreamland">
+    </div>
+    <div class="property-details">
+        <h3>Purva Sammys Dreamland</h3>
+        <div class="property-location">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Yelahanka, Airport Road, Bangalore</span>
+        </div>
+        <div class="property-actions">
+            <a href="purva-sammys-dreamland.html" class="action-btn" aria-label="About Purva Sammys Dreamland Project">
+                <i class="fas fa-info-circle"></i> About Project
+            </a>
+            <button class="action-btn brochure-btn" data-project="Purva Sammys Dreamland">
+                <i class="fas fa-download"></i> Brochure
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Purva 270 -->
+<div class="property-card" data-location="east">
+    <div class="property-image">
+        <img src="puravankara-images/purva-270.jpg" alt="Purva 270">
+    </div>
+    <div class="property-details">
+        <h3>Purva 270</h3>
+        <div class="property-location">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>CV Raman Nagar, Bangalore</span>
+        </div>
+        <div class="property-actions">
+            <a href="purva-270.html" class="action-btn" aria-label="About Purva 270 Project">
+                <i class="fas fa-info-circle"></i> About Project
+            </a>
+            <button class="action-btn brochure-btn" data-project="Purva 270">
+                <i class="fas fa-download"></i> Brochure
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Purva Sunflower -->
+<div class="property-card" data-location="west">
+    <div class="property-image">
+        <img src="puravankara-images/purva-sunflower.jpg" alt="Purva Sunflower">
+    </div>
+    <div class="property-details">
+        <h3>Purva Sunflower</h3>
+        <div class="property-location">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Magadi Road, Bangalore</span>
+        </div>
+        <div class="property-actions">
+            <a href="purva-sunflower.html" class="action-btn" aria-label="About Purva Sunflower Project">
+                <i class="fas fa-info-circle"></i> About Project
+            </a>
+            <button class="action-btn brochure-btn" data-project="Purva Sunflower">
+                <i class="fas fa-download"></i> Brochure
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Purva Coronation Square -->
+<div class="property-card" data-location="south">
+    <div class="property-image">
+        <img src="puravankara-images/purva-coronation-square.jpg" alt="Purva Coronation Square">
+    </div>
+    <div class="property-details">
+        <h3>Purva Coronation Square</h3>
+        <div class="property-location">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>JP Nagar, Bangalore</span>
+        </div>
+        <div class="property-actions">
+            <a href="purva-coronation-square.html" class="action-btn" aria-label="About Purva Coronation Square Project">
+                <i class="fas fa-info-circle"></i> About Project
+            </a>
+            <button class="action-btn brochure-btn" data-project="Purva Coronation Square">
+                <i class="fas fa-download"></i> Brochure
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Purva Skydale -->
+<div class="property-card" data-location="south-east">
+    <div class="property-image">
+        <img src="puravankara-images/purva-skydale.jpg" alt="Purva Skydale">
+    </div>
+    <div class="property-details">
+        <h3>Purva Skydale</h3>
+        <div class="property-location">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Haralur Road, Sarjapur Road, Bangalore</span>
+        </div>
+        <div class="property-actions">
+            <a href="purva-skydale.html" class="action-btn" aria-label="About Purva Skydale Project">
+                <i class="fas fa-info-circle"></i> About Project
+            </a>
+            <button class="action-btn brochure-btn" data-project="Purva Skydale">
+                <i class="fas fa-download"></i> Brochure
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Purva Waves -->
+<div class="property-card" data-location="north">
+    <div class="property-image">
+        <img src="puravankara-images/purva-waves.avif" alt="Purva Waves">
+    </div>
+    <div class="property-details">
+        <h3>Purva Waves</h3>
+        <div class="property-location">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Hennur Road, Bangalore</span>
+        </div>
+        <div class="property-actions">
+            <a href="purva-waves.html" class="action-btn" aria-label="About Purva Waves Project">
+                <i class="fas fa-info-circle"></i> About Project
+            </a>
+            <button class="action-btn brochure-btn" data-project="Purva Waves">
+                <i class="fas fa-download"></i> Brochure
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Purva Palm Beach -->
+<div class="property-card" data-location="north">
+    <div class="property-image">
+        <img src="puravankara-images/purva-palm-beach.avif" alt="Purva Palm Beach">
+    </div>
+    <div class="property-details">
+        <h3>Purva Palm Beach</h3>
+        <div class="property-location">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Hennur Road, Bangalore</span>
+        </div>
+        <div class="property-actions">
+            <a href="purva-palm-beach.html" class="action-btn" aria-label="About Purva Palm Beach Project">
+                <i class="fas fa-info-circle"></i> About Project
+            </a>
+            <button class="action-btn brochure-btn" data-project="Purva Palm Beach">
+                <i class="fas fa-download"></i> Brochure
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Purva Westend -->
+<div class="property-card" data-location="south">
+    <div class="property-image">
+        <img src="puravankara-images/purva-westend.jpg" alt="Purva Westend">
+    </div>
+    <div class="property-details">
+        <h3>Purva Westend</h3>
+        <div class="property-location">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Kudlu Gate, Hosur Road, Bangalore</span>
+        </div>
+        <div class="property-actions">
+            <a href="purva-westend.html" class="action-btn" aria-label="About Purva Westend Project">
+                <i class="fas fa-info-circle"></i> About Project
+            </a>
+            <button class="action-btn brochure-btn" data-project="Purva Westend">
+                <i class="fas fa-download"></i> Brochure
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Purva Whitehall -->
+<div class="property-card" data-location="south-east">
+    <div class="property-image">
+        <img src="puravankara-images/purva-whitehall.jpg" alt="Purva Whitehall">
+    </div>
+    <div class="property-details">
+        <h3>Purva Whitehall</h3>
+        <div class="property-location">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Sarjapur Road, Bangalore</span>
+        </div>
+        <div class="property-actions">
+            <a href="purva-whitehall.html" class="action-btn" aria-label="About Purva Whitehall Project">
+                <i class="fas fa-info-circle"></i> About Project
+            </a>
+            <button class="action-btn brochure-btn" data-project="Purva Whitehall">
+                <i class="fas fa-download"></i> Brochure
+            </button>
+        </div>
+    </div>
+</div>
+</div></div></section>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>PrimeLand Investments</h3>
+                    <p>Delivering exceptional real estate investment opportunities through rigorous research and strategic acquisitions.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="properties.html">Available Properties</a></li>
+                        <li><a href="blog.html">Investment Strategies</a></li>
+                        <li><a href="#">Due Diligence Process</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Disclosures</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <!--<li><i class="fas fa-map-marker-alt"></i> 123 Investment Plaza, Mumbai</li>-->
+                        <li><i class="fas fa-phone"></i> +91-6366850754</li>
+                        <!-- <li><i class="fas fa-envelope"></i> info@primeland.in</li> -->
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 PrimeLand Investments. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script>// DOM Content Loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile Navigation
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+            
+            hamburger.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+                hamburger.innerHTML = navLinks.classList.contains('active') ? 
+                    '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+            });
+            
+            // Navbar Scroll Effect
+            window.addEventListener('scroll', function() {
+                const navbar = document.querySelector('.navbar');
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+            
+            // Load Featured Properties
+            loadFeaturedProperties();
+            
+            // Investment Calculator Preview
+            const investmentRange = document.getElementById('investmentRange');
+            const investmentValue = document.getElementById('investmentValue');
+            const projectedValue = document.getElementById('projectedValue');
+            
+            investmentRange.addEventListener('input', function() {
+                const value = parseInt(this.value);
+                investmentValue.textContent = '₹' + value.toLocaleString('en-IN');
+                
+                // Simple projection calculation (22% annual return for 5 years)
+                const projected = Math.round(value * Math.pow(1.22, 5));
+                projectedValue.textContent = '₹' + projected.toLocaleString('en-IN');
+            });
+            
+            // Initialize Charts
+            initCharts();
+            
+            // Load Testimonials
+            loadTestimonials();
+        });
+        
+        // Load Featured Properties
+        function loadFeaturedProperties() {
+            const propertyGrid = document.getElementById('featuredProperties');
+            
+            // Sample data - in real app, this would come from an API
+            const properties = [
+                {
+                    id: 1,
+                    title: "Premium Residential Plots",
+                    location: "Bangalore North",
+                    size: "2400 sq.ft.",
+                    price: "1,25,00,000",
+                    image: "brigade-prestige-puravankara-images/property1.jpg"
+                },
+                {
+                    id: 2,
+                    title: "Commercial Development Land",
+                    location: "Hyderabad Growth Corridor",
+                    size: "1.5 Acres",
+                    price: "3,75,00,000",
+                    image: "brigade-prestige-puravankara-images/property2.jpg"
+                },
+                {
+                    id: 3,
+                    title: "Farmland with Resort Potential",
+                    location: "Lonavala Foothills",
+                    size: "5 Acres",
+                    price: "2,50,00,000",
+                    image: "brigade-prestige-puravankara-images/property3.jpg"
+                }
+            ];
+            
+            // Clear loading state
+            propertyGrid.innerHTML = '';
+            
+            // Add properties to grid
+            properties.forEach(property => {
+                const propertyCard = document.createElement('div');
+                propertyCard.className = 'property-card';
+                propertyCard.innerHTML = `
+                    <div class="property-image">
+                        <img src="${property.image}" alt="${property.title}">
+                    </div>
+                    <div class="property-details">
+                        <h3>${property.title}</h3>
+                        <div class="property-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>${property.location}</span>
+                        </div>
+                        <div class="property-features">
+                            <span><i class="fas fa-vector-square"></i> ${property.size}</span>
+                        </div>
+                        <div class="property-price">
+                            ₹${property.price} <span>Starting Price</span>
+                        </div>
+                        <button class="btn" onclick="viewProperty(${property.id})">View Details</button>
+                    </div>
+                `;
+                propertyGrid.appendChild(propertyCard);
+            });
+        }
+        
+        // Initialize Charts
+        function initCharts() {
+            // Price Trend Chart
+            const priceTrendCtx = document.getElementById('priceTrendChart').getContext('2d');
+            new Chart(priceTrendCtx, {
+                type: 'line',
+                data: {
+                    labels: ['2018', '2019', '2020', '2021', '2022', '2023'],
+                    datasets: [{
+                        label: 'Price Index (2018=100)',
+                        data: [100, 115, 125, 140, 165, 195],
+                        borderColor: '#e74c3c',
+                        backgroundColor: 'rgba(231, 76, 60, 0.1)',
+                        tension: 0.3,
+                        fill: true
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    }
+                }
+            });
+            
+            // Demand Heatmap Chart
+            const demandCtx = document.getElementById('demandChart').getContext('2d');
+            new Chart(demandCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['North', 'East', 'South', 'West', 'Central'],
+                    datasets: [{
+                        label: 'Demand Index',
+                        data: [85, 72, 68, 78, 65],
+                        backgroundColor: [
+                            'rgba(231, 76, 60, 0.7)',
+                            'rgba(52, 152, 219, 0.7)',
+                            'rgba(46, 204, 113, 0.7)',
+                            'rgba(155, 89, 182, 0.7)',
+                            'rgba(241, 196, 15, 0.7)'
+                        ]
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    }
+                }
+            });
+            
+            // Supply Analysis Chart
+            const supplyCtx = document.getElementById('supplyChart').getContext('2d');
+            new Chart(supplyCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Residential', 'Commercial', 'Industrial', 'Agricultural'],
+                    datasets: [{
+                        data: [35, 25, 20, 20],
+                        backgroundColor: [
+                            '#e74c3c',
+                            '#3498db',
+                            '#f39c12',
+                            '#2ecc71'
+                        ]
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    }
+                }
+            });
+        }
+        
+        // Load Testimonials
+        function loadTestimonials() {
+            const testimonialSlider = document.getElementById('testimonialSlider');
+            
+            // Sample data - in real app, this would come from an API
+            const testimonials = [
+                {
+                    id: 1,
+                    text: "PrimeLand helped me identify an emerging corridor before prices skyrocketed. My investment has appreciated 35% in just 2 years.",
+                    author: "Rajesh Mehta",
+                    role: "Serial Investor"
+                },
+                {
+                    id: 2,
+                    text: "Their due diligence process is unmatched. I feel completely confident investing through PrimeLand's vetted opportunities.",
+                    author: "Priya Sharma",
+                    role: "NRI Investor"
+                },
+                {
+                    id: 3,
+                    text: "The team's market intelligence helped me diversify my portfolio across different asset classes for optimal returns.",
+                    author: "Vikram Patel",
+                    role: "Portfolio Manager"
+                }
+            ];
+            
+            // Clear loading state
+            testimonialSlider.innerHTML = '';
+            
+            // Add testimonials to slider
+            testimonials.forEach(testimonial => {
+                const testimonialCard = document.createElement('div');
+                testimonialCard.className = 'testimonial-card';
+                testimonialCard.innerHTML = `
+                    <p class="testimonial-text">"${testimonial.text}"</p>
+                    <p class="testimonial-author">${testimonial.author}</p>
+                    <p class="testimonial-role">${testimonial.role}</p>
+                `;
+                testimonialSlider.appendChild(testimonialCard);
+            });
+            
+            // Initialize slider functionality
+            // In a full implementation, you would use a library like Slick or Swiper
+            // This is a simplified version
+            let currentTestimonial = 0;
+            const cards = document.querySelectorAll('.testimonial-card');
+            
+            function showTestimonial(index) {
+                cards.forEach(card => card.style.display = 'none');
+                cards[index].style.display = 'block';
+            }
+            
+            showTestimonial(currentTestimonial);
+            
+            // Auto-rotate testimonials
+            setInterval(() => {
+                currentTestimonial = (currentTestimonial + 1) % cards.length;
+                showTestimonial(currentTestimonial);
+            }, 5000);
+        }
+        
+        // View Property Details
+        function viewProperty(id) {
+            // In a full implementation, this would redirect to property details page
+            alert(`Viewing property with ID: ${id}\nIn a complete implementation, this would redirect to the property details page.`);
+        }</script> <script>
+        // Filter functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    const filterValue = this.getAttribute('data-filter');
+                    const propertyCards = document.querySelectorAll('.property-card');
+                    
+                    propertyCards.forEach(card => {
+                        if (filterValue === 'all') {
+                            card.style.display = 'block';
+                        } else {
+                            if (card.getAttribute('data-location') === filterValue) {
+                                card.style.display = 'block';
+                            } else {
+                                card.style.display = 'none';
+                            }
+                        }
+                    });
+                });
+            });
+        });
+
+        // Placeholder functions for actions
+        function viewProject(projectId) {
+            alert(`Viewing details for ${projectId}. In a complete implementation, this would open a detailed project page.`);
+        }
+
+        function checkPrice(projectId) {
+            alert(`Price details for ${projectId} would be displayed here.`);
+        }
+
+        function fixAppointment(projectId) {
+            alert(`Appointment scheduling for ${projectId} would open here.`);
+        }
+
+        function downloadBrochure(projectId) {
+            alert(`Brochure download for ${projectId} would initiate here.`);
+        }
+
+    // Enquiry Popup logic
+    const enquiryBtn = document.getElementById('enquiryVerticalBtn');
+    const navEnquiryBtn = document.getElementById('navEnquiryBtn');
+    const enquiryPopup = document.getElementById('enquiryPopup');
+    const closeEnquiry = document.getElementById('closeEnquiry');
+    const enquiryForm = document.getElementById('enquiryForm');
+
+    function openEnquiry(e) {
+        if (e) e.preventDefault();
+        enquiryPopup.classList.add('active');
+    }
+
+    function closeEnquiryPopup() {
+        enquiryPopup.classList.remove('active');
+    }
+
+    if (enquiryBtn) enquiryBtn.addEventListener('click', openEnquiry);
+    if (navEnquiryBtn) navEnquiryBtn.addEventListener('click', openEnquiry);
+    if (closeEnquiry) closeEnquiry.addEventListener('click', closeEnquiryPopup);
+    if (enquiryPopup) {
+        enquiryPopup.addEventListener('click', function(e) {
+            if (e.target === this) closeEnquiryPopup();
+        });
+    }
+    if (enquiryForm) {
+        enquiryForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('enquiryName').value.trim();
+            const email = document.getElementById('enquiryEmail').value.trim();
+            const phone = document.getElementById('enquiryPhone').value.trim();
+            if (name && email && phone) {
+                alert('Thank you for your enquiry! We will get back to you soon.');
+                enquiryForm.reset();
+                closeEnquiryPopup();
+            } else {
+                alert('Please fill in all fields.');
+            }
+        });
+    }
+
+    // Brochure Popup logic
+    const brochurePopup = document.getElementById('brochurePopup');
+    const closeBrochure = document.getElementById('closeBrochure');
+    const brochureForm = document.getElementById('brochureForm');
+
+    document.querySelectorAll('.brochure-btn').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const projectName = this.dataset.project || 'Project';
+            const nameInput = document.getElementById('brochureName');
+            if (nameInput) nameInput.placeholder = 'Your full name for ' + projectName;
+            if (brochurePopup) brochurePopup.classList.add('active');
+        });
+    });
+
+    function closeBrochurePopup() {
+        if (brochurePopup) brochurePopup.classList.remove('active');
+    }
+
+    if (closeBrochure) closeBrochure.addEventListener('click', closeBrochurePopup);
+    if (brochurePopup) {
+        brochurePopup.addEventListener('click', function(e) {
+            if (e.target === this) closeBrochurePopup();
+        });
+    }
+    if (brochureForm) {
+        brochureForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('brochureName').value.trim();
+            const email = document.getElementById('brochureEmail').value.trim();
+            const phone = document.getElementById('brochurePhone').value.trim();
+            if (name && email && phone) {
+                alert('Thank you! Your brochure download will start shortly.');
+                brochureForm.reset();
+                closeBrochurePopup();
+            } else {
+                alert('Please fill in all fields to download the brochure.');
+            }
+        });
+    }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/api.js"></script>
+</body>
+</html>

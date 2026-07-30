@@ -1,0 +1,151 @@
+[24-Oct-2025 11:04:45 UTC] PHP Warning:  Undefined array key "full_number" in /home/fxw2qymg26z2/public_html/urbanflatshub.com/send-email.php on line 7
+[24-Oct-2025 11:05:15 UTC] PHP Warning:  Undefined array key "full_number" in /home/fxw2qymg26z2/public_html/urbanflatshub.com/send-email.php on line 7
+[24-Oct-2025 11:05:17 UTC] PHP Warning:  Undefined array key "full_number" in /home/fxw2qymg26z2/public_html/urbanflatshub.com/send-email.php on line 7
+[24-Oct-2025 11:05:19 UTC] PHP Warning:  Undefined array key "full_number" in /home/fxw2qymg26z2/public_html/urbanflatshub.com/send-email.php on line 7
+[24-Oct-2025 11:08:55 UTC] PHP Warning:  Undefined array key "full_number" in /home/fxw2qymg26z2/public_html/urbanflatshub.com/send-email.php on line 7
+[24-Oct-2025 11:11:28 UTC] PHP Warning:  Undefined array key "full_number" in /home/fxw2qymg26z2/public_html/urbanflatshub.com/send-email.php on line 7
+[24-Oct-2025 11:14:14 UTC] PHP Warning:  Undefined array key "full_number" in /home/fxw2qymg26z2/public_html/urbanflatshub.com/send-email.php on line 7
+[31-Oct-2025 09:39:24 UTC] PHP Warning:  Undefined array key "project" in /home/fxw2qymg26z2/public_html/urbanflatshub.com/send-email.php on line 3
+[31-Oct-2025 09:39:24 UTC] PHP Warning:  Undefined array key "name" in /home/fxw2qymg26z2/public_html/urbanflatshub.com/send-email.php on line 4
+[31-Oct-2025 09:39:24 UTC] PHP Warning:  Undefined array key "email" in /home/fxw2qymg26z2/public_html/urbanflatshub.com/send-email.php on line 5
+[31-Oct-2025 09:39:24 UTC] PHP Warning:  Undefined array key "full_number" in /home/fxw2qymg26z2/public_html/urbanflatshub.com/send-email.php on line 7
+[14-Nov-2025 09:14:30 UTC] PHP Warning:  Undefined array key "project" in /home/fxw2qymg26z2/public_html/urbanflatshub.com/send-email.php on line 3
+[14-Nov-2025 09:14:30 UTC] PHP Warning:  Undefined variable $project_name in /home/fxw2qymg26z2/public_html/urbanflatshub.com/send-email.php on line 14
+[14-Nov-2025 09:20:37 UTC] Project value received: 'Prestige Jade Pavilion'
+[14-Nov-2025 09:20:40 UTC] Email sent successfully
+[14-Nov-2025 09:31:47 UTC] Project value received: 'Prestige Deja Vu'
+[14-Nov-2025 09:31:51 UTC] Email sent successfully
+[14-Nov-2025 09:59:21 UTC] Project value received: 'Prestige Ferns Residency'
+[14-Nov-2025 09:59:24 UTC] Email sent successfully
+[17-Nov-2025 05:57:20 UTC] Project value received: 'Prestige Kenilworth'
+[17-Nov-2025 05:57:27 UTC] Email sent successfully
+[17-Nov-2025 06:24:23 UTC] Project value received: 'Prestige Sunrise Park Resale'
+[17-Nov-2025 06:24:27 UTC] Email sent successfully
+[17-Nov-2025 06:57:10 UTC] Project value received: 'Prestige Temple Bells'
+[17-Nov-2025 06:57:20 UTC] Email sent successfully
+[17-Nov-2025 07:24:57 UTC] Project value received: 'Prestige Kew Gardens'
+[17-Nov-2025 07:24:58 UTC] Project value received: 'Prestige Kew Gardens'
+[17-Nov-2025 07:25:00 UTC] Email sent successfully
+[17-Nov-2025 07:25:04 UTC] Email sent successfully
+[17-Nov-2025 09:49:47 UTC] Project value received: 'Prestige Kew Gardens'
+[17-Nov-2025 09:49:51 UTC] Email sent successfully
+[17-Nov-2025 09:50:16 UTC] Project value received: 'Prestige Tech Vista'
+[17-Nov-2025 09:50:24 UTC] Email sent successfully
+[17-Nov-2025 09:50:52 UTC] Project value received: 'Prestige Rapperswil'
+[17-Nov-2025 09:50:56 UTC] Email sent successfully
+[17-Nov-2025 09:51:26 UTC] Project value received: 'Prestige Southern Star'
+[17-Nov-2025 09:51:35 UTC] Email sent successfully
+[17-Nov-2025 10:55:37 UTC] Project value received: 'Prestige Suncrest Apartments'
+[17-Nov-2025 10:55:43 UTC] Email sent successfully
+[17-Nov-2025 11:38:05 UTC] Project value received: 'Prestige Suncrest Apartments'
+[17-Nov-2025 11:38:10 UTC] Email sent successfully
+[18-Nov-2025 07:00:15 UTC] Project value received: 'Prestige Raintree Park'
+[18-Nov-2025 07:00:22 UTC] Email sent successfully
+[18-Nov-2025 09:32:22 UTC] Project value received: 'Prestige Camden Gardens'
+[18-Nov-2025 09:32:26 UTC] Email sent successfully
+[18-Nov-2025 10:02:16 UTC] Project value received: 'Prestige Somerville'
+[18-Nov-2025 10:02:19 UTC] Email sent successfully
+[18-Nov-2025 10:24:25 UTC] Project value received: 'L&T Thanisandra'
+[18-Nov-2025 10:24:32 UTC] Email sent successfully
+[18-Nov-2025 10:41:35 UTC] Project value received: 'Prestige Marathahalli-Whitefield'
+[18-Nov-2025 10:41:43 UTC] Email sent successfully
+[24-Nov-2025 05:20:35 UTC] Project value received: 'Total Environment after the rain'
+[24-Nov-2025 05:20:39 UTC] Email sent successfully
+[24-Nov-2025 05:21:49 UTC] Project value received: 'Total Environment Down by the Water'
+[24-Nov-2025 05:21:53 UTC] Email sent successfully
+[24-Nov-2025 05:22:59 UTC] Project value received: 'Total Environment In That Quiet Earth Tower 5'
+[24-Nov-2025 05:23:03 UTC] Email sent successfully
+[24-Nov-2025 06:19:53 UTC] Project value received: 'Prestige Marathahalli-Whitefield'
+[24-Nov-2025 06:19:56 UTC] Email sent successfully
+[24-Nov-2025 06:30:53 UTC] Project value received: 'Prestige Glenbrook'
+[24-Nov-2025 06:30:57 UTC] Email sent successfully
+[24-Nov-2025 06:48:31 UTC] Project value received: 'Prestige Serenity Shores'
+[24-Nov-2025 06:48:42 UTC] Email sent successfully
+[24-Nov-2025 07:15:05 UTC] Project value received: 'Prestige Lavender Fields'
+[24-Nov-2025 07:15:09 UTC] Email sent successfully
+[24-Nov-2025 12:34:43 UTC] Project value received: 'Prestige Primrose Hills Phase 2'
+[24-Nov-2025 12:34:46 UTC] Email sent successfully
+[24-Nov-2025 12:37:06 UTC] Project value received: 'Prestige Elm Park Resale'
+[24-Nov-2025 12:37:09 UTC] Email sent successfully
+[25-Nov-2025 07:31:06 UTC] Project value received: 'Prestige Elysian'
+[25-Nov-2025 07:31:09 UTC] Email sent successfully
+[26-Nov-2025 05:36:34 UTC] Project value received: 'Prestige Falcon City'
+[26-Nov-2025 05:36:41 UTC] Email sent successfully
+[26-Nov-2025 10:39:02 UTC] Project value received: 'Prestige Waterford Resale'
+[26-Nov-2025 10:39:09 UTC] Email sent successfully
+[26-Nov-2025 10:39:48 UTC] Project value received: 'Prestige Brooklyn Heights'
+[26-Nov-2025 10:39:52 UTC] Email sent successfully
+[26-Nov-2025 10:42:38 UTC] Project value received: 'Prestige Royale Gardens'
+[26-Nov-2025 10:42:42 UTC] Email sent successfully
+[26-Nov-2025 11:38:13 UTC] Project value received: 'Prestige Jindal City'
+[26-Nov-2025 11:38:25 UTC] Email sent successfully
+[26-Nov-2025 11:40:22 UTC] Project value received: 'Prestige Fontaine Bleau'
+[26-Nov-2025 11:40:26 UTC] Email sent successfully
+[29-Nov-2025 09:36:18 UTC] Project value received: 'Sobha Ayana at Dream Acres'
+[29-Nov-2025 09:36:21 UTC] Email sent successfully
+[29-Nov-2025 10:02:25 UTC] Project value received: 'Sobha Insignia'
+[29-Nov-2025 10:02:29 UTC] Email sent successfully
+[29-Nov-2025 10:37:05 UTC] Project value received: 'Sobha Neopolis'
+[29-Nov-2025 10:37:09 UTC] Email sent successfully
+[29-Nov-2025 10:42:48 UTC] Project value received: 'Sobha Royal Crest'
+[29-Nov-2025 10:42:52 UTC] Email sent successfully
+[30-Nov-2025 11:26:10 UTC] Project value received: 'Prestige Waterford Resale'
+[30-Nov-2025 11:26:13 UTC] Email sent successfully
+[01-Dec-2025 09:23:20 UTC] Project value received: 'sobha city athena'
+[01-Dec-2025 09:23:24 UTC] Email sent successfully
+[01-Dec-2025 09:31:21 UTC] Project value received: 'sobha sentosa'
+[01-Dec-2025 09:31:33 UTC] Email sent successfully
+[01-Dec-2025 09:56:31 UTC] Project value received: 'sobha town park'
+[01-Dec-2025 09:56:35 UTC] Email sent successfully
+[01-Dec-2025 09:59:29 UTC] Project value received: 'sobha town park'
+[01-Dec-2025 09:59:32 UTC] Email sent successfully
+[01-Dec-2025 10:08:19 UTC] Project value received: 'sobha victoria park'
+[01-Dec-2025 10:08:23 UTC] Email sent successfully
+[08-Dec-2025 23:20:50 UTC] PHP Warning:  Undefined array key "project" in /home/fxw2qymg26z2/public_html/urbanflatshub.com/send-email.php on line 3
+[08-Dec-2025 23:20:50 UTC] PHP Warning:  Undefined array key "name" in /home/fxw2qymg26z2/public_html/urbanflatshub.com/send-email.php on line 4
+[08-Dec-2025 23:20:50 UTC] PHP Warning:  Undefined array key "email" in /home/fxw2qymg26z2/public_html/urbanflatshub.com/send-email.php on line 5
+[08-Dec-2025 23:20:50 UTC] PHP Warning:  Undefined array key "full_number" in /home/fxw2qymg26z2/public_html/urbanflatshub.com/send-email.php on line 7
+[08-Dec-2025 23:20:50 UTC] Project value received: ''
+[19-Dec-2025 13:29:08 UTC] PHP Warning:  Undefined array key "project" in /home/fxw2qymg26z2/public_html/urbanflatshub.com/send-email.php on line 3
+[19-Dec-2025 13:29:08 UTC] PHP Warning:  Undefined array key "name" in /home/fxw2qymg26z2/public_html/urbanflatshub.com/send-email.php on line 4
+[19-Dec-2025 13:29:08 UTC] PHP Warning:  Undefined array key "email" in /home/fxw2qymg26z2/public_html/urbanflatshub.com/send-email.php on line 5
+[19-Dec-2025 13:29:08 UTC] PHP Warning:  Undefined array key "full_number" in /home/fxw2qymg26z2/public_html/urbanflatshub.com/send-email.php on line 7
+[19-Dec-2025 13:29:08 UTC] Project value received: ''
+[30-Jan-2026 14:12:24 UTC] PHP Warning:  Undefined array key "project" in /home/fxw2qymg26z2/public_html/urbanflatshub.com/send-email.php on line 3
+[30-Jan-2026 14:12:24 UTC] PHP Warning:  Undefined array key "name" in /home/fxw2qymg26z2/public_html/urbanflatshub.com/send-email.php on line 4
+[30-Jan-2026 14:12:24 UTC] PHP Warning:  Undefined array key "email" in /home/fxw2qymg26z2/public_html/urbanflatshub.com/send-email.php on line 5
+[30-Jan-2026 14:12:24 UTC] PHP Warning:  Undefined array key "full_number" in /home/fxw2qymg26z2/public_html/urbanflatshub.com/send-email.php on line 7
+[30-Jan-2026 14:12:24 UTC] Project value received: ''
+[06-Feb-2026 02:39:52 UTC] PHP Warning:  Undefined array key "project" in /home/fxw2qymg26z2/public_html/urbanflatshub.com/send-email.php on line 3
+[06-Feb-2026 02:39:52 UTC] PHP Warning:  Undefined array key "name" in /home/fxw2qymg26z2/public_html/urbanflatshub.com/send-email.php on line 4
+[06-Feb-2026 02:39:52 UTC] PHP Warning:  Undefined array key "email" in /home/fxw2qymg26z2/public_html/urbanflatshub.com/send-email.php on line 5
+[06-Feb-2026 02:39:52 UTC] PHP Warning:  Undefined array key "full_number" in /home/fxw2qymg26z2/public_html/urbanflatshub.com/send-email.php on line 7
+[06-Feb-2026 02:39:52 UTC] Project value received: ''
+[13-Feb-2026 10:29:40 UTC] Project value received: 'Total Environment after the rain'
+[13-Feb-2026 10:29:44 UTC] Email sent successfully
+[19-Feb-2026 06:07:32 UTC] Project value received: 'L&T Elara Celestia'
+[19-Feb-2026 06:07:35 UTC] Email sent successfully
+[25-Mar-2026 09:26:27 UTC] Project value received: 'L&T Thanisandra'
+[25-Mar-2026 09:26:29 UTC] Project value received: 'L&T Thanisandra'
+[25-Mar-2026 09:26:30 UTC] Email sent successfully
+[25-Mar-2026 09:26:34 UTC] Email sent successfully
+[01-Apr-2026 15:59:20 UTC] Project value received: 'L&T Raintree Boulevard'
+[01-Apr-2026 15:59:27 UTC] Email failed to send
+[01-Apr-2026 15:59:30 UTC] Project value received: 'L&T Raintree Boulevard'
+[01-Apr-2026 15:59:37 UTC] Email failed to send
+[01-Apr-2026 15:59:42 UTC] Project value received: 'L&T Sarjapur Road'
+[01-Apr-2026 15:59:47 UTC] Email sent successfully
+[01-Apr-2026 15:59:50 UTC] Project value received: 'L&T Sarjapur Road'
+[01-Apr-2026 15:59:57 UTC] Email sent successfully
+[28-Apr-2026 15:13:25 UTC] PHP Warning:  Undefined array key "project" in /home/fxw2qymg26z2/public_html/urbanflatshub.com/send-email.php on line 3
+[28-Apr-2026 15:13:25 UTC] PHP Warning:  Undefined array key "name" in /home/fxw2qymg26z2/public_html/urbanflatshub.com/send-email.php on line 4
+[28-Apr-2026 15:13:25 UTC] PHP Warning:  Undefined array key "email" in /home/fxw2qymg26z2/public_html/urbanflatshub.com/send-email.php on line 5
+[28-Apr-2026 15:13:25 UTC] PHP Warning:  Undefined array key "full_number" in /home/fxw2qymg26z2/public_html/urbanflatshub.com/send-email.php on line 7
+[28-Apr-2026 15:13:25 UTC] Project value received: ''
+[02-May-2026 17:43:05 UTC] Project value received: 'Prestige Park Grove Resale'
+[02-May-2026 17:43:09 UTC] Email sent successfully
+[16-May-2026 03:32:39 UTC] PHP Warning:  Undefined array key "project" in /home/fxw2qymg26z2/public_html/urbanflatshub.com/send-email.php on line 3
+[16-May-2026 03:32:39 UTC] PHP Warning:  Undefined array key "name" in /home/fxw2qymg26z2/public_html/urbanflatshub.com/send-email.php on line 4
+[16-May-2026 03:32:39 UTC] PHP Warning:  Undefined array key "email" in /home/fxw2qymg26z2/public_html/urbanflatshub.com/send-email.php on line 5
+[16-May-2026 03:32:39 UTC] PHP Warning:  Undefined array key "full_number" in /home/fxw2qymg26z2/public_html/urbanflatshub.com/send-email.php on line 7
+[16-May-2026 03:32:39 UTC] Project value received: ''
