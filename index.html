@@ -268,7 +268,7 @@
             overflow: hidden;
             transition: max-height 0.4s cubic-bezier(.3,.7,.3,1);
         }
-        #mobile-menu.open { max-height: 600px; display: block; }
+        /* #mobile-menu.open { max-height: 600px; display: block; } */
         #mobile-menu a {
             display: block;
             padding: 12px 0;
@@ -775,6 +775,44 @@
         .contact-fab-email { background: #fff; color: var(--ink); border: 1px solid var(--hairline); }
         .contact-fab-email:hover { border-color: var(--aurora); color: var(--aurora-dark); }
         
+        @media (max-width: 768px) {
+    #contact-rail {
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        gap: 0;
+        padding: 0;
+        background: #fff;
+        box-shadow: 0 -5px 15px rgba(0,0,0,.12);
+    }
+
+
+    .contact-fab {
+        flex: 1;
+        width: auto;
+        height: 60px;
+        border-radius: 0;
+        box-shadow: none;
+         
+    }
+
+    .contact-fab-call {
+        background: #111827;
+        transform: none !important;
+    }
+
+    .contact-fab-whatsapp {
+        background: #25D366;
+        transform: none !important;
+    }
+
+    .contact-fab-email {
+        display: none;
+    }
+}
         /* ===== MODAL/POPUP ===== */
         .modal-overlay {
             display: none;
@@ -853,8 +891,8 @@
             .property-grid { grid-template-columns: 1fr; }
             .footer-grid { grid-template-columns: 1fr; gap: 32px; }
             
-            #contact-rail { right: 12px; bottom: 16px; }
-            .contact-fab { width: 44px; height: 44px; }
+            /* #contact-rail { right: 12px; bottom: 16px; } */
+            /* .contact-fab { width: 44px; height: 44px; } */
             .contact-fab svg { width: 18px; height: 18px; }
         }
         
@@ -1076,6 +1114,7 @@
     max-height: 600px;
     display: block;
     overflow-y: auto;
+    top: 35px;
 }
 
 #mobile-menu a {
@@ -1175,7 +1214,7 @@
     }
     
     #mobile-menu {
-        top: 64px;
+        top: 0;
     }
     
     .nav-links {
@@ -1595,13 +1634,16 @@
     const hamburger = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobile-menu');
     const nav = document.getElementById('site-nav');
-
+     console.log(document.querySelectorAll("#mobile-menu").length);
     hamburger.addEventListener('click', () => {
         const isOpen = mobileMenu.classList.toggle('open');
         hamburger.classList.toggle('open');
         hamburger.setAttribute('aria-expanded', isOpen);
-    });
 
+
+    });
+// console.log(hamburger);
+//      console.log(mobileMenu);
     // Close mobile menu on link click
     document.querySelectorAll('#mobile-menu a').forEach(link => {
         link.addEventListener('click', () => {
@@ -2121,25 +2163,25 @@
 <script>// ===== MOBILE DROPDOWN TOGGLE =====
 // ===== NAVIGATION JAVASCRIPT =====
 document.addEventListener('DOMContentLoaded', function() {
-    const hamburger = document.getElementById('hamburger');
-    const mobileMenu = document.getElementById('mobile-menu');
+    // const hamburger = document.getElementById('hamburger');
+    // const mobileMenu = document.getElementById('mobile-menu');
     const nav = document.getElementById('site-nav');
 
     // Toggle mobile menu
-    hamburger.addEventListener('click', function() {
-        const isOpen = mobileMenu.classList.toggle('open');
-        this.classList.toggle('open');
-        this.setAttribute('aria-expanded', isOpen);
-    });
+    // hamburger.addEventListener('click', function() {
+    //     const isOpen = mobileMenu.classList.toggle('open');
+    //     this.classList.toggle('open');
+    //     this.setAttribute('aria-expanded', isOpen);
+    // });
 
     // Close mobile menu on link click
-    document.querySelectorAll('#mobile-menu a').forEach(link => {
-        link.addEventListener('click', function() {
-            mobileMenu.classList.remove('open');
-            hamburger.classList.remove('open');
-            hamburger.setAttribute('aria-expanded', 'false');
-        });
-    });
+    // document.querySelectorAll('#mobile-menu a').forEach(link => {
+    //     link.addEventListener('click', function() {
+    //         mobileMenu.classList.remove('open');
+    //         hamburger.classList.remove('open');
+    //         hamburger.setAttribute('aria-expanded', 'false');
+    //     });
+    // });
 
     // Scroll nav condense
     window.addEventListener('scroll', function() {
