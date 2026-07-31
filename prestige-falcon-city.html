@@ -887,7 +887,7 @@
                     <i class="fas fa-phone-alt"></i>
                     <span>+91-6366850754</span>
                 </div> -->
-                <button class="btn">Enquire Now</button>
+                <button class="btn open-enquiry openModal">Enquire Now</button>
             </div>
             
             <div class="mobile-menu">
@@ -902,7 +902,7 @@
             <h1>Experience Premium Living at Prestige Falcon City</h1>
             <p>Bangalore's most sought-after residential project offering luxurious 2, 3 & 4 BHK residences with world-class amenities on Kanakapura Road.</p>
             <div class="hero-btns">
-                <a href="#contact" class="hero-btn primary-btn">Schedule Site Visit</a>
+                <a class="hero-btn primary-btn openModal">Schedule Site Visit</a>
                 <a href="#gallery" class="hero-btn secondary-btn">View Gallery</a>
             </div>
         </div>
@@ -1032,7 +1032,7 @@
                         </div>
                     </div>
                     <div class="plan-price">₹80 Lakhs Onwards</div>
-                    <button class="plan-btn">Download Brochure</button>
+                    <button class="plan-btn openModal">Download Brochure</button>
                 </div>
             </div>
             
@@ -1057,7 +1057,7 @@
                         </div>
                     </div>
                     <div class="plan-price">₹1.4 Cr Onwards</div>
-                    <button class="plan-btn">Download Brochure</button>
+                    <button class="plan-btn openModal">Download Brochure</button>
                 </div>
             </div>
             
@@ -1082,7 +1082,7 @@
                         </div>
                     </div>
                     <div class="plan-price">₹2.5 Cr Onwards</div>
-                    <button class="plan-btn">Download Brochure</button>
+                    <button class="plan-btn openModal">Download Brochure</button>
                 </div>
             </div>
         </div>
@@ -1094,7 +1094,7 @@
             <h2>Location Advantages</h2>
         </div>
         
-        <div class="location-map">
+        <div class="location-map openModal">
             <!-- In a real implementation, this would be a Google Maps embed -->
             <img src="https://maps.googleapis.com/maps/api/staticmap?center=Kanakapura+Road,Bangalore&zoom=14&size=800x300&maptype=roadmap&markers=color:red%7CKanakapura+Road,Bangalore&key=YOUR_API_KEY" alt="Location Map" style="width:100%;height:100%;object-fit:cover;">
         </div>
@@ -1616,10 +1616,10 @@
         <h3>Interested in Sobha Royal Crest?</h3>
         <p>Contact our sales team for exclusive offers and personalized site visits. Limited units available in Bangalore's most prestigious address.</p>
         <div class="cta-btns">
-            <button class="cta-btn primary-cta">
+            <button class="cta-btn primary-cta openModal">
                 <i class="fas fa-phone-alt"></i> Call Sales Executive
             </button>
-            <button class="cta-btn secondary-cta">
+            <button class="cta-btn secondary-cta openModal">
                 <i class="fas fa-calendar-alt"></i> Schedule Site Visit
             </button>
         </div>
@@ -1670,6 +1670,236 @@
         </div>
     </footer>
 
+    <!-- Open Modal Button -->
+<!-- <button class="open-modal-btn openModal">
+    Enquire Now
+</button> -->
+
+<!-- Modal -->
+<div class="modal" id="enquiryModal">
+
+    <div class="modal-content">
+
+        <span class="close-modal" id="closeModal">&times;</span>
+
+        <div class="modal-header">
+            <h2>Request a Callback</h2>
+            <p>Our sales expert will contact you shortly.</p>
+        </div>
+
+        <form id="propertyInquiryForm" action="send-email.php" method="POST">
+
+            <input type="hidden" name="project" value="Prestige Falcon City">
+
+            <div class="form-group">
+                <label>Full Name</label>
+                <input
+                    type="text"
+                    name="name"
+                    placeholder="Enter your full name"
+                    required>
+            </div>
+
+            <div class="form-group">
+                <label>Email Address</label>
+                <input
+                    type="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    required>
+            </div>
+
+            <div class="form-group">
+                <label>Phone Number</label>
+                <input
+                    type="tel"
+                    id="full_number"
+                    name="full_number"
+                    placeholder="Enter your phone number"
+                    required>
+            </div>
+
+            <button type="submit" class="submit-btn">
+                <i class="fas fa-paper-plane"></i>
+                Submit Inquiry
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+<style>
+    /* Overlay */
+
+.modal{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.75);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    opacity:0;
+    visibility:hidden;
+    transition:.35s;
+    z-index:9999;
+}
+
+.modal.show{
+    opacity:1;
+    visibility:visible;
+}
+
+/* Modal */
+
+.modal-content{
+    width:90%;
+    max-width:480px;
+    background:#fff;
+    border-radius:18px;
+    padding:35px;
+    position:relative;
+    animation:popup .35s ease;
+    box-shadow:0 25px 70px rgba(0,0,0,.2);
+}
+
+@keyframes popup{
+
+from{
+    transform:translateY(30px) scale(.95);
+    opacity:0;
+}
+
+to{
+    transform:translateY(0) scale(1);
+    opacity:1;
+}
+
+}
+
+.close-modal{
+    position:absolute;
+    top:18px;
+    right:20px;
+    font-size:28px;
+    cursor:pointer;
+    color:#777;
+    transition:.3s;
+}
+
+.close-modal:hover{
+    color:#000;
+}
+
+.modal-header{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+.modal-header h2{
+    margin-bottom:8px;
+    font-size:28px;
+    color:#222;
+}
+
+.modal-header p{
+    color:#666;
+    font-size:15px;
+}
+
+.form-group{
+    margin-bottom:18px;
+}
+
+.form-group label{
+    display:block;
+    margin-bottom:8px;
+    font-weight:600;
+    color:#333;
+}
+
+.form-group input{
+    width:100%;
+    height:52px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    padding:0 16px;
+    font-size:15px;
+    outline:none;
+    transition:.3s;
+}
+
+.form-group input:focus{
+    border-color:#b38b59;
+    box-shadow:0 0 0 3px rgba(179,139,89,.15);
+}
+
+.submit-btn{
+    width:100%;
+    height:54px;
+    border:none;
+    background:#b38b59;
+    color:#fff;
+    font-size:16px;
+    font-weight:600;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.submit-btn:hover{
+    background:#967145;
+}
+
+.open-modal-btn{
+    padding:15px 35px;
+    border:none;
+    background:#b38b59;
+    color:#fff;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:600;
+}
+
+@media(max-width:600px){
+
+.modal-content{
+    padding:25px;
+}
+
+.modal-header h2{
+    font-size:24px;
+}
+
+}
+</style>
+<script>
+    const modal = document.getElementById("enquiryModal");
+const openBtn = document.querySelectorAll(".openModal");
+const closeBtn = document.getElementById("closeModal");
+
+// openBtn.addEventListener("click", () => {
+//     modal.classList.add("show");
+// });
+//  console.log(openBtn);
+openBtn.forEach(button => {
+    button.addEventListener("click", function (e) {
+        e.preventDefault();
+        modal.classList.add("show");
+    });
+});
+
+closeBtn.addEventListener("click", () => {
+    modal.classList.remove("show");
+});
+
+window.addEventListener("click", (e) => {
+    if (e.target === modal) {
+        modal.classList.remove("show");
+    }
+});
+</script>
     <script>
         // Simple JavaScript for mobile menu toggle
         document.querySelector('.mobile-menu').addEventListener('click', function() {

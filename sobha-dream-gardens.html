@@ -1147,7 +1147,7 @@
 </head>
 <body>
     <!-- Dynamic Enquire Now Button -->
-    <button class="dynamic-enquire-btn" id="dynamic-enquire-btn">
+    <button class="dynamic-enquire-btn openModal">
         <i class="fas fa-paper-plane"></i> Enquire Now
     </button>
 
@@ -1168,14 +1168,14 @@
                 <li><a href="#contact">Contact</a></li>
                 <!-- Mobile buttons - hidden in desktop view -->
                 <div class="mobile-header-buttons">
-                    <a href="#contact" class="btn btn-outline">Enquire Now</a>
+                    <a class="btn btn-outline openModal">Enquire Now</a>
                     <!-- <a href="tel:+91-6366850754" class="btn btn-primary">Call Now</a> -->
                 </div>
             </ul>
             
             <!-- Desktop buttons - hidden in mobile view -->
             <div class="header-buttons">
-                <a href="#contact" class="btn btn-outline">Enquire Now</a>
+                <a class="btn btn-outline openModal">Enquire Now</a>
                 <!-- <a href="tel:+91-6366850754" class="btn btn-primary">Call Now</a> -->
             </div>
             
@@ -1194,8 +1194,8 @@
             <h1>Sobha Dream Gardens</h1>
             <p>Premium 1,2 BHK Apartments in Thanisandra, Bangalore</p>
             <div class="hero-buttons">
-                <a href="#configurations" class="btn btn-primary">View Floor Plans</a>
-                <a href="#contact" class="btn btn-brochure">Download Brochure</a>
+                <a class="btn btn-primary openModal">View Floor Plans</a>
+                <a class="btn btn-brochure openModal">Download Brochure</a>
             </div>
         </div>
     </section>
@@ -1257,7 +1257,7 @@
             
             <!-- Enquire Now Button for Overview Section -->
             <div class="section-cta">
-                <button class="section-btn" id="overview-enquire-btn">Enquire Now</button>
+                <button class="section-btn openModal">Enquire Now</button>
             </div>
         </div>
     </section>
@@ -1315,7 +1315,7 @@
             
             <!-- Enquire Now Button for Configurations Section -->
             <div class="section-cta">
-                <button class="section-btn" id="configurations-enquire-btn">Enquire Now</button>
+                <button class="section-btn openModal">Enquire Now</button>
             </div>
         </div>
     </section>
@@ -1367,7 +1367,7 @@
             </div>
             
             <div class="location-cta">
-                <button class="location-btn" id="location-enquire-btn">Enquire Now</button>
+                <button class="location-btn openModal">Enquire Now</button>
             </div>
         </div>
     </section>
@@ -1387,7 +1387,7 @@
             
             <!-- Enquire Now Button for Master Plan Section -->
             <div class="section-cta">
-                <button class="master-plan-btn" id="master-plan-enquire-btn">Enquire Now</button>
+                <button class="master-plan-btn openModal">Enquire Now</button>
             </div>
         </div>
     </section>
@@ -1433,7 +1433,7 @@
             
             <!-- Enquire Now Button for Specifications Section -->
             <div class="section-cta">
-                <button class="section-btn" id="specifications-enquire-btn">Enquire Now</button>
+                <button class="section-btn openModal">Enquire Now</button>
             </div>
         </div>
     </section>
@@ -1521,7 +1521,7 @@
             
             <!-- Enquire Now Button for Amenities Section -->
             <div class="section-cta">
-                <button class="section-btn" id="amenities-enquire-btn">Enquire Now</button>
+                <button class="section-btn openModal">Enquire Now</button>
             </div>
         </div>
     </section>
@@ -1683,7 +1683,7 @@
     </div>
 
     <div class="form-submit">
-        <button type="submit" class="btn-submit">Submit Inquiry</button>
+        <button type="submit" class="btn-submit">Submit Enquiry</button>
     </div>
 </form>
             </div>
@@ -1729,6 +1729,230 @@
             </div>
         </div>
     </footer>
+    <div class="modal" id="enquiryModal">
+
+    <div class="modal-content">
+
+        <span class="close-modal" id="closeModal">&times;</span>
+
+        <div class="modal-header">
+            <h2>Request a Callback</h2>
+            <p>Our sales expert will contact you shortly.</p>
+        </div>
+
+        <form id="propertyInquiryForm" action="send-email.php" method="POST">
+
+            <input type="hidden" name="project" value="Prestige Falcon City">
+
+            <div class="form-group">
+                <label>Full Name</label>
+                <input
+                    type="text"
+                    name="name"
+                    placeholder="Enter your full name"
+                    required>
+            </div>
+
+            <div class="form-group">
+                <label>Email Address</label>
+                <input
+                    type="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    required>
+            </div>
+
+            <div class="form-group">
+                <label>Phone Number</label>
+                <input
+                    type="tel"
+                    id="full_number"
+                    name="full_number"
+                    placeholder="Enter your phone number"
+                    required>
+            </div>
+
+            <button type="submit" class="submit-btn">
+                <i class="fas fa-paper-plane"></i>
+                Submit Inquiry
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+<style>
+    /* Overlay */
+
+.modal{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.75);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    opacity:0;
+    visibility:hidden;
+    transition:.35s;
+    z-index:9999;
+}
+
+.modal.show{
+    opacity:1;
+    visibility:visible;
+}
+
+/* Modal */
+
+.modal-content{
+    width:90%;
+    max-width:480px;
+    background:#fff;
+    border-radius:18px;
+    padding:35px;
+    position:relative;
+    animation:popup .35s ease;
+    box-shadow:0 25px 70px rgba(0,0,0,.2);
+}
+
+@keyframes popup{
+
+from{
+    transform:translateY(30px) scale(.95);
+    opacity:0;
+}
+
+to{
+    transform:translateY(0) scale(1);
+    opacity:1;
+}
+
+}
+
+.close-modal{
+    position:absolute;
+    top:18px;
+    right:20px;
+    font-size:28px;
+    cursor:pointer;
+    color:#777;
+    transition:.3s;
+}
+
+.close-modal:hover{
+    color:#000;
+}
+
+.modal-header{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+.modal-header h2{
+    margin-bottom:8px;
+    font-size:28px;
+    color:#222;
+}
+
+.modal-header p{
+    color:#666;
+    font-size:15px;
+}
+
+.form-group{
+    margin-bottom:18px;
+}
+
+.form-group label{
+    display:block;
+    margin-bottom:8px;
+    font-weight:600;
+    color:#333;
+}
+
+.form-group input{
+    width:100%;
+    height:52px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    padding:0 16px;
+    font-size:15px;
+    outline:none;
+    transition:.3s;
+}
+
+.form-group input:focus{
+    border-color:#b38b59;
+    box-shadow:0 0 0 3px rgba(179,139,89,.15);
+}
+
+.submit-btn{
+    width:100%;
+    height:54px;
+    border:none;
+    background:#b38b59;
+    color:#fff;
+    font-size:16px;
+    font-weight:600;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.submit-btn:hover{
+    background:#967145;
+}
+
+.open-modal-btn{
+    padding:15px 35px;
+    border:none;
+    background:#b38b59;
+    color:#fff;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:600;
+}
+
+@media(max-width:600px){
+
+.modal-content{
+    padding:25px;
+}
+
+.modal-header h2{
+    font-size:24px;
+}
+
+}
+</style>
+<script>
+    const modal = document.getElementById("enquiryModal");
+const openBtn = document.querySelectorAll(".openModal");
+const closeBtn = document.getElementById("closeModal");
+
+// openBtn.addEventListener("click", () => {
+//     modal.classList.add("show");
+// });
+//  console.log(openBtn);
+openBtn.forEach(button => {
+    button.addEventListener("click", function (e) {
+        e.preventDefault();
+        modal.classList.add("show");
+    });
+});
+
+closeBtn.addEventListener("click", () => {
+    modal.classList.remove("show");
+});
+
+window.addEventListener("click", (e) => {
+    if (e.target === modal) {
+        modal.classList.remove("show");
+    }
+});
+</script>
 
     <script>
         // Mobile menu functionality
