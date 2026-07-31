@@ -34,7 +34,7 @@
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
@@ -767,7 +767,7 @@
             cursor: pointer;
         }
         .contact-fab:hover { transform: translateY(-2px) scale(1.05); box-shadow: 0 10px 26px rgba(18,24,26,0.24); }
-        .contact-fab svg { width: 22px; height: 22px; }
+        .contact-fab svg { width: 40px; height: 40px; }
         .contact-fab-call { background: var(--ink); color: #fff; }
         .contact-fab-call:hover { background: var(--aurora-dark); }
         .contact-fab-whatsapp { background: #25D366; color: #fff; }
@@ -893,7 +893,7 @@
             
             /* #contact-rail { right: 12px; bottom: 16px; } */
             /* .contact-fab { width: 44px; height: 44px; } */
-            .contact-fab svg { width: 18px; height: 18px; }
+            .contact-fab svg { width: 60px; height: 35px; }
         }
         
         @media (max-width: 480px) {
@@ -1114,7 +1114,7 @@
     max-height: 600px;
     display: block;
     overflow-y: auto;
-    top: 35px;
+    top: 45px;
 }
 
 #mobile-menu a {
@@ -1237,7 +1237,7 @@
 }
 
 .nav-logo img {
-    height: 50px;
+    height: 100px;
     width: auto;
     display: block;
 }
@@ -1266,13 +1266,16 @@
 
 @media (max-width: 480px) {
     .nav-logo img {
-        height: 34px;
+        height: 100px;
     }
     
     .mobile-logo img {
         height: 34px;
     }
 } 
+.contact-fab i {
+    font-size: 30px; /* Increase icon size */
+}
     </style>
 </head>
 <body>
@@ -1282,7 +1285,7 @@
 <nav id="site-nav">
     <div class="nav-inner">
        <a href="index.html" class="nav-logo">
-            <img src="/direct sales team.png" alt="PrimeLand Logo" />
+            <img src="./direct_sales_team.png" alt="PrimeLand Logo" />
         </a>
         <div class="nav-links">
             <a href="index.html">Home</a>
@@ -1318,13 +1321,13 @@
 
 <!-- ===== MOBILE MENU ===== -->
 <div id="mobile-menu">
-    <a href="index.html" class="nav-logo">
+    <!-- <a href="index.html" class="nav-logo">
             <img src="/direct sales team.png" alt="PrimeLand Logo" />
-        </a>
+        </a> -->
     
     <!-- Mobile Builders Dropdown -->
     <div class="dropdown">
-        <a href="properties.html" class="dropbtn">Builders <i class="fas fa-chevron-down"></i></a>
+        <a class="dropbtn">Builders <i class="fas fa-chevron-down"></i></a>
         <div class="dropdown-content">
             <a href="total-environment.html">Total Environment</a>
             <a href="lnt-projects.html">L&T Projects</a>
@@ -1583,21 +1586,24 @@
 <!-- ===== CONTACT RAIL ===== -->
 <div id="contact-rail">
     <a href="mailto:info@primeland.in" aria-label="Email" class="contact-fab contact-fab-email">
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M3.5 6.5C3.5 5.67 4.17 5 5 5h14c.83 0 1.5.67 1.5 1.5v11c0 .83-.67 1.5-1.5 1.5H5c-.83 0-1.5-.67-1.5-1.5v-11Z" stroke="currentColor" stroke-width="1.5"/>
             <path d="M4 6.5 12 13l8-6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
+        </svg> -->
+         <i class="fas fa-envelope"></i>
     </a>
     <a href="https://wa.me/916366850754" target="_blank" rel="noopener" aria-label="WhatsApp" class="contact-fab contact-fab-whatsapp">
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M17.5 14.4c-.3-.15-1.77-.87-2.04-.97-.28-.1-.48-.15-.68.15-.2.3-.78.97-.96 1.17-.18.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.48-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.15-.15.3-.35.44-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.08-.15-.68-1.63-.93-2.24-.25-.6-.5-.5-.68-.5-.18-.01-.4-.01-.6-.01-.2 0-.53.07-.8.37-.28.3-1.06 1.04-1.06 2.53 0 1.5 1.08 2.94 1.24 3.14.15.2 2.1 3.2 5.1 4.36 3 1.17 3 .78 3.54.73.55-.05 1.77-.72 2.03-1.42.25-.7.25-1.3.18-1.42-.08-.13-.28-.2-.58-.35Z" fill="currentColor"/>
             <path d="M20.5 3.5A11 11 0 0 0 3.6 17.2L2.5 21.5l4.4-1.15A11 11 0 1 0 20.5 3.5Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
-        </svg>
+        </svg> -->
+        <i class="fab fa-whatsapp"></i>
     </a>
     <a href="tel:6366850754" aria-label="Call" class="contact-fab contact-fab-call">
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1 .5 1 1v3.8c0 .6-.5 1-1 1C10.9 21.3 2.7 13.1 2.7 3.7c0-.6.5-1 1-1h3.8c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1L6.6 10.8Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-        </svg>
+        </svg> -->
+         <i class="fas fa-phone"></i>
     </a>
 </div>
 
@@ -1634,7 +1640,7 @@
     const hamburger = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobile-menu');
     const nav = document.getElementById('site-nav');
-     console.log(document.querySelectorAll("#mobile-menu").length);
+    //  console.log(document.querySelectorAll("#mobile-menu").length);
     hamburger.addEventListener('click', () => {
         const isOpen = mobileMenu.classList.toggle('open');
         hamburger.classList.toggle('open');
@@ -1645,7 +1651,7 @@
 // console.log(hamburger);
 //      console.log(mobileMenu);
     // Close mobile menu on link click
-    document.querySelectorAll('#mobile-menu a').forEach(link => {
+    document.querySelectorAll('#mobile-menu .dropdown-content a').forEach(link => {
         link.addEventListener('click', () => {
             mobileMenu.classList.remove('open');
             hamburger.classList.remove('open');
@@ -2146,8 +2152,8 @@
         });
     });
 
-    console.log('🚀 PrimeLand — Luxury Apartments in Bangalore');
-    console.log(`📊 Loaded ${properties.length} properties`);
+    // console.log('🚀 PrimeLand — Luxury Apartments in Bangalore');
+    // console.log(`📊 Loaded ${properties.length} properties`);
 </script>
 
 <!-- ===== FALLBACK PLACEHOLDER IMAGES ===== -->
@@ -2193,16 +2199,19 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // ===== MOBILE DROPDOWN TOGGLE =====
-    const dropdowns = document.querySelectorAll('.dropdown');
+    const dropdowns = document.querySelectorAll('#mobile-menu .dropdown');
+    // console.log(dropdowns);
     
     dropdowns.forEach(dropdown => {
         const dropbtn = dropdown.querySelector('.dropbtn');
+        // console.log(dropbtn);
         
         if (dropbtn) {
             dropbtn.addEventListener('click', function(e) {
                 // Only for mobile (screen width <= 768px)
                 if (window.innerWidth <= 768) {
                     e.preventDefault();
+                    e.stopPropagation();
                     // Close other dropdowns
                     dropdowns.forEach(other => {
                         if (other !== dropdown && other.classList.contains('active')) {
@@ -2249,6 +2258,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
     });
-});</script>
+});
+</script>
 </body>
 </html>
