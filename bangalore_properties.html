@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bangalore Properties</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+  background:#f5f7fa;
+  color:#222;
+}
+
+.hero{
+  height:60vh;
+  background:url('https://images.unsplash.com/photo-1597047084897-51e81819a499?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+}
+
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.45);
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+  text-align:center;
+  color:#fff;
+}
+
+.hero h1{
+  font-size:48px;
+  margin-bottom:10px;
+}
+
+.hero p{
+  font-size:18px;
+}
+
+.container{
+  width:90%;
+  max-width:1200px;
+  margin:auto;
+}
+
+.filter-box{
+  background:#fff;
+  padding:20px;
+  border-radius:16px;
+  box-shadow:0 10px 25px rgba(0,0,0,.08);
+  margin-top:-50px;
+  position:relative;
+  z-index:10;
+}
+
+.filter-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+}
+
+.filter-grid select{
+  padding:14px;
+  border:1px solid #ddd;
+  border-radius:12px;
+  font-size:15px;
+  outline:none;
+}
+
+.section-title{
+  text-align:center;
+  font-size:32px;
+  margin:50px 0 30px;
+}
+
+.property-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+  margin-bottom:60px;
+}
+
+.property-card{
+  background:#fff;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 10px 24px rgba(0,0,0,.08);
+}
+
+.property-card img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+}
+
+.property-content{
+  padding:20px;
+}
+
+.property-content h3{
+  font-size:22px;
+  margin-bottom:10px;
+}
+
+.meta{
+  color:#666;
+  font-size:14px;
+  margin-bottom:10px;
+}
+
+.price{
+  color:#d32f2f;
+  font-size:20px;
+  font-weight:bold;
+  margin-bottom:15px;
+}
+
+.btn{
+  display:inline-block;
+  padding:10px 18px;
+  background:#111827;
+  color:#fff;
+  text-decoration:none;
+  border-radius:10px;
+}
+
+.no-results{
+  text-align:center;
+  grid-column:1 / -1;
+  padding:40px;
+  color:#777;
+}
+
+@media(max-width:992px){
+  .property-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:768px){
+  .hero h1{
+    font-size:34px;
+  }
+
+  .filter-grid{
+    grid-template-columns:1fr;
+  }
+
+  .property-grid{
+    grid-template-columns:1fr;
+  }
+}
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-content">
+    <h1>Bangalore Properties</h1>
+    <p>Premium Apartments, Villas & Plots across Bangalore</p>
+  </div>
+</section>
+
+<div class="container">
+
+  <div class="filter-box">
+
+    <div class="filter-grid">
+
+      <select id="typeFilter">
+        <option value="">Property Type</option>
+        <option value="Apartment">Apartment</option>
+        <option value="Villa">Villa</option>
+        <option value="Plot">Plot</option>
+      </select>
+
+      <select id="zoneFilter">
+        <option value="">Bangalore Zone</option>
+        <option value="North">North Bangalore</option>
+        <option value="South">South Bangalore</option>
+        <option value="East">East Bangalore</option>
+        <option value="West">West Bangalore</option>
+        <option value="Central">Central Bangalore</option>
+      </select>
+
+      <select id="areaFilter">
+        <option value="">Select Area</option>
+      </select>
+
+    </div>
+
+  </div>
+
+  <h2 class="section-title">Featured Properties</h2>
+
+  <div id="propertyGrid" class="property-grid"></div>
+
+</div>
+
+<script>
+const zoneAreas = {
+  North: ["Hebbal", "Yelahanka", "Thanisandra", "Devanahalli"],
+  South: ["JP Nagar", "Bannerghatta Road", "Kanakapura Road", "Electronic City"],
+  East: ["Whitefield", "KR Puram", "Marathahalli", "Sarjapur Road"],
+  West: ["Rajajinagar", "Vijayanagar", "Nagarbhavi", "Magadi Road"],
+  Central: ["MG Road", "Indiranagar", "Richmond Town", "Shivajinagar"]
+};
+
+const properties = [
+  {
+    name:"L&T Elara Celestia",
+    type:"Apartment",
+    zone:"North",
+    area:"Hebbal",
+    price:"₹2.30 Cr",
+    image:"https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=900&q=80",
+    url:"/lnt-elara-celestia"
+  },
+  {
+    name:"Godrej Whitefield",
+    type:"Apartment",
+    zone:"East",
+    area:"Whitefield",
+    price:"₹1.80 Cr",
+    image:"https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80",
+    url:"/godrej-whitefield"
+  },
+  {
+    name:"Nambiar District 25",
+    type:"Apartment",
+    zone:"East",
+    area:"Sarjapur Road",
+    price:"₹1.45 Cr",
+    image:"https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=900&q=80",
+    url:"/nambiar-district-25"
+  },
+  {
+    name:"Prestige Whitefield Villas",
+    type:"Villa",
+    zone:"East",
+    area:"Whitefield",
+    price:"₹4.20 Cr",
+    image:"https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=900&q=80",
+    url:"/prestige-whitefield-villas"
+  },
+  {
+    name:"Sobha Dream Gardens",
+    type:"Apartment",
+    zone:"North",
+    area:"Yelahanka",
+    price:"₹1.20 Cr",
+    image:"https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=900&q=80",
+    url:"/sobha-dream-gardens"
+  },
+  {
+    name:"Brigade JP Nagar Villas",
+    type:"Villa",
+    zone:"South",
+    area:"JP Nagar",
+    price:"₹3.60 Cr",
+    image:"https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=900&q=80",
+    url:"/brigade-jp-nagar-villas"
+  }
+];
+
+const typeFilter = document.getElementById("typeFilter");
+const zoneFilter = document.getElementById("zoneFilter");
+const areaFilter = document.getElementById("areaFilter");
+const propertyGrid = document.getElementById("propertyGrid");
+
+function populateAreas(zone){
+  areaFilter.innerHTML = '<option value="">Select Area</option>';
+
+  if(zoneAreas[zone]){
+    zoneAreas[zone].forEach(area => {
+      areaFilter.innerHTML += `<option value="${area}">${area}</option>`;
+    });
+  }
+}
+
+function renderProperties(list){
+  propertyGrid.innerHTML = "";
+
+  if(list.length === 0){
+    propertyGrid.innerHTML = '<div class="no-results">No properties found.</div>';
+    return;
+  }
+
+  list.forEach(p => {
+    propertyGrid.innerHTML += `
+      <div class="property-card">
+        <img src="${p.image}" alt="${p.name}">
+        <div class="property-content">
+          <h3>${p.name}</h3>
+          <div class="meta">${p.type} • ${p.area} • ${p.zone} Bangalore</div>
+          <div class="price">${p.price}</div>
+          <a href="${p.url}" class="btn">View Details</a>
+        </div>
+      </div>
+    `;
+  });
+}
+
+function filterProperties(){
+  const type = typeFilter.value;
+  const zone = zoneFilter.value;
+  const area = areaFilter.value;
+
+  const filtered = properties.filter(p => {
+    return (!type || p.type === type) &&
+           (!zone || p.zone === zone) &&
+           (!area || p.area === area);
+  });
+
+  renderProperties(filtered);
+}
+
+zoneFilter.addEventListener("change", () => {
+  populateAreas(zoneFilter.value);
+  filterProperties();
+});
+
+typeFilter.addEventListener("change", filterProperties);
+areaFilter.addEventListener("change", filterProperties);
+
+renderProperties(properties);
+</script>
+
+</body>
+</html>

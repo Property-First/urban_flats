@@ -1276,6 +1276,35 @@
 .contact-fab i {
     font-size: 40px; /* Increase icon size */
 }
+
+.filter-wrapper{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+  margin:30px 0;
+}
+
+.filter-select{
+  width:100%;
+  padding:14px 16px;
+  border:1px solid #ddd;
+  border-radius:12px;
+  font-size:15px;
+  background:#fff;
+  cursor:pointer;
+  outline:none;
+}
+
+.filter-select:focus{
+  border-color:#0b6b3a;
+  box-shadow:0 0 0 3px rgba(11,107,58,.12);
+}
+
+@media (max-width:768px){
+  .filter-wrapper{
+    grid-template-columns:1fr;
+  }
+}
     </style>
 </head>
 <body>
@@ -1402,34 +1431,222 @@
                     <label for="mainEmail">Email Address</label>
                     <input type="email" id="mainEmail" placeholder="Enter your email" required />
                 </div>
-                <div class="form-group">
-                    <label for="mainTimeline">Investment Timeline</label>
-                    <select id="mainTimeline">
-                        <option value="" disabled selected>Select a timeframe</option>
-                        <option value="Within 3 months">Within 3 months</option>
-                        <option value="3-6 months">3 – 6 months</option>
-                        <option value="6-12 months">6 – 12 months</option>
-                        <option value="More than 12 months">More than 12 months</option>
-                        <option value="Just exploring">Just exploring</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="mainBudget">Budget Range</label>
-                    <select id="mainBudget">
-                        <option value="" disabled selected>Select a budget range</option>
-                        <option value="Under ₹50L">Under ₹50L</option>
-                        <option value="₹50L-1Cr">₹50L – 1Cr</option>
-                        <option value="₹1Cr-3Cr">₹1Cr – 3Cr</option>
-                        <option value="₹3Cr-5Cr">₹3Cr – 5Cr</option>
-                        <option value="₹5Cr+">₹5Cr+</option>
-                    </select>
-                </div>
+                
                 <p id="mainFormStatus" class="form-status"></p>
                 <button type="button" class="submit-btn" id="mainSubmitBtn">Submit Enquiry</button>
             </form>
         </div>
     </div>
 </section>
+
+<!-- Browse by City Section -->
+<section class="city-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-badge">Explore</span>
+      <h2>Browse Properties by City</h2>
+      <p>Choose your preferred city to explore premium apartments, villas, plots, and luxury homes.</p>
+    </div>
+
+    <div class="city-grid">
+
+      <a href="./bangalore_properties.html" class="city-card">
+        <img src="images/bangalore.jpg" alt="Properties in Bangalore">
+        <div class="city-content">
+          <h3>Bangalore</h3>
+          <span>Explore Properties →</span>
+        </div>
+      </a>
+
+      <a href="/mumbai-properties" class="city-card">
+        <img src="images/mumbai.jpg" alt="Properties in Mumbai">
+        <div class="city-content">
+          <h3>Mumbai</h3>
+          <span>Explore Properties →</span>
+        </div>
+      </a>
+
+      <a href="/hyderabad-properties" class="city-card">
+        <img src="images/hyderabad.jpg" alt="Properties in Hyderabad">
+        <div class="city-content">
+          <h3>Hyderabad</h3>
+          <span>Explore Properties →</span>
+        </div>
+      </a>
+
+      <a href="/pune-properties" class="city-card">
+        <img src="images/pune.jpg" alt="Properties in Pune">
+        <div class="city-content">
+          <h3>Pune</h3>
+          <span>Explore Properties →</span>
+        </div>
+      </a>
+
+      <a href="/chennai-properties" class="city-card">
+        <img src="images/chennai.jpg" alt="Properties in Chennai">
+        <div class="city-content">
+          <h3>Chennai</h3>
+          <span>Explore Properties →</span>
+        </div>
+      </a>
+
+      <a href="/delhi-properties" class="city-card">
+        <img src="images/delhi.jpg" alt="Properties in Delhi NCR">
+        <div class="city-content">
+          <h3>Delhi NCR</h3>
+          <span>Explore Properties →</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+<style>
+    /* ===== Browse by City ===== */
+.city-section{
+  padding:80px 20px;
+  background:#f8f9fb;
+}
+
+.city-section .container{
+  max-width:1200px;
+  margin:auto;
+}
+
+.section-header{
+  text-align:center;
+  margin-bottom:40px;
+}
+
+.section-badge{
+  display:inline-block;
+  background:#111827;
+  color:#fff;
+  padding:6px 14px;
+  border-radius:50px;
+  font-size:13px;
+  letter-spacing:.5px;
+  text-transform:uppercase;
+}
+
+.section-header h2{
+  font-size:2.2rem;
+  color:#111827;
+  margin:16px 0 10px;
+}
+
+.section-header p{
+  color:#6b7280;
+  max-width:650px;
+  margin:auto;
+  line-height:1.7;
+}
+
+.city-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
+  gap:24px;
+}
+
+.city-card{
+  display:block;
+  background:#fff;
+  border-radius:20px;
+  overflow:hidden;
+  text-decoration:none;
+  box-shadow:0 10px 25px rgba(0,0,0,.08);
+  transition:.35s ease;
+}
+
+.city-card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 18px 35px rgba(0,0,0,.15);
+}
+
+.city-card img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  display:block;
+}
+
+.city-content{
+  padding:22px;
+}
+
+.city-content h3{
+  font-size:1.3rem;
+  color:#111827;
+  margin-bottom:8px;
+}
+
+.city-content span{
+  color:#d32f2f;
+  font-weight:600;
+  font-size:15px;
+}
+
+.city-card:hover span{
+  text-decoration:underline;
+}
+
+/* Mobile only sticky vertical scroll */
+/* Mobile only stacked scroll animation */
+@media (max-width:768px){
+
+    html,
+  body,
+  .city-section,
+  .city-section .container,
+  .city-grid{
+    overflow: visible !important;
+  }
+
+  .city-section{
+    padding:40px 16px;
+    background:#f8f9fb;
+  }
+
+  .city-grid{
+    display:block;
+    position:relative;
+  }
+
+  .city-card{
+    position:sticky;
+    top:90px;                 /* sticky point below header */
+    display:block;
+    width:100%;
+    background:#fff;
+    border-radius:24px;
+    overflow:hidden;
+    text-decoration:none;
+    box-shadow:0 15px 35px rgba(0,0,0,.18);
+    margin-bottom:28px;
+  }
+
+  .city-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    display:block;
+  }
+
+  .city-content{
+    padding:20px;
+  }
+
+  /* Important: later cards appear above earlier cards */
+  .city-card:nth-child(1){ z-index:1; }
+  .city-card:nth-child(2){ z-index:2; top: 95px; }
+  .city-card:nth-child(3){ z-index:3; top: 100px}
+  .city-card:nth-child(4){ z-index:4; top: 105px;}
+  .city-card:nth-child(5){ z-index:5; top: 110px;}
+  .city-card:nth-child(6){ z-index:6; top: 115px;}
+
+}
+</style>
+
 
 <!-- ===== FILTER + PROPERTIES ===== -->
 <section id="properties">
@@ -1449,9 +1666,27 @@
             <button class="filter-btn" data-filter="central">Central Bangalore</button>
             <button class="filter-btn" data-filter="whitefield">Whitefield</button>
         </div>
+
         
+         <!-- 3-Level Filter -->
+    <!-- <div class="filter-wrapper">
+      <select id="cityFilter" class="filter-select">
+        <option value="all">Select City</option>
+      </select>
+
+      <select id="areaFilter" class="filter-select">
+        <option value="all">Select Area</option>
+      </select>
+
+      <select id="typeFilter" class="filter-select">
+  <option value="all">Select Property Type</option>
+  <option value="Apartment">Apartment</option>
+  <option value="Villa">Villa</option>
+  <option value="Plot">Plot</option>
+</select>
+    </div> -->
         <div class="property-grid" id="propertyGrid">
-            <!-- Properties will be injected by JavaScript -->
+        
         </div>
     </div>
 </section>
@@ -1722,6 +1957,250 @@
             ease: 'back.out(1.7)'
         });
     });
+
+
+    // ===============================
+// PROPERTIES DATA
+// ===============================
+// const properties = [
+//   {
+//     id: 1,
+//     name: "Prestige Falcon City",
+//     city: "Bangalore",
+//     area: "South Bangalore",
+//     type: "Apartment",
+//     location: "Kanakapura Road",
+//     img: "images/Prestige-Falcon-City.webp"
+//   },
+//   {
+//     id: 2,
+//     name: "Sobha Dream Gardens",
+//     city: "Bangalore",
+//     area: "North Bangalore",
+//     type: "Apartment",
+//     location: "Thanisandra Main Road",
+//     img: "images/dream-gardens.webp"
+//   },
+//   {
+//     id: 3,
+//     name: "Godrej Ananda Phase 2",
+//     city: "Bangalore",
+//     area: "North Bangalore",
+//     type: "Apartment",
+//     location: "Bagalur, KIADB Aerospace Park",
+//     img: "images/Godrej-Ananda.webp"
+//   },
+//   {
+//     id: 4,
+//     name: "L&T Raintree Boulevard",
+//     city: "Bangalore",
+//     area: "North Bangalore",
+//     type: "Apartment",
+//     location: "Hebbal",
+//     img: "images/l&t-raintree-boulevard.jpg"
+//   },
+//   {
+//     id: 5,
+//     name: "Tata One Bangalore",
+//     city: "Bangalore",
+//     area: "North Bangalore",
+//     type: "Villa",
+//     location: "Devanahalli",
+//     img: "images/tata-one-bangalore.webp"
+//   },
+//   {
+//     id: 6,
+//     name: "Prestige Willow Tree",
+//     city: "Bangalore",
+//     area: "North Bangalore",
+//     type: "Apartment",
+//     location: "Vidyaranyapura",
+//     img: "images/prestige-willow-tree.webp"
+//   },
+//   {
+//     id: 7,
+//     name: "Sobha HRC Pristine",
+//     city: "Bangalore",
+//     area: "North Bangalore",
+//     type: "Apartment",
+//     location: "Jakkur",
+//     img: "images/sobha-hrc-pristine.jpg"
+//   },
+//   {
+//     id: 8,
+//     name: "Brigade Orchards",
+//     city: "Bangalore",
+//     area: "North Bangalore",
+//     type: "Villa",
+//     location: "Devanahalli",
+//     img: "images/brigade-orchards.jpg"
+//   },
+//   {
+//     id: 9,
+//     name: "Assetz Zen and Sato",
+//     city: "Bangalore",
+//     area: "North Bangalore",
+//     type: "Apartment",
+//     location: "Bagalur Main Road, Yelahanka",
+//     img: "assetz-images/assetz-zen-and-sato.webp"
+//   }
+// ];
+
+// ===============================
+// DOM ELEMENTS
+// ===============================
+// const cityFilter = document.getElementById("cityFilter");
+// const areaFilter = document.getElementById("areaFilter");
+// const typeFilter = document.getElementById("typeFilter");
+// const propertyGrid = document.getElementById("propertyGrid");
+
+// ===============================
+// LOAD CITIES
+// ===============================
+// function loadCities() {
+//   cityFilter.innerHTML = '<option value="all">Select City</option>';
+
+//   const cities = [...new Set(properties.map(p => p.city))];
+
+//   cities.forEach(city => {
+//     cityFilter.innerHTML += `<option value="${city}">${city}</option>`;
+//   });
+// }
+
+// ===============================
+// LOAD AREAS BASED ON CITY
+// ===============================
+// function loadAreas(city = 'all') {
+//   areaFilter.innerHTML = '<option value="all">Select Area</option>';
+
+//   const areas = [...new Set(
+//     properties
+//       .filter(p => city === 'all' || p.city === city)
+//       .map(p => p.area)
+//   )];
+
+//   areas.forEach(area => {
+//     areaFilter.innerHTML += `<option value="${area}">${area}</option>`;
+//   });
+// }
+
+// ===============================
+// LOAD PROPERTY TYPES
+// ===============================
+// function loadTypes(city = 'all', area = 'all') {
+//   typeFilter.innerHTML = '<option value="all">Select Property Type</option>';
+
+//   const types = [...new Set(
+//     properties
+//       .filter(p =>
+//         (city === 'all' || p.city === city) &&
+//         (area === 'all' || p.area === area)
+//       )
+//       .map(p => p.type)
+//   )];
+
+//   types.forEach(type => {
+//     typeFilter.innerHTML += `<option value="${type}">${type}</option>`;
+//   });
+// }
+
+// ===============================
+// RENDER PROPERTY CARDS
+// ===============================
+// function renderProperties(city = 'all', area = 'all', type = 'all') {
+//   propertyGrid.innerHTML = '';
+
+//   const filtered = properties.filter(p =>
+//     (city === 'all' || p.city === city) &&
+//     (area === 'all' || p.area === area) &&
+//     (type === 'all' || p.type === type)
+//   );
+
+//   if (filtered.length === 0) {
+//     propertyGrid.innerHTML = '<p class="no-properties">No properties found.</p>';
+//     return;
+//   }
+
+//   filtered.forEach(p => {
+//     const card = document.createElement('div');
+//     card.className = 'property-card';
+
+//     card.innerHTML = `
+//       <div class="property-card-img">
+//         <img src="${p.img}" alt="${p.name}" loading="lazy"
+//              onerror="this.src='images/placeholder.jpg'">
+//       </div>
+
+//       <div class="property-card-body">
+//         <h3>${p.name}</h3>
+
+//         <div class="property-location">
+//           <i class="fas fa-map-marker-alt"></i>
+//           <span>${p.location}</span>
+//         </div>
+
+//         <p class="property-type">${p.type}</p>
+
+//         <div class="property-actions">
+//           <button class="action-btn"
+//             onclick="window.location.href='${p.name.toLowerCase().replace(/ /g,'-')}.html'">
+//             <i class="fas fa-info-circle"></i> About
+//           </button>
+
+//           <button class="action-btn brochure-btn" data-project="${p.name}">
+//             <i class="fas fa-download"></i> Brochure
+//           </button>
+//         </div>
+//       </div>
+//     `;
+
+//     propertyGrid.appendChild(card);
+//   });
+
+  // Brochure modal listeners
+//   document.querySelectorAll('.brochure-btn').forEach(btn => {
+//     btn.addEventListener('click', function () {
+//       const projectName = this.dataset.project || 'Project';
+
+//       document.getElementById('modalTitle').textContent =
+//         `Download Brochure — ${projectName}`;
+
+//       document.getElementById('brochureName').placeholder =
+//         `Your name for ${projectName}`;
+
+//       document.getElementById('brochureModal').classList.add('active');
+//     });
+//   });
+// }
+
+// ===============================
+// FILTER EVENTS
+// ===============================
+// cityFilter.addEventListener('change', function () {
+//   loadAreas(this.value);
+//   loadTypes(this.value, 'all');
+//   renderProperties(this.value, 'all', 'all');
+// });
+
+// areaFilter.addEventListener('change', function () {
+//   loadTypes(cityFilter.value, this.value);
+//   renderProperties(cityFilter.value, this.value, 'all');
+// });
+
+// typeFilter.addEventListener('change', function () {
+//   renderProperties(cityFilter.value, areaFilter.value, this.value);
+// });
+
+// ===============================
+// INITIAL LOAD
+// ===============================
+// document.addEventListener('DOMContentLoaded', () => {
+//   loadCities();
+//   loadAreas('all');
+//   loadTypes('all', 'all');
+//   renderProperties('all', 'all', 'all');
+// });
+
 
     // ===== PROPERTY DATA =====
     const properties = [
