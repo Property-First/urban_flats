@@ -296,7 +296,7 @@ body{
 
 .land-image img{
   width:100%;
-  height:640px;
+  height:450px;
   object-fit:cover;
   display:block;
   border-radius:28px;
@@ -454,7 +454,7 @@ body{
   position:relative;
   border-radius:30px;
   overflow:hidden;
-  min-height:400px;
+  /* min-height:400px; */
   background:#e7ebea;
   box-shadow:0 18px 36px rgba(0,0,0,.08);
 }
@@ -784,6 +784,158 @@ body{
 
 
 
+/* ===== Why Invest in Bangalore Section ===== */
+
+.why-invest-section{
+  padding:90px 20px;
+}
+
+.why-invest-container{
+  max-width:1280px;
+  margin:auto;
+}
+
+.why-invest-header{
+  max-width:760px;
+  margin:0 0 46px;
+}
+
+.why-invest-header h2{
+  font-family:Georgia, "Times New Roman", serif;
+  font-size:clamp(30px, 2vw, 56px);
+  line-height:1.1;
+  font-weight:400;
+  color:#111827;
+  margin:0 0 18px;
+}
+
+.why-invest-header p{
+  font-size:15px;
+  line-height:1.9;
+  color:#5f6b7a;
+}
+
+.reasons-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+  margin-bottom:70px;
+}
+
+.reason-card{
+  background:#f5f5f4;
+  border:1px solid rgba(17,24,39,.08);
+  border-radius:24px;
+  padding:28px;
+}
+
+.reason-card .card-label{
+  margin-bottom:14px;
+}
+
+.reason-card h3{
+  font-family:Georgia, serif;
+  font-size:20px;
+  font-weight:400;
+  color:#111827;
+  margin:0 0 10px;
+}
+
+.reason-card p{
+  font-size:13.5px;
+  line-height:1.75;
+  color:#374151;
+}
+
+/* Apartments vs Villas comparison */
+
+.compare-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  background:#e9eded;
+  border-radius:28px;
+  padding:48px;
+}
+
+.compare-col h3{
+  font-family:Georgia, "Times New Roman", serif;
+  font-size:26px;
+  font-weight:400;
+  color:#111827;
+  margin:0 0 18px;
+}
+
+.compare-col p.compare-intro{
+  font-size:14px;
+  line-height:1.8;
+  color:#5f6b7a;
+  margin-bottom:22px;
+}
+
+.compare-col ul{
+  list-style:none;
+  padding:0;
+  margin:0;
+}
+
+.compare-col ul li{
+  position:relative;
+  padding-left:26px;
+  margin-bottom:14px;
+  color:#374151;
+  font-size:13.5px;
+  line-height:1.7;
+}
+
+.compare-col ul li::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:6px;
+  width:6px;
+  height:6px;
+  border:2px solid #0b7d73;
+  border-radius:50%;
+}
+
+.compare-col + .compare-col{
+  border-left:1px solid rgba(17,24,39,.1);
+  padding-left:40px;
+}
+
+/* Responsive */
+
+@media (max-width:992px){
+  .reasons-grid{
+    grid-template-columns:1fr;
+  }
+  .compare-grid{
+    grid-template-columns:1fr;
+    padding:32px;
+    gap:32px;
+  }
+  .compare-col + .compare-col{
+    border-left:none;
+    padding-left:0;
+    border-top:1px solid rgba(17,24,39,.1);
+    padding-top:32px;
+  }
+}
+
+@media (max-width:768px){
+  .why-invest-section{
+    padding:56px 16px;
+  }
+  .why-invest-header h2{
+    font-size:30px;
+  }
+  .compare-grid{
+    padding:24px;
+    border-radius:22px;
+  }
+}
+
 .catalyst-section{
   background:#071316;
   padding:90px 20px;
@@ -898,7 +1050,7 @@ body{
   position:relative;
   border-radius:30px;
   overflow:hidden;
-  min-height:400px;
+  /* min-height:400px; */
   background:#e7ebea;
   box-shadow:0 18px 36px rgba(0,0,0,.18);
 }
@@ -1063,6 +1215,92 @@ body{
   </div>
 </section>
 
+<!-- Why Invest in Bangalore Section -->
+<section class="why-invest-section">
+  <div class="why-invest-container">
+
+    <div class="why-invest-header">
+      <span class="eyebrow">WHY BANGALORE</span>
+      <h2>Why Bangalore is India's most consistent real estate market to invest in.</h2>
+      <p>
+        Bangalore has delivered steady price appreciation and strong rental demand for
+        over two decades, driven by its IT and startup economy, an expanding metro and
+        ring-road network, and a young, high-income working population that keeps
+        housing demand structurally strong across both apartments and villas.
+      </p>
+    </div>
+
+    <div class="reasons-grid">
+
+      <div class="reason-card">
+        <span class="card-label">IT &amp; STARTUP HUB</span>
+        <h3>India's tech capital</h3>
+        <p>Home to the country's largest IT/ITeS workforce and thousands of startups, driving sustained end-user and rental demand near office corridors like Whitefield, Outer Ring Road and Sarjapur.</p>
+      </div>
+
+      <div class="reason-card">
+        <span class="card-label">INFRASTRUCTURE</span>
+        <h3>Fast-expanding connectivity</h3>
+        <p>Namma Metro's Phase 2 &amp; 3, the Peripheral Ring Road, Satellite Town Ring Road and airport-linked expressways are steadily cutting commute times and opening up new growth corridors.</p>
+      </div>
+
+      <div class="reason-card">
+        <span class="card-label">RENTAL DEMAND</span>
+        <h3>Strong rental yields</h3>
+        <p>A large working population of IT professionals and a limited supply of quality housing keep rental yields in Bangalore among the highest of India's metro cities.</p>
+      </div>
+
+      <div class="reason-card">
+        <span class="card-label">PRICE APPRECIATION</span>
+        <h3>Steady, long-term growth</h3>
+        <p>Established corridors like Whitefield and Sarjapur Road, and emerging ones like Devanahalli and North Bangalore, have shown consistent year-on-year price growth rather than sharp speculative swings.</p>
+      </div>
+
+      <div class="reason-card">
+        <span class="card-label">QUALITY OF LIFE</span>
+        <h3>Weather &amp; livability</h3>
+        <p>A moderate climate through the year, tree-lined neighbourhoods and a wide choice of international schools, hospitals and malls make Bangalore one of India's most livable large cities.</p>
+      </div>
+
+      <div class="reason-card">
+        <span class="card-label">TRANSPARENCY</span>
+        <h3>RERA-regulated market</h3>
+        <p>Karnataka's RERA enforcement is among the strictest in India, giving buyers stronger project-level transparency on timelines, approvals and escrow-linked construction funding.</p>
+      </div>
+
+    </div>
+
+    <div class="compare-grid">
+
+      <div class="compare-col">
+        <h3>Why buy an apartment</h3>
+        <p class="compare-intro">A gated apartment is usually the easier entry point into Bangalore real estate, and works well as both a home and a rental asset.</p>
+        <ul>
+          <li>Lower ticket size and easier home-loan eligibility than a villa</li>
+          <li>Ready access to gated amenities — clubhouse, gym, pool, security</li>
+          <li>Best rental demand near IT corridors (Whitefield, ORR, Sarjapur, Electronic City)</li>
+          <li>Lower maintenance effort — upkeep is handled by the association</li>
+          <li>Easier to resell given a larger pool of comparable buyers</li>
+        </ul>
+      </div>
+
+      <div class="compare-col">
+        <h3>Why buy a villa</h3>
+        <p class="compare-intro">A villa suits buyers prioritising space, privacy and long-term land value over convenience of a ready flat.</p>
+        <ul>
+          <li>Land component appreciates faster than a depreciating built structure</li>
+          <li>More built-up area, private garden/terrace space, and no shared walls</li>
+          <li>Full control over interiors, layout and future renovation</li>
+          <li>Preferred by larger families and end-users wanting a permanent home</li>
+          <li>Gated villa communities now offer club/security amenities similar to apartments</li>
+        </ul>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
 <section class="land-section">
   <div class="land-container">
 
@@ -1096,7 +1334,7 @@ body{
     </div>
 
     <div class="land-image">
-      <img src="images/devanahalli-land.jpg" alt="Devanahalli Landscape">
+      <img src="./nambiar-images/nambiar-bannerghatta-banner.webp" alt="Devanahalli Landscape">
     </div>
 
   </div>
@@ -1130,41 +1368,12 @@ body{
         and a plot gives you full control over when and how you build.
       </p>
 
-      <!-- Metrics -->
-      <!-- <div class="stats-grid">
-
-        <div class="stat-item">
-          <h3>13.5%</h3>
-          <span>CAGR SINCE 2020</span>
-        </div>
-
-        <div class="stat-item">
-          <h3>₹5,500 →<br>₹13K</h3>
-          <span>RATES/SQFT, 2020–2026</span>
-        </div>
-
-        <div class="stat-item">
-          <h3>1,000+</h3>
-          <span>INDEPENDENT LISTINGS</span>
-        </div>
-
-      </div> -->
-
     </div>
 
     <!-- Right Image -->
     <div class="growth-image">
 
-      <img src="images/devanahalli-plots.jpg" alt="Devanahalli Plot Market">
-
-      <!-- <div class="image-overlay"> -->
-        <!-- <span class="overlay-label">QUICK SNAPSHOT</span>
-
-        <p>
-          ₹5,300/sqft in BIAAPA layouts to ₹13,000/sqft in premium
-          gated projects nearest the airport.
-        </p> -->
-      <!-- </div> -->
+      <img src="./nambiar-images/nambiar-bannerghatta-gallery-2.webp" alt="Devanahalli Plot Market">
 
     </div>
 
@@ -1243,7 +1452,6 @@ body{
     <!-- Left Content -->
     <div class="catalyst-content">
 
-      <!-- <span class="section-title-small">Four Catalysts</span> -->
       <span class="eyebrow">CONNECTIVITY ROADMAP</span>
 
       <h2>
@@ -1271,19 +1479,7 @@ body{
     <!-- Right Image -->
     <div class="catalyst-image">
 
-      <img src="images/devanahalli-infrastructure.jpg" alt="Infrastructure and Connectivity">
-
-      <!-- <div class="takeaway-card">
-
-        <span class="takeaway-label">BUYER TAKEAWAY</span>
-
-        <p>
-          Plots closest to the Doddajala Metro station and the STRR-airport
-          interchange command the steepest premiums today. Prioritise proximity
-          to these two nodes over sheer distance from the terminal itself.
-        </p>
-
-      </div> -->
+      <img src="./nambiar-images/nambiar-bannerghatta-gallery-1.webp" alt="Infrastructure and Connectivity">
 
     </div>
 
