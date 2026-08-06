@@ -99,7 +99,7 @@
         .btn-secondary {
             background: transparent;
             border: 1px solid var(--hairline);
-            color: var(--ink);
+            color: #eaeeef;
             padding: 14px 32px;
             border-radius: 9999px;
             font-size: 0.7rem;
@@ -289,11 +289,20 @@
         
         /* ===== HERO ===== */
         .hero-section {
-            padding: 140px 0 80px;
-            background: linear-gradient(180deg, var(--basalt-2) 0%, var(--ice) 100%);
-            position: relative;
-            overflow: hidden;
-        }
+    padding: 140px 0 80px;
+    position: relative;
+    overflow: hidden;
+
+    background: linear-gradient(
+                    rgba(0, 0, 0, -0.75),
+                    rgba(0, 0, 0, 1)
+                ),
+                url('./banner_image_direct.png');
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
         .hero-section .container {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -321,7 +330,7 @@
         
         .hero-title {
             font-family: 'Fraunces', serif;
-            font-size: clamp(2.8rem, 5.5vw, 4.5rem);
+            font-size: clamp(2.8rem, 5.5vw, 4rem);
             font-weight: 400;
             line-height: 1.05;
             color: var(--ink);
@@ -332,7 +341,7 @@
         .hero-desc {
             font-size: 1.05rem;
             line-height: 1.7;
-            color: var(--glacier);
+            color: white;
             max-width: 520px;
             margin-bottom: 32px;
         }
@@ -353,7 +362,7 @@
             font-size: 0.6rem;
             text-transform: uppercase;
             letter-spacing: 0.14em;
-            color: var(--glacier);
+            color: white;
             margin-top: 2px;
         }
         
@@ -363,6 +372,8 @@
             border-radius: 24px;
             padding: 36px 40px;
             box-shadow: 0 20px 60px rgba(18,24,26,0.06);
+            width: 400px;
+    margin-left: 70px;
         }
         .hero-form h2 {
             font-family: 'Fraunces', serif;
@@ -883,10 +894,30 @@
             .hamburger { display: flex; }
             #mobile-menu { display: block; }
             
-            .hero-section { padding: 100px 0 60px; }
+            .hero-section { padding: 100px 0 60px;  background: linear-gradient(
+                    rgba(0, 0, 0, -0.80),
+                    rgba(0, 0, 0, 1)
+                ),
+                url('./banner_image_vertical_direct.png');}
+                .hero-title i {
+    color: white;
+    font-style: italic;
+}
+
+.hero-badge {
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+}
             .hero-stats { grid-template-columns: 1fr 1fr; gap: 12px; }
             .hero-stat h2 { font-size: 1.5rem; }
-            .hero-form { padding: 24px 20px; }
+            .hero-form { padding: 24px 20px; margin-left: 0; width: auto; }
             
             .property-grid { grid-template-columns: 1fr; }
             .footer-grid { grid-template-columns: 1fr; gap: 32px; }

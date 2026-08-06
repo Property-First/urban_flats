@@ -1147,6 +1147,138 @@ body{
     font-size:15px;
   }
 }
+
+.launch-section{
+  padding:80px 20px;
+  background:#efebe8;
+}
+
+.container{
+  max-width:1280px;
+  margin:auto;
+}
+
+.tabs{
+  display:flex;
+  justify-content:center;
+  gap:32px;
+  margin-bottom:28px;
+  flex-wrap:wrap;
+}
+
+.tab{
+  background:none;
+  border:none;
+  padding:10px 0;
+  font-size:15px;
+  font-weight:600;
+  color:#4b5563;
+  cursor:pointer;
+  position:relative;
+}
+
+.tab.active{
+  color:#0b7d73;
+}
+
+.tab.active::after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:-6px;
+  height:2px;
+  background:#0b7d73;
+}
+
+.cards-layout{
+  display:grid;
+  grid-template-columns:1.6fr 1fr;
+  gap:24px;
+}
+
+.featured-card,
+.small-card{
+  display:block;
+  background:#f2f2f0;
+  border:1px solid #d8d8d5;
+  border-radius:18px;
+  overflow:hidden;
+  text-decoration:none;
+  color:#111827;
+  box-shadow:0 8px 18px rgba(0,0,0,.06);
+  transition:.25s ease;
+}
+
+.featured-card:hover,
+.small-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 14px 28px rgba(0,0,0,.12);
+}
+
+.featured-card img{
+  width:100%;
+  height:340px;
+  object-fit:cover;
+}
+
+.side-cards{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
+
+.small-card img{
+  width:100%;
+  height:160px;
+  object-fit:cover;
+}
+
+.card-body{
+  padding:18px;
+}
+
+.featured-card h3{
+  font-size:28px;
+  line-height:1.2;
+  margin-bottom:10px;
+  font-family:Georgia, serif;
+}
+
+.small-card h4{
+  font-size:20px;
+  line-height:1.25;
+  margin-bottom:10px;
+  font-family:Georgia, serif;
+}
+
+.card-body p{
+  color:#6b7280;
+  font-size:14px;
+  line-height:1.6;
+  margin-bottom:16px;
+}
+
+.tag{
+  font-size:11px;
+  letter-spacing:.12em;
+  font-weight:700;
+  color:#6b7280;
+}
+
+@media(max-width:992px){
+  .cards-layout{
+    grid-template-columns:1fr;
+  }
+
+  .side-cards{
+    grid-template-columns:1fr;
+  }
+
+  .featured-card img{
+    height:260px;
+  }
+}
 </style>
 </head>
 <body>
@@ -1486,7 +1618,211 @@ body{
   </div>
 </section>
 
+<section class="launch-section">
+  <div class="container">
 
+    <div class="tabs">
+      <button class="tab active" data-tab="launch">New Launch</button>
+      <button class="tab" data-tab="apartments">Apartments</button>
+      <button class="tab" data-tab="plots">Plots</button>
+      <button class="tab" data-tab="villas">Villas</button>
+      <button class="tab" data-tab="luxury">Luxury Homes</button>
+    </div>
+
+    <div class="cards-layout">
+
+      <a href="#" class="featured-card">
+        <img src="images/graviti-hanging-gardens.jpg" alt="Graviti Hanging Gardens">
+        <div class="card-body">
+          <h3>Graviti Hanging Gardens in Chikkajala, Airport Road, Bangalore</h3>
+          <p>Graviti Hanging Gardens is a new ultra-premium residential apartment project near Airport Road, Bangalore.</p>
+          <span class="tag">CHIKKAJALA</span>
+        </div>
+      </a>
+
+      <div class="side-cards">
+
+        <a href="#" class="small-card">
+          <img src="images/brigade-granada.jpg" alt="Brigade Granada">
+          <div class="card-body">
+            <h4>Brigade Granada on Whitefield-Kadugodi Road, Bangalore</h4>
+            <p>Upcoming luxury township apartments in East Bangalore.</p>
+            <span class="tag">WHITEFIELD-KADUGODI ROAD</span>
+          </div>
+        </a>
+
+        <a href="#" class="small-card">
+          <img src="images/lnt-thanisandra.jpg" alt="L&T Thanisandra">
+          <div class="card-body">
+            <h4>Upcoming L&T Apartments in Thanisandra, Bangalore</h4>
+            <p>Premium apartment project near Yelahanka and North Bangalore.</p>
+            <span class="tag">THANISANDRA</span>
+          </div>
+        </a>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<script>
+    const propertyData = {
+  launch: [
+    {
+      title: "Graviti Hanging Gardens",
+      location: "Chikkajala, Bangalore",
+      image: "images/graviti-hanging-gardens.jpg",
+      url: "graviti-hanging-gardens.html"
+    },
+    {
+      title: "Brigade Granada",
+      location: "Whitefield-Kadugodi Road",
+      image: "images/brigade-granada.jpg",
+      url: "brigade-granada.html"
+    },
+    {
+      title: "L&T Thanisandra",
+      location: "Thanisandra, Bangalore",
+      image: "images/lnt-thanisandra.jpg",
+      url: "lnt-thanisandra.html"
+    }
+  ],
+
+  apartments: [
+    {
+      title: "L&T Elara Celestia",
+      location: "Hebbal, Bangalore",
+      image: "lnt-images/lnt-elara-celestia.jpg",
+      url: "lnt-elara-celestia.html"
+    },
+    {
+      title: "Sobha Dream Gardens",
+      location: "Thanisandra, Bangalore",
+      image: "images/dream-gardens.webp",
+      url: "sobha-dream-gardens.html"
+    },
+    {
+      title: "Godrej Whitefield",
+      location: "Whitefield, Bangalore",
+      image: "godrej-images/godrej-whitefield.webp",
+      url: "godrej-whitefield.html"
+    }
+  ],
+
+  villas: [
+    {
+      title: "Total Environment After the Rain",
+      location: "Yelahanka, Bangalore",
+      image: "total-images/after-the-rain.jpg",
+      url: "after-the-rain.html"
+    },
+    {
+      title: "Nambiar Bannerghatta Villas",
+      location: "Bannerghatta, Bangalore",
+      image: "nambiar-images/nambiar-bannerghatta-banner.webp",
+      url: "nambiar-bannerghatta-villas.html"
+    },
+    {
+      title: "Assetz Soul & Soil",
+      location: "Hennur Road, Bangalore",
+      image: "assetz-images/assetz-soul-&-soil.jpg",
+      url: "assetz-soul-soil.html"
+    }
+  ],
+
+  plots: [
+    {
+      title: "Northern Boulevard",
+      location: "IVC Road, Devanahalli",
+      image: "images/northern-boulevard.jpg",
+      url: "northern-boulevard.html"
+    },
+    {
+      title: "Godrej Reserve",
+      location: "Devanahalli, Bangalore",
+      image: "godrej-images/godrej-reserve.jpg",
+      url: "godrej-reserve.html"
+    },
+    {
+      title: "Purva Palm Beach",
+      location: "Hennur Road, Bangalore",
+      image: "puravankara-images/purva-palm-beach.avif",
+      url: "purva-palm-beach.html"
+    }
+  ],
+
+  luxury: [
+    {
+      title: "Prestige Leela Residences",
+      location: "Old Airport Road, Bangalore",
+      image: "prestige-images/prestige-leela-residences.webp",
+      url: "prestige-leela-residences.html"
+    },
+    {
+      title: "Sobha Infinia",
+      location: "Koramangala, Bangalore",
+      image: "sobha-images/sobha-infinia-phase-2.webp",
+      url: "sobha-infinia.html"
+    },
+    {
+      title: "Purva Orient Grand",
+      location: "Richmond Road, Bangalore",
+      image: "puravankara-images/purva-orient-grand.webp",
+      url: "purva-orient-grand.html"
+    }
+  ]
+};
+
+const tabs = document.querySelectorAll(".tab");
+const cardsLayout = document.querySelector(".cards-layout");
+
+
+function renderCards(data){
+  if(!data || data.length === 0) return;
+
+  const featured = data[0];
+  const sideCards = data.slice(1);
+
+  cardsLayout.innerHTML = `
+    <a href="${featured.url}" class="featured-card">
+      <img src="${featured.image}" alt="${featured.title}">
+      <div class="card-body">
+        <h3>${featured.title}</h3>
+        <p>${featured.location}</p>
+        <span class="tag">${featured.location.toUpperCase()}</span>
+      </div>
+    </a>
+
+    <div class="side-cards">
+      ${sideCards.map(item => `
+        <a href="${item.url}" class="small-card">
+          <img src="${item.image}" alt="${item.title}">
+          <div class="card-body">
+            <h4>${item.title}</h4>
+            <p>${item.location}</p>
+            <span class="tag">${item.location.toUpperCase()}</span>
+          </div>
+        </a>
+      `).join("")}
+    </div>
+  `;
+}
+
+tabs.forEach(tab => {
+  tab.addEventListener("click", () => {
+
+    tabs.forEach(t => t.classList.remove("active"));
+    tab.classList.add("active");
+
+    const category = tab.dataset.tab;
+    renderCards(propertyData[category]);
+
+  });
+});
+</script>
 
 </body>
 </html>
