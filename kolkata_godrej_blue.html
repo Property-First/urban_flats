@@ -1,0 +1,1940 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Luxury Real Estate Hero</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:"Inter", sans-serif;
+  background:#f5f3ef;
+  color:#fff;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  background:#f3f1ed;
+  z-index:999;
+  border-bottom:1px solid rgba(0,0,0,.08);
+}
+
+.nav-container{
+  max-width:1180px;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:18px 20px;
+}
+
+.logo{
+  font-family:"Playfair Display", serif;
+  font-size:34px;
+  font-weight:700;
+  color:#10233f;
+}
+
+.logo span{
+  color:#b58b3b;
+  font-style:italic;
+}
+
+.nav-links{
+  display:flex;
+  gap:24px;
+}
+
+.nav-links a{
+  text-decoration:none;
+  color:#34445f;
+  font-size:13px;
+  font-weight:500;
+  transition:.3s;
+}
+
+.nav-links a:hover{
+  color:#b58b3b;
+}
+
+.enquire-btn{
+  padding:14px 26px;
+  border:1px solid #1d3154;
+  background:transparent;
+  color:#1d3154;
+  text-decoration:none;
+  font-weight:600;
+  transition:.3s;
+}
+
+.enquire-btn:hover{
+  background:#1d3154;
+  color:#fff;
+}
+
+.menu-toggle{
+  display:none;
+  font-size:30px;
+  cursor:pointer;
+  color:#1d3154;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+  min-height:100vh;
+  padding-top:95px;
+  background:
+  linear-gradient(rgba(18,39,68,.72), rgba(18,39,68,.72)),
+  url('./bluew_banner.avif');
+  background-size:cover;
+  background-position:center;
+  display:flex;
+  align-items:center;
+}
+
+.hero-inner{
+  max-width:1180px;
+  margin:auto;
+  padding:40px 20px 80px;
+  width:100%;
+}
+
+.hero-topline{
+  color:#d7b15a;
+  font-size:11px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-bottom:24px;
+}
+
+.hero-topline::before{
+  content:"";
+  width:26px;
+  height:2px;
+  background:#d7b15a;
+}
+
+.hero h1{
+  font-family:"Playfair Display", serif;
+  font-size:28px;
+  line-height:1.06;
+  font-weight:700;
+  max-width:760px;
+}
+
+.hero h1 .gold{
+  color:#d7b15a;
+  font-style:italic;
+}
+
+.hero p{
+  margin-top:26px;
+  max-width:700px;
+  font-size:14px;
+  line-height:1.8;
+  color:#e8edf6;
+}
+
+.hero-buttons{
+  display:flex;
+  gap:18px;
+  margin-top:34px;
+  flex-wrap:wrap;
+}
+
+.btn-primary{
+  background:#caa14d;
+  color:#132746;
+  padding:16px 32px;
+  text-decoration:none;
+  font-weight:700;
+  transition:.3s;
+}
+
+.btn-primary:hover{
+  background:#d8b062;
+}
+
+.btn-outline{
+  border:1px solid rgba(255,255,255,.55);
+  color:#fff;
+  padding:16px 32px;
+  text-decoration:none;
+  font-weight:600;
+  transition:.3s;
+}
+
+.btn-outline:hover{
+  background:rgba(255,255,255,.08);
+}
+
+/* ================= STATS ================= */
+
+.stats{
+  margin-top:64px;
+  border-top:1px solid rgba(255,255,255,.22);
+  padding-top:30px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+}
+
+.stat h3{
+  font-family:"Playfair Display", serif;
+  font-size:24px;
+  color:#d7b15a;
+  margin-bottom:10px;
+}
+
+.stat p{
+  margin:0;
+  font-size:12px;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  color:#d7dde8;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width:991px){
+
+  .nav-links{
+    position:absolute;
+    top:100%;
+    left:0;
+    width:100%;
+    background:#f3f1ed;
+    flex-direction:column;
+    padding:20px;
+    display:none;
+    border-top:1px solid rgba(0,0,0,.08);
+  }
+
+  .nav-links.active{
+    display:flex;
+  }
+
+  .menu-toggle{
+    display:block;
+  }
+
+  .enquire-btn{
+    display:none;
+  }
+
+  .hero h1{
+    font-size:54px;
+  }
+
+  .hero p{
+    font-size:20px;
+  }
+
+  .stats{
+    grid-template-columns:1fr;
+  }
+
+}
+
+@media (max-width:600px){
+
+  .logo{
+    font-size:30px;
+  }
+
+  .hero{
+    padding-top:84px;
+  }
+
+  .hero h1{
+    font-size:42px;
+  }
+
+  .hero p{
+    font-size:17px;
+    line-height:1.7;
+  }
+
+  .hero-buttons{
+    flex-direction:column;
+  }
+
+  .btn-primary,
+  .btn-outline{
+    width:100%;
+    text-align:center;
+  }
+
+  .stat h3{
+    font-size:36px;
+  }
+
+}
+
+/* ================= ABOUT PROJECT ================= */
+
+.about-project{
+  background:#f5f3ef;
+  padding:70px 0;
+}
+
+.about-container{
+  max-width:920px;
+  margin:0 auto;
+}
+
+.section-tag{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  color:#b58b3b;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  margin-bottom:18px;
+}
+
+.section-tag::before{
+  content:"";
+  width:22px;
+  height:2px;
+  background:#b58b3b;
+}
+
+.about-project h2{
+  font-family:"Playfair Display", serif;
+  font-size:36px;
+  font-weight:700;
+  color:#10233f;
+  margin-bottom:14px;
+  line-height:1.15;
+}
+
+.about-subtitle{
+  font-size:14px;
+  color:#8b6f4a;
+  margin-bottom:34px;
+}
+
+.about-content p{
+  font-size:14px;
+  line-height:1.95;
+  color:#5f6673;
+  margin-bottom:28px;
+  text-align: justify;
+}
+
+.about-content strong{
+  color:#10233f;
+  font-weight:700;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width:768px){
+
+  .about-project{
+    padding:54px 20px;
+  }
+
+  .about-project h2{
+    font-size:38px;
+  }
+
+  .about-subtitle{
+    font-size:17px;
+    margin-bottom:24px;
+  }
+
+  .about-content p{
+    font-size:16px;
+    line-height:1.8;
+    margin-bottom:22px;
+  }
+
+}
+
+@media (max-width:480px){
+
+  .about-project h2{
+    font-size:32px;
+  }
+
+  .about-subtitle{
+    font-size:16px;
+  }
+
+  .about-content p{
+    font-size:15px;
+  }
+
+}
+
+/* ================= PRICING SECTION ================= */
+
+.pricing-section{
+  background:#0f2747;
+  color:#ffffff;
+  padding:80px 0;
+}
+
+.pricing-container{
+  max-width:900px;
+  margin:0 auto;
+}
+
+.section-tag.light{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  color:#d7b15a;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  margin-bottom:18px;
+}
+
+.section-tag.light::before{
+  content:"";
+  width:22px;
+  height:2px;
+  background:#d7b15a;
+}
+
+.pricing-section h2{
+  font-family:"Playfair Display", serif;
+  font-size:36px;
+  color:#ffffff;
+  margin-bottom:12px;
+}
+
+.pricing-subtitle{
+  color:#d7dde8;
+  margin-bottom:34px;
+  font-size:14px;
+}
+
+.pricing-table{
+  width:100%;
+  border-collapse:collapse;
+}
+
+.pricing-table thead th{
+  text-align:left;
+  padding:14px 0;
+  color:#d7b15a;
+  font-size:12px;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  border-bottom:1px solid rgba(215,177,90,.45);
+}
+
+.pricing-table tbody td{
+  padding:18px 0;
+  border-bottom:1px solid rgba(255,255,255,.12);
+  color:#eef2f7;
+  font-size:14px;
+}
+
+.pricing-table tbody td strong{
+  color:#ffffff;
+  font-weight:700;
+}
+
+.pricing-table a{
+  color:#ffffff;
+  text-decoration:none;
+  font-weight:600;
+}
+
+.pricing-note{
+  margin-top:18px;
+  color:#b9c4d3;
+  font-size:13px;
+  line-height:1.7;
+}
+
+.offer-link{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  margin-top:26px;
+  color:#d7b15a;
+  text-decoration:none;
+  font-weight:700;
+  letter-spacing:.5px;
+}
+
+.offer-link::after{
+  content:"";
+  display:block;
+  width:80px;
+  height:2px;
+  background:#d7b15a;
+}
+
+/* ================= HIGHLIGHTS SECTION ================= */
+
+.highlights-section{
+  background:#f5f3ef;
+  padding:80px 0;
+}
+
+.section-tag.dark{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  color:#b58b3b;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  margin-bottom:18px;
+}
+
+.section-tag.dark::before{
+  content:"";
+  width:22px;
+  height:2px;
+  background:#b58b3b;
+}
+ .highlight-container{
+    max-width: 900px;
+    margin: 0 auto;
+ }
+.highlights-section h2{
+  font-family:"Playfair Display", serif;
+  font-size:36px;
+  color:#10233f;
+  margin-bottom:12px;
+}
+
+.highlights-subtitle{
+  color:#7c6d57;
+  margin-bottom:34px;
+  font-size:14px;
+}
+
+.highlights-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:16px 34px;
+}
+
+.highlight-item{
+  display:flex;
+  align-items:flex-start;
+  gap:12px;
+  padding:14px 0;
+  border-bottom:1px solid rgba(16,35,63,.12);
+}
+
+.highlight-item .icon{
+  color:#b58b3b;
+  font-size:14px;
+  line-height:1.4;
+  margin-top:2px;
+}
+
+.highlight-item p{
+  color:#4f5663;
+  font-size:13px;
+  line-height:1.7;
+}
+
+.highlights-cta{
+  margin-top:34px;
+  text-align:center;
+}
+
+.highlights-cta a{
+  color:#10233f;
+  text-decoration:none;
+  font-weight:700;
+  letter-spacing:.5px;
+}
+
+.highlights-cta a span{
+  color:#b58b3b;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width:768px){
+
+  .pricing-section,
+  .highlights-section{
+    padding:56px 20px;
+  }
+
+  .pricing-section h2,
+  .highlights-section h2{
+    font-size:36px;
+  }
+
+  .highlights-grid{
+    grid-template-columns:1fr;
+  }
+
+  .pricing-table thead{
+    display:none;
+  }
+
+  .pricing-table,
+  .pricing-table tbody,
+  .pricing-table tr,
+  .pricing-table td{
+    display:block;
+    width:100%;
+  }
+
+  .pricing-table tr{
+    padding:14px 0;
+    border-bottom:1px solid rgba(255,255,255,.12);
+  }
+
+  .pricing-table td{
+    border:none;
+    padding:6px 0;
+  }
+
+  .pricing-table td::before{
+    content:attr(data-label);
+    display:block;
+    color:#d7b15a;
+    font-size:12px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    margin-bottom:4px;
+  }
+
+}
+
+@media (max-width:480px){
+
+  .pricing-section h2,
+  .highlights-section h2{
+    font-size:30px;
+  }
+
+}
+
+/* ================= GALLERY SECTION ================= */
+
+.gallery-section{
+  background:#f5f3ef;
+  padding:80px 0;
+}
+
+.gallery-container{
+    max-width: 900px;
+    margin: 0 auto;
+}
+.gallery-section h2{
+  font-family:"Playfair Display", serif;
+  font-size:36px;
+  color:#10233f;
+  margin-bottom:12px;
+}
+
+.gallery-subtitle{
+  color:#7c6d57;
+  margin-bottom:32px;
+  font-size:14px;
+}
+
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+}
+
+.gallery-item{
+  border-radius:6px;
+  overflow:hidden;
+}
+
+.gallery-item.large{
+  grid-column:span 2;
+  grid-row:span 2;
+}
+
+.gallery-item img{
+  width:100%;
+  height:100%;
+  min-height:180px;
+  object-fit:cover;
+  display:block;
+  transition:transform .35s ease;
+}
+
+.gallery-item:hover img{
+  transform:scale(1.04);
+}
+
+.gallery-cta{
+  margin-top:28px;
+  text-align:center;
+}
+
+.gallery-cta a{
+  color:#10233f;
+  text-decoration:none;
+  font-weight:700;
+  letter-spacing:.5px;
+}
+
+.gallery-cta a span{
+  color:#b58b3b;
+}
+
+/* ================= LOCATION SECTION ================= */
+
+.location-section{
+  background:#f5f3ef;
+  padding:80px 0;
+}
+
+.location-container{
+    max-width: 900px;
+    margin: 0 auto;
+}
+.location-section h2{
+  font-family:"Playfair Display", serif;
+  font-size:36px;
+  color:#10233f;
+  margin-bottom:12px;
+}
+
+.location-subtitle{
+  color:#7c6d57;
+  margin-bottom:32px;
+  font-size:14px;
+}
+
+.location-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:34px;
+  align-items:start;
+}
+
+.location-map{
+  border-radius:6px;
+  overflow:hidden;
+}
+
+.location-map img{
+  width:100%;
+  height:100%;
+  min-height:360px;
+  object-fit:cover;
+  display:block;
+}
+
+.location-content p{
+  color:#5f6673;
+  font-size:13px;
+  line-height:1.9;
+  margin-bottom:26px;
+}
+
+.location-content strong{
+  color:#10233f;
+}
+
+.connectivity-list{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.connectivity-item{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:12px 0;
+  border-bottom:1px solid rgba(16,35,63,.12);
+}
+
+.connectivity-item span{
+  color:#4f5663;
+  font-size:13px;
+}
+
+.connectivity-item strong{
+  color:#10233f;
+  font-size:13px;
+}
+
+.location-cta{
+  margin-top:30px;
+  text-align:center;
+}
+
+.location-cta a{
+  color:#10233f;
+  text-decoration:none;
+  font-weight:700;
+  letter-spacing:.5px;
+}
+
+.location-cta a span{
+  color:#b58b3b;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width:768px){
+
+  .gallery-section,
+  .location-section{
+    padding:56px 20px;
+  }
+
+  .gallery-section h2,
+  .location-section h2{
+    font-size:36px;
+  }
+
+  .gallery-grid{
+    grid-template-columns:1fr;
+  }
+
+  .gallery-item.large{
+    grid-column:span 1;
+    grid-row:span 1;
+  }
+
+  .location-grid{
+    grid-template-columns:1fr;
+  }
+
+  .location-map img{
+    min-height:260px;
+  }
+
+}
+
+@media (max-width:480px){
+
+  .gallery-section h2,
+  .location-section h2{
+    font-size:30px;
+  }
+
+  .gallery-subtitle,
+  .location-subtitle{
+    font-size:15px;
+  }
+
+}
+
+/* ================= MASTER PLAN ================= */
+
+.masterplan-section{
+  background:#f5f3ef;
+  padding:80px 0;
+}
+
+.masterplan-container{
+  max-width:900px;
+  margin:0 auto;
+  text-align:center;
+}
+
+.masterplan-section h2{
+  font-family:"Playfair Display", serif;
+  font-size:36px;
+  color:#10233f;
+  margin-bottom:12px;
+}
+
+.masterplan-subtitle{
+  color:#7c6d57;
+  margin-bottom:32px;
+  font-size:14px;
+}
+
+.masterplan-image{
+  border-radius:6px;
+  overflow:hidden;
+  margin-bottom:28px;
+}
+
+.masterplan-image img{
+  width:100%;
+  display:block;
+}
+
+.masterplan-content{
+  max-width:760px;
+  margin:0 auto;
+}
+
+.masterplan-content p{
+  color:#5f6673;
+  font-size:14px;
+  line-height:1.9;
+  margin-bottom:18px;
+}
+
+.masterplan-content strong{
+  color:#10233f;
+}
+
+.masterplan-cta{
+  margin-top:30px;
+}
+
+.masterplan-cta a{
+  color:#10233f;
+  text-decoration:none;
+  font-weight:700;
+  letter-spacing:.5px;
+}
+
+.masterplan-cta a span{
+  color:#b58b3b;
+}
+
+/* ================= AMENITIES ================= */
+
+.amenities-section{
+  background:#f5f3ef;
+  padding:80px 0;
+}
+
+.amenities-container{
+  max-width:980px;
+  margin:0 auto;
+  text-align:center;
+}
+
+.amenities-section h2{
+  font-family:"Playfair Display", serif;
+  font-size:36px;
+  color:#10233f;
+  margin-bottom:12px;
+}
+
+.amenities-subtitle{
+  color:#7c6d57;
+  margin-bottom:34px;
+  font-size:14px;
+}
+
+.amenities-grid{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  border:1px solid rgba(16,35,63,.12);
+}
+
+.amenity-item{
+  padding:26px 18px;
+  border-right:1px solid rgba(16,35,63,.12);
+  border-bottom:1px solid rgba(16,35,63,.12);
+}
+
+.amenity-item:nth-child(5n){
+  border-right:none;
+}
+
+.amenity-item:nth-last-child(-n+5){
+  border-bottom:none;
+}
+
+.amenity-icon{
+  font-size:24px;
+  color:#b58b3b;
+  margin-bottom:12px;
+}
+
+.amenity-item h4{
+  font-size:13px;
+  color:#10233f;
+  font-weight:600;
+}
+
+.amenities-cta{
+  margin-top:30px;
+}
+
+.amenities-cta a{
+  color:#10233f;
+  text-decoration:none;
+  font-weight:700;
+  letter-spacing:.5px;
+}
+
+.amenities-cta a span{
+  color:#b58b3b;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width:992px){
+
+  .amenities-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .amenity-item{
+    border-right:1px solid rgba(16,35,63,.12);
+    border-bottom:1px solid rgba(16,35,63,.12);
+  }
+
+  .amenity-item:nth-child(2n){
+    border-right:none;
+  }
+
+  .amenity-item:last-child{
+    border-bottom:none;
+  }
+
+}
+
+@media (max-width:768px){
+
+  .masterplan-section,
+  .amenities-section{
+    padding:56px 20px;
+  }
+
+  .masterplan-section h2,
+  .amenities-section h2{
+    font-size:36px;
+  }
+
+}
+
+@media (max-width:480px){
+
+  .amenities-grid{
+    grid-template-columns:1fr;
+  }
+
+  .amenity-item{
+    border-right:none;
+  }
+
+  .masterplan-section h2,
+  .amenities-section h2{
+    font-size:30px;
+  }
+
+}
+
+/* ================= DEVELOPER SECTION ================= */
+
+.developer-section{
+  background:#0f2747;
+  padding:80px 0;
+  color:#fff;
+}
+
+.developer-container{
+  max-width:1100px;
+  margin:0 auto;
+}
+
+.developer-section h2{
+  font-family:"Playfair Display", serif;
+  font-size:36px;
+  color:#fff;
+  margin-bottom:32px;
+}
+
+.developer-grid{
+  display:grid;
+  grid-template-columns:360px 1fr;
+  gap:34px;
+  align-items:center;
+}
+
+.developer-image{
+  border-radius:6px;
+  overflow:hidden;
+}
+
+.developer-image img{
+  width:100%;
+  display:block;
+}
+
+.developer-content h3{
+  font-family:"Playfair Display", serif;
+  font-size:22px;
+  color:#fff;
+  margin-bottom:16px;
+}
+
+.developer-content p{
+  color:#d7dde8;
+  font-size:14px;
+  line-height:1.8;
+  margin-bottom:18px;
+}
+
+.developer-content strong{
+  color:#fff;
+}
+
+.developer-stats{
+  display:flex;
+  gap:34px;
+  margin-top:10px;
+}
+
+.dev-stat h4{
+  font-family:"Playfair Display", serif;
+  font-size:24px;
+  color:#d7b15a;
+  margin-bottom:4px;
+}
+
+.dev-stat p{
+  margin:0;
+  color:#d7dde8;
+  font-size:9px;
+  letter-spacing:1px;
+  text-transform:uppercase;
+}
+
+/* ================= CONTACT SECTION ================= */
+
+.contact-section{
+  /* background:#0f2747; */
+  padding:80px 0;
+  color:#10233f;
+}
+
+.contact-container{
+  max-width:1100px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:1fr 420px;
+  gap:40px;
+  align-items:start;
+}
+
+.contact-section h2{
+  font-family:"Playfair Display", serif;
+  font-size:36px;
+  /* color:#fff; */
+  margin-bottom:18px;
+}
+
+.contact-left p{
+  color:#7c6d57;
+  font-size:14px;
+  line-height:1.9;
+  margin-bottom:26px;
+}
+
+.contact-list{
+  list-style:none;
+  padding:0;
+}
+
+.contact-list li{
+  position:relative;
+  padding-left:26px;
+  margin-bottom:14px;
+  color:#5f6673;
+}
+
+.contact-list li::before{
+  content:"★";
+  position:absolute;
+  left:0;
+  top:0;
+  color:#d7b15a;
+  font-size:12px;
+}
+
+.contact-form{
+  background:#f5f3ef;
+  color:#10233f;
+  padding:28px;
+  border-radius:6px;
+}
+
+.contact-form h3{
+  font-family:"Playfair Display", serif;
+  font-size:24px;
+  margin-bottom:10px;
+}
+
+.contact-form p{
+  color:#5f6673;
+  font-size:12px;
+  margin-bottom:22px;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea{
+  width:100%;
+  border:none;
+  border-bottom:1px solid rgba(16,35,63,.18);
+  background:transparent;
+  padding:12px 0;
+  margin-bottom:18px;
+  /* font:inherit; */
+  color:#10233f;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder{
+  color:#6b7280;
+}
+
+.submit-btn{
+  width:100%;
+  background:#10233f;
+  color:#fff;
+  border:none;
+  padding:14px;
+  font-weight:600;
+  cursor:pointer;
+  transition:.3s;
+}
+
+.submit-btn:hover{
+  background:#1a335b;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width:992px){
+
+  .developer-grid,
+  .contact-container{
+    grid-template-columns:1fr;
+  }
+
+  .developer-stats{
+    flex-wrap:wrap;
+    gap:22px;
+  }
+
+}
+
+@media (max-width:768px){
+
+  .developer-section,
+  .contact-section{
+    padding:56px 20px;
+  }
+
+  .developer-section h2,
+  .contact-section h2{
+    font-size:34px;
+  }
+
+  .developer-content h3{
+    font-size:22px;
+  }
+
+}
+
+@media (max-width:480px){
+
+  .developer-section h2,
+  .contact-section h2{
+    font-size:28px;
+  }
+
+  .contact-form{
+    padding:22px;
+  }
+
+}
+</style>
+</head>
+<body>
+
+<header class="navbar">
+  <div class="nav-container">
+
+    <div class="logo">
+      GODREJ <span>Blue</span>
+    </div>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#overview">Overview</a>
+      <a href="#price">Pricing</a>
+      <a href="#highlights">Highlights</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#amenities">Amenities</a>
+      <a href="#location">Location</a>
+      <a href="#masterplan">Master Plan</a>
+      <!-- <a href="#">Blog</a> -->
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <a href="#" class="enquire-btn">Enquire Now</a>
+
+    <div class="menu-toggle" id="menuToggle">&#9776;</div>
+
+  </div>
+</header>
+
+<section class="hero">
+
+  <div class="hero-inner">
+
+  <div class="hero-topline">
+  GODREJ PROPERTIES • NEW ALIPORE, KOLKATA
+</div>
+
+<h1>
+  Reserved for <span class="gold">Distinction</span>, Defined by <span class="gold">Luxury</span>
+</h1>
+
+<p>
+  Discover premium 3 & 4 BHK residences at Godrej Blue, New Alipore — a rare
+  address with expansive private greens, a natural lake, world-class amenities,
+  and seamless connectivity to Tollygunge Phari and South Kolkata.
+</p>
+
+<div class="hero-buttons">
+  <a href="#pricing" class="btn-primary">View Pricing</a>
+  <a href="#contact" class="btn-outline">Dwonload Broucher</a>
+</div>
+
+<div class="stats">
+
+  <div class="stat">
+    <h3>7.4 Acres</h3>
+    <p>Premium Land Parcel</p>
+  </div>
+
+  <div class="stat">
+    <h3>3 & 4 BHK</h3>
+    <p>Luxury Residences</p>
+  </div>
+
+  <div class="stat">
+    <h3>5 Min</h3>
+    <p>Walk to Tollygunge Phari</p>
+  </div>
+
+</div>
+  </div>
+
+</section>
+
+
+
+<section class="about-project" id="overview">
+  <div class="container about-container">
+
+   <div class="section-tag">THE PROJECT</div>
+
+<h2>About Godrej Blue</h2>
+
+<p class="about-subtitle">
+  A landmark luxury residential address by Godrej Properties, set in the heart of New Alipore, Kolkata.
+</p>
+
+<div class="about-content">
+
+  <p>
+    <strong>Godrej Blue</strong> is a prestigious residential development by Godrej Properties,
+    offering a perfect blend of luxury, comfort, and contemporary living in
+    <strong>New Alipore, Kolkata</strong>. Located at <strong>Mahabirtalla on BL Saha Road</strong>,
+    just a <strong>5-minute walk from Tollygunge Phari</strong>, the project provides seamless
+    connectivity to South Kolkata's major business districts, educational institutions,
+    healthcare centres, shopping destinations, and entertainment hubs.
+  </p>
+
+  <p>
+    Spread across <strong>7.4 acres</strong>, Godrej Blue features
+    <strong>480 premium residences</strong> across <strong>7 elegantly designed towers</strong>
+    with G+19 and G+21 configurations. The development offers thoughtfully planned
+    <strong>3 and 4 BHK luxury apartments</strong> with spacious layouts, elegant interiors,
+    abundant natural light, and excellent cross ventilation, creating an ideal lifestyle
+    for families, professionals, and discerning homeowners.
+  </p>
+
+  <p>
+    The project is surrounded by approximately <strong>60% open green space</strong>,
+    including <strong>2 acres of podium-level landscaping</strong> and a
+    <strong>1-acre natural and beautified lake</strong>, creating a serene environment
+    rarely found in the city. Residents can enjoy world-class amenities such as an
+    <strong>Olympic-size infinity swimming pool, indoor temperature-controlled jacuzzi,
+    luxury spa, squash court, basketball court, gymnasium, Zumba studio, guest suites,
+    and an independent premium clubhouse</strong>.
+  </p>
+
+  <p>
+    Designed for those who appreciate life's finer privileges,
+    <strong>Godrej Blue</strong> offers a rare combination of private greens, timeless
+    architecture, and premium lifestyle amenities. The project is scheduled for
+    <strong>possession in December 2028</strong>, making it one of New Alipore's most
+    distinguished luxury residential developments and an excellent opportunity for
+    long-term value appreciation.
+  </p>
+
+</div>
+  </div>
+</section>
+ 
+
+
+<!-- ================= PRICING SECTION ================= -->
+
+<section class="pricing-section" id="price">
+
+  <div class="container pricing-container">
+
+    <div class="section-tag light">PRICING & FLOOR PLANS</div>
+
+<h2>Choose Your Perfect Residence</h2>
+
+<p class="pricing-subtitle">
+  Explore premium 3 & 4 BHK residences at Godrej Blue, New Alipore. Register now for exclusive launch offers and priority inventory access.
+</p>
+
+<div class="pricing-table-wrapper">
+
+  <table class="pricing-table">
+
+    <thead>
+      <tr>
+        <th>Configuration</th>
+        <th>Size</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td><strong>3 BHK</strong></td>
+        <td>1500 sq.ft</td>
+        <td><a href="#">₹2.49 Cr Onwards</a></td>
+      </tr>
+
+      <tr>
+        <td><strong>3 BHK</strong></td>
+        <td>1900 sq.ft</td>
+        <td><a href="#">₹2.95 Cr Onwards</a></td>
+      </tr>
+
+      <tr>
+        <td><strong>3 BHK</strong></td>
+        <td>2100 sq.ft</td>
+        <td><a href="#">₹3.20 Cr Onwards</a></td>
+      </tr>
+
+      <tr>
+        <td><strong>4 BHK</strong></td>
+        <td>2500 sq.ft</td>
+        <td><a href="#">₹3.80 Cr Onwards</a></td>
+      </tr>
+
+      <tr>
+        <td><strong>4 BHK</strong></td>
+        <td>2900 sq.ft</td>
+        <td><a href="#">₹4.30 Cr Onwards</a></td>
+      </tr>
+    </tbody>
+
+  </table>
+
+</div>
+
+<p class="pricing-note">
+  The quoted price includes <strong>GST, one car parking, two years of maintenance from the handover date, lifetime clubhouse membership, sinking fund, and development charges</strong>. Additional car parking is available at <strong>₹10 Lakhs</strong>. Prices are indicative and subject to change without prior notice.
+</p>
+
+<a href="#" class="offer-link">
+  GET EXCLUSIVE LAUNCH OFFER
+  <span>&rarr;</span>
+</a>
+  </div>
+
+</section>
+
+<!-- ================= HIGHLIGHTS SECTION ================= -->
+
+<section class="highlights-section" id="highlights">
+
+  <div class="container highlight-container">
+
+    <div class="section-tag dark">WHY GODREJ BLUE</div>
+
+<h2>Key Highlights</h2>
+
+<p class="highlights-subtitle">
+  What makes Godrej Blue one of the most distinguished luxury addresses in New Alipore, Kolkata.
+</p>
+
+<div class="highlights-grid">
+
+  <div class="highlight-item">
+    <span class="icon">★</span>
+    <p>Premium 3 & 4 BHK luxury residences by Godrej Properties</p>
+  </div>
+
+  <div class="highlight-item">
+    <span class="icon">★</span>
+    <p>Prime location at Mahabirtalla, BL Saha Road near Tollygunge Phari</p>
+  </div>
+
+  <div class="highlight-item">
+    <span class="icon">★</span>
+    <p>Only a 5-minute walk from Tollygunge Phari with excellent South Kolkata connectivity</p>
+  </div>
+
+  <div class="highlight-item">
+    <span class="icon">★</span>
+    <p>7.4-acre premium development with approximately 60% open green space</p>
+  </div>
+
+  <div class="highlight-item">
+    <span class="icon">★</span>
+    <p>2 acres of landscaped podium gardens and a 1-acre natural beautified lake</p>
+  </div>
+
+  <div class="highlight-item">
+    <span class="icon">★</span>
+    <p>Olympic-size infinity swimming pool, indoor jacuzzi, spa, and independent clubhouse</p>
+  </div>
+
+  <div class="highlight-item">
+    <span class="icon">★</span>
+    <p>Squash court, basketball court, gymnasium, Zumba studio, cafeteria, and guest suites</p>
+  </div>
+
+  <div class="highlight-item">
+    <span class="icon">★</span>
+    <p>Low-density planning with only 3-4 apartments per floor across 7 premium towers</p>
+  </div>
+
+  <div class="highlight-item">
+    <span class="icon">★</span>
+    <p>Premium garden-facing residences designed for refined luxury living</p>
+  </div>
+
+  <div class="highlight-item">
+    <span class="icon">★</span>
+    <p>Possession scheduled for December 2028 with strong long-term value appreciation potential</p>
+  </div>
+
+</div>
+
+<div class="highlights-cta">
+  <a href="#">ENQUIRE NOW <span>&rarr;</span></a>
+</div>
+
+  </div>
+
+</section>
+
+<!-- ================= GALLERY SECTION ================= -->
+
+<section class="gallery-section" id="gallery">
+  <div class="container gallery-container">
+
+    <div class="section-tag dark">GALLERY</div>
+
+    <h2>A Glimpse of the Life Here</h2>
+
+    <p class="gallery-subtitle">
+      A curated view of the project and lifestyle at L&T Malad.
+    </p>
+
+    <div class="gallery-grid">
+
+      <div class="gallery-item large">
+        <img src="./blue_gallery_1.avif" alt="Gallery 1">
+      </div>
+
+      <div class="gallery-item">
+        <img src="./blue_gallery_2.avif" alt="Gallery 2">
+      </div>
+
+      <div class="gallery-item">
+        <img src="./blue_gallery_3.avif" alt="Gallery 3">
+      </div>
+
+      <div class="gallery-item">
+        <img src="./blue_gallery_4.avif" alt="Gallery 4">
+      </div>
+
+      <!-- <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80" alt="Gallery 5">
+      </div>
+
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=1200&q=80" alt="Gallery 6">
+      </div> -->
+
+    </div>
+
+    <div class="gallery-cta">
+      <a href="#">VIEW MORE <span>&rarr;</span></a>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ================= AMENITIES SECTION ================= -->
+
+<section class="amenities-section" id="amenities">
+
+  <div class="container amenities-container">
+
+    <div class="section-tag dark">AMENITIES</div>
+
+    <h2>World-Class Amenities</h2>
+
+    <p class="amenities-subtitle">
+      Experience luxury living with thoughtfully curated amenities at Godrej Blue.
+    </p>
+
+    <div class="amenities-grid">
+
+      <div class="amenity-item">
+        <div class="amenity-icon">🏊</div>
+        <h4>Infinity Pool</h4>
+      </div>
+
+      <div class="amenity-item">
+        <div class="amenity-icon">♨️</div>
+        <h4>Indoor Jacuzzi</h4>
+      </div>
+
+      <div class="amenity-item">
+        <div class="amenity-icon">🧖</div>
+        <h4>Luxury Spa</h4>
+      </div>
+
+      <div class="amenity-item">
+        <div class="amenity-icon">🏛️</div>
+        <h4>Independent Clubhouse</h4>
+      </div>
+
+      <div class="amenity-item">
+        <div class="amenity-icon">🏸</div>
+        <h4>Squash Court</h4>
+      </div>
+
+      <div class="amenity-item">
+        <div class="amenity-icon">🏀</div>
+        <h4>Basketball Court</h4>
+      </div>
+
+      <div class="amenity-item">
+        <div class="amenity-icon">💪</div>
+        <h4>Gym & Zumba</h4>
+      </div>
+
+      <div class="amenity-item">
+        <div class="amenity-icon">☕</div>
+        <h4>Cafeteria</h4>
+      </div>
+
+      <div class="amenity-item">
+        <div class="amenity-icon">🛏️</div>
+        <h4>Guest Suites</h4>
+      </div>
+
+      <div class="amenity-item">
+        <div class="amenity-icon">🌳</div>
+        <h4>Landscaped Gardens</h4>
+      </div>
+
+    </div>
+
+    <div class="amenities-cta">
+      <a href="#">VIEW ALL AMENITIES <span>&rarr;</span></a>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ================= LOCATION SECTION ================= -->
+
+<section class="location-section" id="location">
+  <div class="container location-container">
+
+<div class="section-tag dark">LOCATION</div>
+
+<h2>Everywhere You Need, Minutes Away</h2>
+
+<p class="location-subtitle">
+  The strategic advantage of Godrej Blue, New Alipore.
+</p>
+
+<div class="location-grid">
+
+  <div class="location-map">
+    <img src="images/location-map.jpg" alt="Godrej Blue Location Map">
+  </div>
+
+  <div class="location-content">
+
+    <p>
+      Strategically located at <strong>Mahabirtalla on BL Saha Road, New Alipore</strong>,
+      <strong>Godrej Blue</strong> offers excellent connectivity to Tollygunge,
+      Alipore, EM Bypass, South Kolkata's business districts, premium schools,
+      hospitals, shopping destinations, and entertainment hubs, ensuring effortless
+      access to everything that matters.
+    </p>
+
+    <div class="connectivity-list">
+
+      <div class="connectivity-item">
+        <span>Tollygunge Phari</span>
+        <strong>5 Min Walk</strong>
+      </div>
+
+      <div class="connectivity-item">
+        <span>BL Saha Road</span>
+        <strong>Immediate Access</strong>
+      </div>
+
+      <div class="connectivity-item">
+        <span>New Alipore</span>
+        <strong>Prime Residential Zone</strong>
+      </div>
+
+      <div class="connectivity-item">
+        <span>Tollygunge Metro Station</span>
+        <strong>Nearby</strong>
+      </div>
+
+      <div class="connectivity-item">
+        <span>EM Bypass</span>
+        <strong>Excellent Connectivity</strong>
+      </div>
+
+      <div class="connectivity-item">
+        <span>South City Mall</span>
+        <strong>Nearby</strong>
+      </div>
+
+      <div class="connectivity-item">
+        <span>Leading Schools & Colleges</span>
+        <strong>Within Easy Reach</strong>
+      </div>
+
+      <div class="connectivity-item">
+        <span>Major Hospitals</span>
+        <strong>Within Easy Reach</strong>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<div class="location-cta">
+  <a href="#">EXPLORE THE NEIGHBOURHOOD <span>&rarr;</span></a>
+</div>
+  </div>
+</section>
+
+<!-- ================= MASTER PLAN SECTION ================= -->
+
+<section class="masterplan-section" id="masterplan">
+
+  <div class="container masterplan-container">
+
+    <div class="section-tag dark">MASTER PLAN</div>
+
+    <h2>Thoughtfully Designed, Down to the Layout</h2>
+
+    <p class="masterplan-subtitle">
+      Explore the master plan of Godrej Blue, New Alipore.
+    </p>
+
+    <div class="masterplan-image">
+      <img src="images/master-plan.jpg" alt="Godrej Blue Master Plan">
+    </div>
+
+    <div class="masterplan-content">
+
+      <p>
+        <strong>Godrej Blue</strong> is spread across <strong>7.4 acres</strong> with
+        thoughtfully planned residential towers, expansive landscaped gardens,
+        and a serene <strong>1-acre natural and beautified lake</strong>. The development
+        is designed to maximize open space, natural light, privacy, and a seamless
+        connection with nature.
+      </p>
+
+      <p>
+        With approximately <strong>60% open green area</strong>, <strong>2 acres of
+        podium-level landscaping</strong>, and only <strong>3-4 apartments per floor</strong>,
+        the master plan creates a low-density luxury environment that offers both
+        exclusivity and everyday comfort.
+      </p>
+
+    </div>
+
+    <div class="masterplan-cta">
+      <a href="#">DOWNLOAD MASTER PLAN <span>&rarr;</span></a>
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ================= ABOUT DEVELOPER ================= -->
+
+<section class="developer-section" id="contact">
+
+  <div class="container developer-container">
+
+    <div class="section-tag light">ABOUT THE DEVELOPER</div>
+
+    <h2>Godrej Properties</h2>
+
+    <div class="developer-grid">
+
+      <div class="developer-image">
+        <img src="./blue_gallery_4.avif" alt="Godrej Blue New Alipore">
+      </div>
+
+      <div class="developer-content">
+
+        <h3>One of India's Most Trusted Real Estate Developers</h3>
+
+        <p>
+          <strong>Godrej Properties</strong> is one of India's leading real estate developers,
+          known for its commitment to innovation, sustainability, superior construction quality,
+          and thoughtful design. The company has delivered landmark residential and commercial
+          developments across major cities and continues to set new benchmarks in premium urban living.
+        </p>
+
+        <p>
+          With a strong legacy of trust and excellence, Godrej Properties combines cutting-edge
+          architecture with customer-centric planning, creating homes that offer exceptional lifestyle,
+          long-term value appreciation, and enduring quality.
+        </p>
+
+        <div class="developer-stats">
+
+          <div class="dev-stat">
+            <h4>125+</h4>
+            <p>Years of Legacy</p>
+          </div>
+
+          <div class="dev-stat">
+            <h4>12+</h4>
+            <p>Major Cities</p>
+          </div>
+
+          <div class="dev-stat">
+            <h4>Trusted</h4>
+            <p>Premium Developer</p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ================= CONTACT SECTION ================= -->
+
+<section class="contact-section">
+
+  <div class="container contact-container">
+
+    <div class="contact-left">
+
+      <div class="section-tag light">REGISTER YOUR INTEREST</div>
+
+      <h2>Interested in Godrej Blue?</h2>
+
+      <p>
+        Register your interest to receive the latest price sheet, floor plans, brochure,
+        exclusive launch offers, and a priority site visit for <strong>Godrej Blue New Alipore</strong>.
+      </p>
+
+      <ul class="contact-list">
+
+        <li>Mahabirtalla, BL Saha Road, New Alipore, Kolkata</li>
+
+        <li>5-minute walk from Tollygunge Phari</li>
+
+        <li>Premium 3 & 4 BHK luxury residences</li>
+
+        <li>Possession by December 2028</li>
+
+      </ul>
+
+    </div>
+
+    <div class="contact-form-wrapper">
+
+      <div class="contact-form">
+
+        <h3>Pre-Register for Godrej Blue</h3>
+
+        <p>Complete the form below and our relationship manager will contact you shortly.</p>
+
+        <form>
+
+          <input type="text" placeholder="Full Name" required>
+
+          <input type="tel" placeholder="Mobile Number" required>
+
+          <input type="email" placeholder="Email Address" required>
+          <button type="submit" class="submit-btn">Request a Callback</button>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<script>
+const toggle = document.getElementById('menuToggle');
+const nav = document.getElementById('navLinks');
+
+toggle.addEventListener('click', () => {
+  nav.classList.toggle('active');
+});
+</script>
+
+</body>
+</html>

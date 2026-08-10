@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kolkata Apartments | Premium Property Listings</title>
+ <style>
+    /* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+body{
+  font-family:'Inter', sans-serif;
+  background:#f4f6f8;
+  color:#1f2937;
+  line-height:1.5;
+}
+
+.hero{
+  background:linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
+  url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80');
+  background-size:cover;
+  background-position:center;
+  height:340px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:#fff;
+}
+
+.hero h1{
+  font-family:'Playfair Display', serif;
+  font-size:54px;
+  font-weight:700;
+  letter-spacing:.5px;
+  margin-bottom:12px;
+}
+
+.hero p{
+  font-size:18px;
+  font-weight:400;
+  opacity:.95;
+}
+
+.container{
+  max-width:1200px;
+  margin:25px auto;
+  padding:0 16px;
+}
+
+.filters{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  justify-content:center;
+  margin-bottom:24px;
+}
+
+.filter-btn{
+  padding:10px 18px;
+  border:1px solid #d1d5db;
+  border-radius:999px;
+  background:#fff;
+  color:#374151;
+  cursor:pointer;
+  font-size:13px;
+  font-weight:600;
+  transition:.25s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active{
+  background:#111827;
+  color:#fff;
+  border-color:#111827;
+}
+
+.property-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:18px;
+}
+
+.property-card{
+  background:#fff;
+  border:1px solid #e5e7eb;
+  border-radius:14px;
+  overflow:hidden;
+  box-shadow:0 6px 18px rgba(15,23,42,.06);
+  transition:.25s ease;
+}
+
+.property-image{
+  position:relative;
+}
+
+.property-image img{
+  width:100%;
+  height:200px;
+  object-fit:cover;
+  display:block;
+}
+
+.status{
+  position:absolute;
+  top:12px;
+  left:12px;
+  z-index:2;
+  padding:6px 12px;
+  border-radius:999px;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.5px;
+  text-transform:uppercase;
+  box-shadow:0 4px 12px rgba(0,0,0,.15);
+}
+
+.property-card:hover{
+  transform:translateY(-3px);
+}
+
+.property-card img{
+  width:100%;
+  height:200px;
+  object-fit:cover;
+}
+
+.property-content{
+  padding:16px;
+}
+
+.status{
+  display:inline-block;
+  padding:5px 10px;
+  border-radius:999px;
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:.5px;
+  text-transform:uppercase;
+  margin-bottom:10px;
+}
+
+.upcoming{ background:#fff4d6; color:#8a6d00; }
+.construction{ background:#e8f2ff; color:#0056b3; }
+.ready{ background:#e7f8ee; color:#0b7a3d; }
+
+.property-content h3{
+  font-family:'Playfair Display', serif;
+  font-size:20px;
+  margin-top: -5px;
+  font-weight:700;
+  margin-bottom:2px;
+  color:#111827;
+}
+
+.location{
+  color:#6b7280;
+  font-size:13px;
+  margin-bottom:10px;
+}
+
+.price{
+  font-size:18px;
+  font-weight:700;
+  color:#0f172a;
+  margin-bottom:10px;
+}
+
+.details{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px;
+  font-size:13px;
+  color:#4b5563;
+  margin-bottom:14px;
+}
+
+.details strong{
+  color:#111827;
+  font-weight:600;
+}
+
+.btn{
+  display:inline-block;
+  /* width:100%; */
+  text-align:center;
+  padding:11px;
+  border-radius:10px;
+  background:#111827;
+  color:#fff;
+  text-decoration:none;
+  font-size:13px;
+  font-weight:600;
+  transition:.25s ease;
+}
+
+.btn:hover{
+  background:#0d6efd;
+}
+
+@media (max-width:768px){
+  .container{
+    margin:18px auto;
+    padding:0 12px;
+  }
+
+  .property-grid{
+    gap:16px;
+  }
+
+  .property-content{
+    padding:14px;
+  }
+
+  .property-content h3{
+    font-size:18px;
+  }
+
+  .price{
+    font-size:17px;
+  }
+}
+ </style>
+</head>
+<body>
+
+  <section class="hero">
+    <div>
+      <h1>Kolkata Apartments</h1>
+      <p>Upcoming Projects, Under Construction & Ready to Move Apartments in Kolkata</p>
+    </div>
+  </section>
+
+  <div class="container">
+
+    <div class="filters">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="upcoming">Upcoming Projects</button>
+      <button class="filter-btn" data-filter="construction">Under Construction</button>
+      <button class="filter-btn" data-filter="ready">Ready to Move</button>
+    </div>
+
+    <div class="property-grid" id="propertyGrid"></div>
+
+  </div>
+
+  <script>
+    const properties = [
+      {
+        projectName: "GODREJ BLUE, NEW ALIPORE",
+        status: "upcoming",
+        location: "Mahabirtalla, Kolkata",
+        bhk: "3 & 4 BHK",
+        priceRange: "₹2.49 Cr - ₹4.30 Cr",
+        sizeRange: "1500 - 2900 sq.ft",
+        possession: "Dec 2028",
+        image: "./blue_overview.avif",
+        url: "./kolkata_godrej_blue.html" 
+    },
+      {
+        projectName: "Salarpuria Inspire",
+        status: "upcoming",
+        location: "New Town, Kolkata",
+        bhk: "3 & 4 BHK",
+        priceRange: "₹1.53 Cr - ₹2.20 Cr",
+        sizeRange: "1442 - 2025 sq.ft",
+        possession: "Mar 2032",
+        image: "https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        projectName: "Merlin Avana",
+        status: "upcoming",
+        location: "New Town, Kolkata",
+        bhk: "2, 3 & 4 BHK",
+        priceRange: "₹79 L - ₹1.95 Cr",
+        sizeRange: "625 - 1486 sq.ft",
+        possession: "Dec 2027",
+        image: "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        projectName: "Siddha Serena",
+        status: "construction",
+        location: " Near DPS Megacity, Newtown",
+        bhk: "2, 3 & 4 BHK",
+        priceRange: "₹82 L - ₹2.16 Cr",
+        sizeRange: "586 - 1531 sq.ft",
+        possession: "Jun 2027",
+        image: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        projectName: "Merlin Rise",
+        status: "ready",
+        location: "6 Lane, Rajarhat",
+        bhk: "2 & 3 BHK",
+        priceRange: "₹77 L - ₹1.45 Cr",
+        sizeRange: "945 - 1911 sq.ft",
+        possession: "Ready to Move",
+        image: "https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        projectName: "Vinayak 21 Acres",
+        status: "ready",
+        location: "Rajarhat, Kolkata",
+        bhk: "2 & 3 BHK",
+        priceRange: "₹81 L - ₹1.35 Cr",
+        sizeRange: "971 - 1531 sq.ft",
+        possession: "Ready to Move",
+        image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80"
+      },
+         {
+        projectName: "Godrej EM Bypass Kolkata",
+        status: "construction",
+        location: "EM Bypass, Kolkata",
+        bhk: "2, 3 & 4 BHK",
+        priceRange: "On Request",
+        sizeRange: "On Request",
+        possession: "Ready to Move",
+        image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80"
+      },
+         {
+        projectName: "Merlin Fashion Residences",
+        status: "ready",
+        location: "New Rajarhat, Kolkata",
+        bhk: "3 & 4 BHK",
+        priceRange: "₹1.45 Cr - ₹2.30 Cr",
+        sizeRange: "960 - 1577 sq.ft",
+        possession: "Ready to Move",
+        image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+    "projectName": "Merlin Niyasa",
+    "status": "construction",
+    "location": "Anandapur, Kolkata",
+    "bhk": "2 & 3 BHK",
+    "priceRange": "₹85 L - ₹1.45 Cr",
+    "sizeRange": "950 - 1650 sq.ft",
+    "possession": "2027",
+    "image": "images/kolkata/merlin-niyasa.jpg"
+  },
+  {
+    "projectName": "Aamod Emami",
+    "status": "construction",
+    "location": "New Alipore, Kolkata",
+    "bhk": "3 & 4 BHK",
+    "priceRange": "₹1.80 Cr - ₹3.20 Cr",
+    "sizeRange": "1450 - 2400 sq.ft",
+    "possession": "2028",
+    "image": "images/kolkata/aamod-emami.jpg"
+  },
+  {
+    "projectName": "Merlin Sanctuary",
+    "status": "construction",
+    "location": "Tollygunge, Kolkata",
+    "bhk": "2, 3 & 4 BHK",
+    "priceRange": "₹1.10 Cr - ₹2.60 Cr",
+    "sizeRange": "1100 - 2200 sq.ft",
+    "possession": "2027",
+    "image": "images/kolkata/merlin-sanctuary.jpg"
+  },
+  {
+    "projectName": "Muskan Highrise The Skylake",
+    "status": "construction",
+    "location": "Kolkata",
+    "bhk": "2 & 3 BHK",
+    "priceRange": "₹70 L - ₹1.20 Cr",
+    "sizeRange": "900 - 1550 sq.ft",
+    "possession": "2027",
+    "image": "images/kolkata/muskan-skylake.jpg"
+  },
+  {
+    "projectName": "Merlin Elements",
+    "status": "construction",
+    "location": "New Alipore, Kolkata",
+    "bhk": "2 & 3 BHK",
+    "priceRange": "₹95 L - ₹1.85 Cr",
+    "sizeRange": "1000 - 1750 sq.ft",
+    "possession": "2027",
+    "image": "images/kolkata/merlin-elements.jpg"
+  },
+  {
+    "projectName": "Sugam Morya Phase 2",
+    "status": "construction",
+    "location": "Tollygunge, Kolkata",
+    "bhk": "2 & 3 BHK",
+    "priceRange": "₹88 L - ₹1.60 Cr",
+    "sizeRange": "980 - 1600 sq.ft",
+    "possession": "2027",
+    "image": "images/kolkata/sugam-morya-phase-2.jpg"
+  },
+  {
+    "projectName": "Ambuja Utpala",
+    "status": "construction",
+    "location": "EM Bypass, Kolkata",
+    "bhk": "2, 3 & 4 BHK",
+    "priceRange": "₹1.20 Cr - ₹3.50 Cr",
+    "sizeRange": "1150 - 2600 sq.ft",
+    "possession": "2028",
+    "image": "images/kolkata/ambuja-utpala.jpg"
+  },
+  {
+    "projectName": "SKDJ Nidhara",
+    "status": "construction",
+    "location": "New Alipore, Kolkata",
+    "bhk": "2 & 3 BHK",
+    "priceRange": "₹90 L - ₹1.70 Cr",
+    "sizeRange": "1000 - 1700 sq.ft",
+    "possession": "2027",
+    "image": "images/kolkata/skdj-nidhara.jpg"
+  },
+  {
+    "projectName": "PS Sansara",
+    "status": "construction",
+    "location": "Howrah, Kolkata",
+    "bhk": "2, 3 & 4 BHK",
+    "priceRange": "₹75 L - ₹2.10 Cr",
+    "sizeRange": "950 - 2200 sq.ft",
+    "possession": "2028",
+    "image": "images/kolkata/ps-sansara.jpg"
+  },
+  {
+    "projectName": "Nav Prantik",
+    "status": "construction",
+    "location": "New Alipore, Kolkata",
+    "bhk": "2 & 3 BHK",
+    "priceRange": "₹82 L - ₹1.55 Cr",
+    "sizeRange": "950 - 1600 sq.ft",
+    "possession": "2027",
+    "image": "images/kolkata/nav-prantik.jpg"
+  },
+  {
+    "projectName": "Srijan Natura",
+    "status": "construction",
+    "location": "New Alipore, Kolkata",
+    "bhk": "2 & 3 BHK",
+    "priceRange": "₹95 L - ₹1.80 Cr",
+    "sizeRange": "1050 - 1750 sq.ft",
+    "possession": "2027",
+    "image": "images/kolkata/srijan-natura.jpg"
+  },
+  {
+    "projectName": "PS Jade Grove Phase 2",
+    "status": "construction",
+    "location": "Kolkata",
+    "bhk": "2, 3 & 4 BHK",
+    "priceRange": "₹1.10 Cr - ₹2.80 Cr",
+    "sizeRange": "1100 - 2300 sq.ft",
+    "possession": "2028",
+    "image": "images/kolkata/ps-jade-grove-phase-2.jpg"
+  },
+  {
+    "projectName": "Sugam Niavara",
+    "status": "construction",
+    "location": "New Alipore, Kolkata",
+    "bhk": "2 & 3 BHK",
+    "priceRange": "₹88 L - ₹1.65 Cr",
+    "sizeRange": "980 - 1650 sq.ft",
+    "possession": "2027",
+    "image": "images/kolkata/sugam-niavara.jpg"
+  },
+  {
+    "projectName": "Mirania Evara",
+    "status": "construction",
+    "location": "EM Bypass, Kolkata",
+    "bhk": "3 & 4 BHK",
+    "priceRange": "₹1.90 Cr - ₹3.80 Cr",
+    "sizeRange": "1500 - 2800 sq.ft",
+    "possession": "2028",
+    "image": "images/kolkata/mirania-evara.jpg"
+  },
+  {
+    "projectName": "Tata 88 East",
+    "status": "ready",
+    "location": "Alipore, Kolkata",
+    "bhk": "3, 4 & 5 BHK",
+    "priceRange": "₹3.50 Cr - ₹9.00 Cr",
+    "sizeRange": "1800 - 4200 sq.ft",
+    "possession": "Ready to Move",
+    "image": "images/kolkata/tata-88-east.jpg"
+  },
+  {
+    "projectName": "Belani NPR & Sriji Sanctuary",
+    "status": "construction",
+    "location": "Tollygunge, Kolkata",
+    "bhk": "2 & 3 BHK",
+    "priceRange": "₹92 L - ₹1.70 Cr",
+    "sizeRange": "1000 - 1700 sq.ft",
+    "possession": "2027",
+    "image": "images/kolkata/belani-sriji-sanctuary.jpg"
+  },
+  {
+    "projectName": "Vishnupriya",
+    "status": "construction",
+    "location": "Tollygunge, Kolkata",
+    "bhk": "2 & 3 BHK",
+    "priceRange": "₹78 L - ₹1.45 Cr",
+    "sizeRange": "900 - 1500 sq.ft",
+    "possession": "2027",
+    "image": "images/kolkata/vishnupriya.jpg"
+  },
+  {
+    "projectName": "Eden Devprayag Pravah",
+    "status": "construction",
+    "location": "Shibpur, Howrah",
+    "bhk": "2 & 3 BHK",
+    "priceRange": "₹68 L - ₹1.35 Cr",
+    "sizeRange": "850 - 1500 sq.ft",
+    "possession": "2027",
+    "image": "images/kolkata/eden-devprayag-pravah.jpg"
+  },
+  {
+    "projectName": "Merlin F Residence",
+    "status": "construction",
+    "location": "Rajarhat, Kolkata",
+    "bhk": "2, 3 & 4 BHK",
+    "priceRange": "₹95 L - ₹2.20 Cr",
+    "sizeRange": "1050 - 2100 sq.ft",
+    "possession": "2028",
+    "image": "images/kolkata/merlin-f-residence.jpg"
+  },
+  {
+    "projectName": "Srijan Optima",
+    "status": "construction",
+    "location": "New Town, Kolkata",
+    "bhk": "2 & 3 BHK",
+    "priceRange": "₹72 L - ₹1.45 Cr",
+    "sizeRange": "900 - 1600 sq.ft",
+    "possession": "2027",
+    "image": "images/kolkata/srijan-optima.jpg"
+  },
+  {
+    "projectName": "Srijan Town Square",
+    "status": "construction",
+    "location": "New Town, Kolkata",
+    "bhk": "2, 3 & 4 BHK",
+    "priceRange": "₹80 L - ₹1.90 Cr",
+    "sizeRange": "950 - 2000 sq.ft",
+    "possession": "2028",
+    "image": "images/kolkata/srijan-town-square.jpg"
+  },
+  {
+    "projectName": "Siddha Serena",
+    "status": "construction",
+    "location": "Kolkata",
+    "bhk": "2 & 3 BHK",
+    "priceRange": "₹70 L - ₹1.40 Cr",
+    "sizeRange": "900 - 1550 sq.ft",
+    "possession": "2027",
+    "image": "images/kolkata/siddha-serena.jpg"
+  }
+        
+    ];
+
+    const grid = document.getElementById('propertyGrid');
+
+    function renderProperties(filter = 'all') {
+      grid.innerHTML = '';
+
+      const filtered = filter === 'all'
+        ? properties
+        : properties.filter(p => p.status === filter);
+
+      filtered.forEach(property => {
+        const card = document.createElement('div');
+        card.className = 'property-card';
+
+        const statusText = {
+          upcoming: 'Upcoming Project',
+          construction: 'Under Construction',
+          ready: 'Ready to Move'
+        };
+
+        card.innerHTML = `
+  <div class="property-image">
+    <span class="status ${property.status}">${statusText[property.status]}</span>
+    <img src="${property.image}" alt="${property.projectName}">
+  </div>
+
+  <div class="property-content">
+    <h3>${property.projectName}</h3>
+    <div class="location">${property.location}</div>
+    <div class="price">${property.priceRange}</div>
+
+    <div class="details">
+      <div><strong>Configuration</strong><br>${property.bhk}</div>
+      <div><strong>Size</strong><br>${property.sizeRange}</div>
+      <div><strong>Possession</strong><br>${property.possession}</div>
+      <div><strong>Status</strong><br>${statusText[property.status]}</div>
+    </div>
+
+    <a href="${property.url}" class="btn">View Details</a>
+  </div>
+`;
+
+grid.appendChild(card);
+      });
+    }
+
+    renderProperties();
+
+    document.querySelectorAll('.filter-btn').forEach(button => {
+      button.addEventListener('click', () => {
+
+        document.querySelectorAll('.filter-btn')
+          .forEach(btn => btn.classList.remove('active'));
+
+        button.classList.add('active');
+
+        renderProperties(button.dataset.filter);
+      });
+    });
+  </script>
+
+</body>
+</html>
