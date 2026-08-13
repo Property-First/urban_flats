@@ -244,6 +244,65 @@ body{
 
   </div>
 
+  <!-- Contact Section -->
+<section class="contact-section" id="contact">
+  <div class="container">
+    <h2>Contact Us</h2>
+    <p>Fill in your details and our team will get back to you shortly.</p>
+
+    <form action="contact.php" method="POST" class="contact-form">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <input type="tel" name="phone" placeholder="Your Phone Number" required>
+
+      <!-- Hidden Project Name -->
+      <input type="hidden" name="project_name" value="Nambiar District 25">
+
+      <button type="submit" name="submit">Submit Enquiry</button>
+    </form>
+  </div>
+</section>
+
+<style>
+.contact-section{
+    padding:60px 20px;
+    background:#f8f8f8;
+    text-align:center;
+}
+.contact-section .container{
+    max-width:600px;
+    margin:auto;
+}
+.contact-section h2{
+    font-size:32px;
+    margin-bottom:10px;
+}
+.contact-form{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+    margin-top:25px;
+}
+.contact-form input{
+    padding:14px;
+    border:1px solid #ccc;
+    border-radius:6px;
+    font-size:16px;
+}
+.contact-form button{
+    padding:14px;
+    background:#0a4a3c;
+    color:#fff;
+    border:none;
+    border-radius:6px;
+    font-size:16px;
+    cursor:pointer;
+}
+.contact-form button:hover{
+    background:#08362c;
+}
+</style>
+
   <script>
     const properties = [
       {

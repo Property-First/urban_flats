@@ -694,17 +694,20 @@
 
       <p>Complete the form below and our relationship manager will contact you shortly.</p>
 
-      <form>
+     <form action="../contact.php" method="POST">
+    <input type="text" name="name" placeholder="Full Name" required>
 
-        <input type="text" placeholder="Full Name" required>
+    <input type="tel" name="phone" placeholder="Mobile Number" required>
 
-        <input type="tel" placeholder="Mobile Number" required>
+    <input type="email" name="email" placeholder="Email Address" required>
 
-        <input type="email" placeholder="Email Address" required>
+    <!-- Hidden Project Name -->
+    <input type="hidden" name="project_name" value="Ambuja_The_Park_Unizen">
 
-        <button type="submit" class="submit-btn">Request a Callback</button>
-
-      </form>
+    <button type="submit" name="submit" class="submit-btn">
+        Request a Callback
+    </button>
+</form>
 
     </div>
 
@@ -745,13 +748,16 @@ toggle.addEventListener('click', () => {
         Get the latest brochure, floor plans, price sheet, and exclusive launch offers for Ambuja The Park Unizen New Alipore.
       </p>
 
-      <form class="popup-form">
+      <form class="popup-form" action="../contact.php" method="POST">
 
-        <input type="text" placeholder="Full Name" required>
+          <input type="text" name="name" placeholder="Full Name" required>
 
-        <input type="tel" placeholder="Mobile Number" required>
+    <input type="tel" name="phone" placeholder="Mobile Number" required>
 
-        <input type="email" placeholder="Email Address" required>
+    <input type="email" name="email" placeholder="Email Address" required>
+
+    <!-- Hidden Project Name -->
+    <input type="hidden" name="project_name" value="Ambuja_The_Park_Unizen">
 
         
         <button type="submit" class="popup-btn">

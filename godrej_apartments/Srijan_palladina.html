@@ -658,13 +658,18 @@
 
       <p>Complete the form below and our relationship manager will contact you shortly.</p>
 
-      <form>
+      <form action="../contact.php" method="post">
 
-        <input type="text" placeholder="Full Name" required>
+          <input type="text" name="name" placeholder="Full Name" required>
 
-        <input type="tel" placeholder="Mobile Number" required>
+    <input type="tel" name="phone" placeholder="Mobile Number" required>
 
-        <input type="email" placeholder="Email Address" required>
+    <input type="email" name="email" placeholder="Email Address" required>
+
+    <!-- Hidden Project Name -->
+    <input type="hidden" name="project_name" value="Srijan Palladina">
+
+       
 
         <button type="submit" class="submit-btn">Request a Callback</button>
 
@@ -709,13 +714,18 @@ toggle.addEventListener('click', () => {
         Get the latest brochure, floor plans, price sheet, and exclusive launch offers for Srijan Palladina New Alipore.
       </p>
 
-      <form class="popup-form">
+      <form class="popup-form" action="../contact.php" method="post">
 
-        <input type="text" placeholder="Full Name" required>
+          <input type="text" name="name" placeholder="Full Name" required>
 
-        <input type="tel" placeholder="Mobile Number" required>
+    <input type="tel" name="phone" placeholder="Mobile Number" required>
 
-        <input type="email" placeholder="Email Address" required>
+    <input type="email" name="email" placeholder="Email Address" required>
+
+    <!-- Hidden Project Name -->
+    <input type="hidden" name="project_name" value="Srijan Palladina">
+
+       
 
         
         <button type="submit" class="popup-btn">
